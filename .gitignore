@@ -1,0 +1,6 @@
+﻿#visual studio
+.vs/
+
+#IntellIj
+out/
+.idea/
