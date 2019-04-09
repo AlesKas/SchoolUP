@@ -1,0 +1,4 @@
+﻿  26.brezen.cpp
+c:\users\aleš\documents\github\schooldesktop\c++\26.brezen\26.brezen\ovoce.cpp(7): warning C4305: inicializování: zkrácení z: double na: float
+c:\users\aleš\documents\github\schooldesktop\c++\26.brezen\26.brezen\26.brezen.cpp(14): warning C4244: return: int se převádí na float; může dojít ke ztrátě dat.
+  26.brezen.vcxproj -> C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C++\26.brezen\Debug\26.brezen.exe

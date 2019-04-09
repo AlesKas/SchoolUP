@@ -1,0 +1,7 @@
+﻿  Source.c
+c:\users\aleš\documents\github\schooldesktop\os\os13.03\os13.03\source.c(152): warning C4409: neplatná velikost instrukce
+c:\users\aleš\documents\github\schooldesktop\os\os13.03\os13.03\source.c(165): warning C4409: neplatná velikost instrukce
+c:\users\aleš\documents\github\schooldesktop\os\os13.03\os13.03\source.c(168): warning C4409: neplatná velikost instrukce
+c:\users\aleš\documents\github\schooldesktop\os\os13.03\os13.03\source.c(196): warning C4102: errmess: neodkazovaná jmenovka
+Source.obj : warning LNK4075: /EDITANDCONTINUE se ignoruje kvůli specifikaci /INCREMENTAL:NO.
+  OS13.03.vcxproj -> C:\Users\Aleš\Documents\GitHub\SchoolDesktop\OS\OS13.03\Debug\OS13.03.exe

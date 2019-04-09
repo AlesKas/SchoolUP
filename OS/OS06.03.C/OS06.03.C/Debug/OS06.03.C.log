@@ -1,0 +1,5 @@
+﻿  Source.c
+c:\users\aleš\documents\github\schooldesktop\os\os06.03.c\os06.03.c\source.c(83): warning C4244: funkce: time_t se převádí na unsigned int; může dojít ke ztrátě dat.
+c:\users\aleš\documents\github\schooldesktop\os\os06.03.c\os06.03.c\source.c(85): warning C4018: <: signed/unsigned – neshoda
+c:\users\aleš\documents\github\schooldesktop\os\os06.03.c\os06.03.c\source.c(113): warning C4244: funkce: time_t se převádí na unsigned int; může dojít ke ztrátě dat.
+  OS06.03.C.vcxproj -> C:\Users\Aleš\Documents\GitHub\SchoolDesktop\OS\OS06.03.C\Debug\OS06.03.C.exe

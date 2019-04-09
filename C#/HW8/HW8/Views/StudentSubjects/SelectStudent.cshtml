@@ -1,0 +1,21 @@
+﻿@using HW8.Models
+@model List<Student>
+@{
+    ViewBag.Title = "Vybrání studenta";
+
+}
+
+<h2>Vyberte studenta</h2>
+
+<table class="table">
+    <tr><th>Jméno</th><th>Příjmení</th><th>Vyberte</th></tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Name</td>
+            <td>@s.Surname</td>
+            <td><a href="@Url.Action("SelectStudent", "StudentSubjects")/@s.Id"><span class="glyphicon glyphicon-ok"></span></a></td>
+        </tr>
+
+    }
+</table>
