@@ -1,4 +1,0 @@
-﻿  Source.c
-c:\users\aleš\source\repos\os20.02\os20.02\source.c(113): warning C4405: ret: Identifikátor je vyhrazené slovo.
-c:\users\aleš\source\repos\os20.02\os20.02\source.c(115): warning C4244: return: double se převádí na int; může dojít ke ztrátě dat.
-  OS20.02.vcxproj -> C:\Users\Aleš\source\repos\OS20.02\Debug\OS20.02.exe

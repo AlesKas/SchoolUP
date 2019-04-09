@@ -1,7 +1,0 @@
-C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW4\HW$\HW$\bin\Debug\HW$.exe.config
-C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW4\HW$\HW$\bin\Debug\HW$.exe
-C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW4\HW$\HW$\bin\Debug\HW$.pdb
-C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW4\HW$\HW$\obj\Debug\HW4.csprojAssemblyReference.cache
-C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW4\HW$\HW$\obj\Debug\HW4.csproj.CoreCompileInputs.cache
-C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW4\HW$\HW$\obj\Debug\HW$.exe
-C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW4\HW$\HW$\obj\Debug\HW$.pdb
