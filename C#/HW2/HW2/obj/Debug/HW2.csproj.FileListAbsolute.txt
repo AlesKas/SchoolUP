@@ -1,0 +1,7 @@
+C:\Users\Aleš\source\repos\HW2\HW2\bin\Debug\HW2.exe.config
+C:\Users\Aleš\source\repos\HW2\HW2\bin\Debug\HW2.exe
+C:\Users\Aleš\source\repos\HW2\HW2\bin\Debug\HW2.pdb
+C:\Users\Aleš\source\repos\HW2\HW2\obj\Debug\HW2.csprojAssemblyReference.cache
+C:\Users\Aleš\source\repos\HW2\HW2\obj\Debug\HW2.csproj.CoreCompileInputs.cache
+C:\Users\Aleš\source\repos\HW2\HW2\obj\Debug\HW2.exe
+C:\Users\Aleš\source\repos\HW2\HW2\obj\Debug\HW2.pdb

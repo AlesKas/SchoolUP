@@ -1,0 +1,7 @@
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW5\HW5\HW5\bin\Debug\HW5.exe.config
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW5\HW5\HW5\bin\Debug\HW5.exe
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW5\HW5\HW5\bin\Debug\HW5.pdb
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW5\HW5\HW5\obj\Debug\HW5.csprojAssemblyReference.cache
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW5\HW5\HW5\obj\Debug\HW5.csproj.CoreCompileInputs.cache
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW5\HW5\HW5\obj\Debug\HW5.exe
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW5\HW5\HW5\obj\Debug\HW5.pdb

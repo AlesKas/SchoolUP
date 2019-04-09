@@ -1,0 +1,12 @@
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\bin\Debug\HW7.exe.config
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\bin\Debug\HW7.exe
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\bin\Debug\HW7.pdb
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\bin\Debug\EntityFramework.dll
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\bin\Debug\EntityFramework.xml
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\obj\Debug\HW7.csprojAssemblyReference.cache
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\obj\Debug\HW7.csproj.CoreCompileInputs.cache
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\obj\Debug\HW7.csproj.CopyComplete
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\obj\Debug\HW7.exe
+C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW7\HW7\obj\Debug\HW7.pdb
