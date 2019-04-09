@@ -1,6 +1,8 @@
 ﻿#visual studio
 .vs/
 packages/
+bin/
+obj/
 
 #IntellIj
 out/
