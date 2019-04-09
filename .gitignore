@@ -3,6 +3,8 @@
 packages/
 bin/
 obj/
+.sln
+.csproj
 
 #IntellIj
 out/
