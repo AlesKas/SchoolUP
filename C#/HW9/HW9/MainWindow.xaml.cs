@@ -75,7 +75,7 @@ namespace HW9
             List<ordered_setElement> set = new List<ordered_setElement>();
             try
             {
-                FileStream f = new FileStream(@"C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW9\load.xml", FileMode.Open);
+                FileStream f = new FileStream(@"C:\Users\Aleš\Documents\GitHub\SchoolUP\C#\HW9\load.xml", FileMode.Open);
                 XmlSerializer serializer = new XmlSerializer(typeof(ordered_set));
                 ordered_set s = (ordered_set)serializer.Deserialize(f);
                 foreach(ordered_setElement el in s.elements)
@@ -95,7 +95,7 @@ namespace HW9
             List<ordered_setOrder> order = new List<ordered_setOrder>();
             try
             {
-                FileStream f = new FileStream(@"C:\Users\Aleš\Documents\GitHub\SchoolDesktop\C#\HW9\load.xml", FileMode.Open);
+                FileStream f = new FileStream(@"C:\Users\Aleš\Documents\GitHub\SchoolUP\C#\HW9\load.xml", FileMode.Open);
                 XmlSerializer serializer = new XmlSerializer(typeof(ordered_set));
                 ordered_set s = (ordered_set)serializer.Deserialize(f);
                 foreach (ordered_setOrder ord in s.orders)
