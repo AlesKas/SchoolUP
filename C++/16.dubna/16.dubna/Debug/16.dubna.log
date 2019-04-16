@@ -1,0 +1,5 @@
+﻿16.dubnaDlg.obj : error LNK2001: unresolved external symbol "public: void __thiscall CMy16dubnaDlg::OnBnClickedButton1(void)" (?OnBnClickedButton1@CMy16dubnaDlg@@QAEXXZ)
+16.dubnaDlg.obj : error LNK2001: unresolved external symbol "public: void __thiscall CMy16dubnaDlg::OnLbnSelchangeList1(void)" (?OnLbnSelchangeList1@CMy16dubnaDlg@@QAEXXZ)
+16.dubnaDlg.obj : error LNK2001: unresolved external symbol "public: void __thiscall CMy16dubnaDlg::OnLbnSelchangeList2(void)" (?OnLbnSelchangeList2@CMy16dubnaDlg@@QAEXXZ)
+16.dubnaDlg.obj : error LNK2001: unresolved external symbol "public: void __thiscall CMy16dubnaDlg::OnBnClickedButton2(void)" (?OnBnClickedButton2@CMy16dubnaDlg@@QAEXXZ)
+C:\Users\Aleš\Documents\GitHub\SchoolUP\C++\16.dubna\Debug\16.dubna.exe : fatal error LNK1120: 4 unresolved externals
