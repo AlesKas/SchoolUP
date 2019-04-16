@@ -5,6 +5,11 @@ bin/
 obj/
 .sln
 .csproj
+packages/
+Properties/
+fonts/
+Scripts/
+
 
 #IntellIj
 out/
