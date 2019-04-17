@@ -1,0 +1,36 @@
+(defclass train ()
+  ((capacity :initform 5)
+   (loadSem :initform (make-semaphore 1))
+   (unloadSem :initform (make-semaphore 1))
+   (travelSem :initform (make-semaphore 1))
+   (paramsSem :initform (make-semaphore 1))
+   (count :initform 0)))
+
+(defmethod loadPass ((train train))
+  (print "loading")
+  (sem-signal (slot-value train 'loadSem)))
+
+(defmethod unloadPass ((train train))
+  (print "unloading")
+  (sem-signal (slot-value train 'unloadsem)))
+
+(defmethod travel ((train train))
+  (print "departing")
+  (sleep 5))
+
+(defclass person ()
+  ((sem :initform (make-semaphore 1))
+   (train)))
+
+(defun make-person (tr)
+  (let ((per (make-instance 'person)))
+    (setf (slot-value per 'train) tr)
+  per))
+
+(defmethod board ((person person))
+  (sem-wait (slot-value (slot-value person 'train) 'loadsem))
+  (print "boarded"))
+
+(defmethod unboard ((person person))
+  (sem-wait (slot-value (slot-value person 'train) 'unloadsem))
+  (print "person left"))
