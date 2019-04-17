@@ -9,6 +9,8 @@ packages/
 Properties/
 fonts/
 Scripts/
+.vxproj
+[Dd]ebug/
 
 
 #IntellIj
