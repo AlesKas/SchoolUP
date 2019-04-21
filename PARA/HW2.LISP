@@ -70,7 +70,7 @@
                          (run-p train)
                          (unboard person train)
                          (unload-p train))
-                     (synch-print train "Not enought passangers for next ride.")))))))
+                     (synch-print train "Not enought passangers")))))))
 
 (defmethod load-p ((train train))
   (print "loading")
@@ -83,7 +83,7 @@
   (inc-count train)
   (if (= (get-count train) (get-capacity train))
       (progn
-        (print "we are going")
+        (print "departing")
         (sleep 3)
         (sem-signal (get-unload-sem train))))
   (sem-signal (get-sync-sem train)))
@@ -101,12 +101,12 @@
   (sem-signal (get-sync-sem train)))
 
 (defmethod check-capacity ((train train))
-  (let ((is-ok NIL))
+  (let ((ok nil))
     (sem-wait (get-sync-sem train))
     (if (<= (get-capacity train) (get-passanger-count train))
-        (setf is-ok t))
+        (setf ok t))
     (sem-signal (get-sync-sem train))
-    is-ok))
+    ok))
                                  
   
 (defclass person ()

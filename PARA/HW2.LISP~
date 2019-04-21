@@ -48,10 +48,8 @@
   (slot-value train 'capacity))
 
 (defmethod synch-print ((train train) text)
-  (sem-wait *print-sem*)
   (sem-wait (get-sync-sem train))
   (print text)
-  (sem-signal *print-sem*)
   (sem-signal (get-sync-sem train)))
 
 
