@@ -7,14 +7,14 @@ typedef struct datumNarozeni
 	unsigned char den;
 	unsigned char mesic;
 	unsigned short rok;
-}datumNarozeni;
+}datumNarozeni; //4
 
 typedef struct person {
 	const char* jmeno;
 	unsigned char vyska;
 	unsigned short vaha;
 	datumNarozeni narozeni;
-}Person;
+}Person; //12
 
 Person dat[30];
 short index = 0;
@@ -37,28 +37,24 @@ int db_add(const char* name, datumNarozeni dN, unsigned char height, unsigned sh
 
 int asm_add(const char* name, datumNarozeni dN, unsigned char height, unsigned short weight)
 {
-	Person newP;
+
 	_asm
 	{
-		movzx eax, index
-		cmp eax, 29
-		je error
+	movsx eax, index
+	mov edx, 12
+	imul edx
+	mov ecx, eax
 
-		mov eax, dat
+	mov eax, name
+	mov[dat + ecx], eax
+	movsx eax, height
+	mov[dat + 2 + ecx], eax
+	movsx eax, weight
+	mov[dat + 4 + ecx], eax
+	mov eax, dN
+	mov[dat + 6 + ecx], eax
 
-		mov ebx, offset newP
-		mov [ebx], name
-		mov [ebx + 2], dN
-		mov [ebx + 4], height
-		mov [ebx + 6], weight
-
-		mov [eax + index], ebx
-		mov eax, 1
-		jmp end
-
-	error:
-		mov al, 0
-	end:
+	inc index
 	}
 }
 
@@ -102,10 +98,9 @@ float db_avg_weight()
 int main()
 {
 	datumNarozeni jk = {13, 2, 1996};
-	db_add("Jakub Katzer", jk, 182, 87);
+	asm_add("Jakub Katzer", jk, 182, 87);
 	datumNarozeni jb = { 18, 6, 1968 };
-	db_add("James Bond", jb, 179, 70);
-
+	asm_add("James Bond", jb, 179, 70);
 	db_print();
 
 	printf("Prumerna vyska: %f\n", db_avg_height());
