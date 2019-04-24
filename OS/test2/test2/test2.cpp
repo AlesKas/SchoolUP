@@ -8,16 +8,21 @@ struct st {
 	int c;
 };
 
-//void func(struct st a)
-//{
-//	_asm {
-//		mov ebx, offset a
-//		mov eax, [ebx]
-//		mov ecx, [ebx + 2]
-//		add eax, ecx
-//		mov [ebx + 4], eax
-//	}
-//}
+void func()
+{
+	struct st a;
+	a.a = 3;
+	a.b = 4;
+	_asm {
+		lea ebx, a
+		movsx eax, byte ptr[ebx]
+		movsx ecx, word ptr[ebx + 2]
+		cdq
+		imul ecx
+		mov dword ptr [ebx + 4], eax
+	}
+	std::cout << a.c << std::endl;
+}
 
 double dist(double a, double t)
 {
@@ -77,6 +82,7 @@ void callFunc()
 
 int main()
 {
+	func();
 	std::cout << dist(5.3, 6.5) << std::endl;
 	callFunc();
     std::cout << "Hello World!\n"; 
