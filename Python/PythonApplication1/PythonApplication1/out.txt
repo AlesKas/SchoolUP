@@ -1,0 +1,25 @@
+('Hello', 'world!')
+0
+1
+2
+3
+4
+A
+B
+C
+D
+E
+['seznam', 'pro', 'neco']
+['seznam', 'pro', 'neco', 'idk']
+seznam
+pro
+neco
+idk
+--------------
+seznam
+pro
+neco
+idk
+['seznam', 'pro', 'neco', 'idk', 'nibba']
+no
+cislo: cislo: 

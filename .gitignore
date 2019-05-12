@@ -5,6 +5,7 @@ bin/
 obj/
 .sln
 .csproj
+.pyproj
 packages/
 Properties/
 fonts/
