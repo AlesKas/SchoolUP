@@ -38,7 +38,7 @@ def encode(string):
         huffmanCode[key] = val.rjust(8, '0')
 
 
-    with open('table.json', 'w') as fp:
+    with open('table.json', 'w', encoding='utf-8') as fp:
         res = {v : k for k, v in huffmanCode.items()}
         json.dump(res, fp)
 
@@ -68,7 +68,7 @@ def decode():
 if __name__ == "__main__":
     op = input("Enter command, e for encode, d for decode: ")
     if op is "e":
-        with open('input.txt', 'r') as inputFile:
+        with open('input.txt', 'r', encoding='utf-8') as inputFile:
             string = inputFile.read()
             encode(string)
     elif op is "d":
