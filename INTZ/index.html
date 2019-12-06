@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Zápočet INTZ</title>
+  <title>Webové technologie</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/time.js"></script>
   <link rel="stylesheet" type="text/css" href="css/home.css">
@@ -33,7 +33,7 @@
             sdruženy v jedné množině označované jako protokoly TCP/IP, která zahrnuje kolem 100 protokolů.
             Jsou to např. protokoly označované jako FTP, Telnet, SMTP, HTTP apod.
             Počítače v síti Internet pracují buď jako servery, nebo jako klientské stroje (klienti). Jejich význam je
-            zřejmý: servery své služby poskytují, klientské počítače tyto služby využívají.A leš je na mě mad af.</p>
+            zřejmý: servery své služby poskytují, klientské počítače tyto služby využívají.</p>
         <aside>
             <img id="myImg" src="res/Vrstvy.jpg" alt="Vrstvy internetové komunikace">
 
@@ -43,6 +43,7 @@
               <div id="caption"></div>
             </div>
         </aside>
+        <article>
         <h2>Architektura a modely</h2>
         <p>Síťová komunikace je rozdělena do vrstev, které znázorňují hierarchii činností. Výměna informací mezi vrstvami je přesně definována. Každá
             vrstva využívá služeb nižší vrstvy, a poskytuje svoje služby vrstvě vyšší. <br/>
@@ -54,6 +55,8 @@
             model byl původně určen pro komunikaci v rozlehlých sítích typu WAN, je jej možné použít i
             pro lokální sítě. Referenční model OSI je tvořen sedmi vrstvami a specifikuje protokoly na
             jednotlivých vrstvách a spolupráci mezi nimi.
+        </p>
+            <article class="ISOOSI">
             <h3>Model ISO/OSI</h3>
             <section> 
                 <h4>Fyzická vrstva</h4>
@@ -118,8 +121,29 @@
                         této vrstvě pracuje Gateway).                                                    
                     </p>
             </section>
-        </p>
-
+        </article>
+        </article>
+        <article>
+            <section>
+                <h3>TCP/IP</h3>
+                <p>
+                    Z ISO/OSI vychází i množina protokolů TCP/IP. Protokol TCP/IP vznikl původně jako
+                    komunikační protokol ministerstva obrany USA pro sjednocení počítačové komunikace v
+                    rámci ARPANET. Slouží ke komunikaci především v heterogenních sítích. Dnes je součástí
+                    prakticky všech operačních systémů (původně byl navrhován hlavně pro UNIX) a je využit ke
+                    komunikaci i v síti Internet. Z těchto důvodů vzrůstá jeho význam jako celosvětového
+                    standardu.
+                    Model TCP/IP je nezávislý na přenosovém mediu a je určen jak pro WAN tak i pro LAN,
+                    jak pro sériové linky, koaxiální kabely, tak i pro vysokorychlostní optické sítě. Je užíván v
+                    heterogenní síti (původně určené pro UNIX) Internet. Je to soustava sítí s IP protokolem
+                    tvořená mezisíťovým počítačem. Jednotlivé podsítě mohou být různé (Ethernet, X.25, ..).
+                    TCP/IP (Transmission Control Protocol/Internet Protokol) předpokládá, že na nižších
+                    vrstvách jsou pouze nespolehlivé přenosové služby. Zajištění spolehlivosti dělají vyšší vrstvy
+                    a to jen při jejich vyžádání. 
+                </p>
+            </section>
+            
+        </article>
     </div>
 </body>
 
