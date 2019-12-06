@@ -48,3 +48,15 @@ li a:hover {
 .body {
     padding-top: 25px;
 }
+
+.body p {
+    width: 70%;
+}
+
+.body aside {
+    width: 25%;
+    display: block;
+    right: 4px;
+    position: fixed;
+    top: 75px;
+}

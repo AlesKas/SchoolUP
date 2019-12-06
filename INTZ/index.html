@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/time.js"></script>
   <link rel="stylesheet" type="text/css" href="css/home.css">
-
+  <link rel="stylesheet" type="text/css" href="css/img.css">
 </head>
 <body>
     <nav>
@@ -22,15 +22,104 @@
         </ul>
     </nav>
     <div class="body">
-        <h1>Home page</h1>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur 
-        aut perferendis doloribus asperiores repellat. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. 
-        Nunc tincidunt ante vitae massa. Donec vitae arcu. Aliquam erat volutpat. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. 
-        Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Proin pede metus, 
-        vulputate nec, fermentum fringilla, vehicula vitae, justo. Praesent vitae arcu tempor neque lacinia pretium. Class aptent taciti sociosqu ad litora 
-        torquent per conubia nostra, per inceptos hymenaeos. Morbi scelerisque luctus velit. Nullam eget nisl. Duis ante orci, molestie vitae vehicula venenatis, 
-        tincidunt ac pede.</p>
+        <h1>Internet a služby</h1>
+        <p>Internet je systém mnoha propojených počítačových sítí po celém světě. Počítačovou sítí nazýváme
+            systém komunikačních linek a počítačů, v němž pracují programy umožňující přenos informace (dat)
+            mezi propojenými počítači. Internet je fyzicky vystavěn z menších počítačových sítí - lokálních (LAN),
+            metropolitních (MAN) a globálních (WAN) počítačových sítí.
+            Samotný přenos informace mezi počítači v Internetu probíhá na základě jednotných pravidel definovaných standardními postupy a jazykem - komunikační protokoly. Počítače Internetu si v rámci
+            daného protokolu vzájemně rozumí a stejně interpretují přenášenou informaci. Každá informační
+            služba má v Internetu vlastní protokol. Komunikační protokoly, které se v Internetu používají, jsou
+            sdruženy v jedné množině označované jako protokoly TCP/IP, která zahrnuje kolem 100 protokolů.
+            Jsou to např. protokoly označované jako FTP, Telnet, SMTP, HTTP apod.
+            Počítače v síti Internet pracují buď jako servery, nebo jako klientské stroje (klienti). Jejich význam je
+            zřejmý: servery své služby poskytují, klientské počítače tyto služby využívají.A leš je na mě mad af.</p>
+        <aside>
+            <img id="myImg" src="res/Vrstvy.jpg" alt="Vrstvy internetové komunikace">
+
+            <div id="myModal" class="modal">
+              <span class="close">×</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+            </div>
+        </aside>
+        <h2>Architektura a modely</h2>
+        <p>Síťová komunikace je rozdělena do vrstev, které znázorňují hierarchii činností. Výměna informací mezi vrstvami je přesně definována. Každá
+            vrstva využívá služeb nižší vrstvy, a poskytuje svoje služby vrstvě vyšší. <br/>
+            Organizace ISO je mezinárodní nevládní organizace založená v roce 1947, sdružuje národní
+            standardizační instituce (např. ANSI, DIN atd.). Pokrývá širokou škálu technických problémů
+            mj. globální standardy pro komunikace a výměnu informací. Tato organizace založila v roce
+            1977 vlastní výbor pod názvem OSI ( Open system interconnection ) a o dva roky později byl
+            vytvořen – referenční model pro propojování otevřených systémů - RM OSI. I když tento
+            model byl původně určen pro komunikaci v rozlehlých sítích typu WAN, je jej možné použít i
+            pro lokální sítě. Referenční model OSI je tvořen sedmi vrstvami a specifikuje protokoly na
+            jednotlivých vrstvách a spolupráci mezi nimi.
+            <h3>Model ISO/OSI</h3>
+            <section> 
+                <h4>Fyzická vrstva</h4>
+                <p>Umožňuje přenos jednotlivých bitů komunikačním kanálem bez
+                    ohledu na jejich význam. Ve fyzické vrstvě jde o definici fyzických signálů používaných na
+                    reprezentaci log 1 a log 0. Vrstva předepisuje i vlastnosti přenosového média, charakteristiky
+                    signálu, rychlost přenosu, tvary konektorů, … (na této vrstvě pracuje Repeater, hub). 
+                </p>
+            </section>
+            <section>
+                <h4>Linková vrstva </h4>
+                <p>
+                    Úkolem vrstvy je zajistit bezchybný přenos dat mezi přímo
+                    propojenými (sousedními) stanicemi. Vytváří rámce (frames), které obsahují mimo vlastních
+                    přenášených informací i údaje pro adresování a zabezpečení proti chybám přenosu a údaj pro
+                    rozpoznání začátku rámce. Přidá tedy (v sítích TCP/IP, Ethernet) před paket preamble
+                    (synchronizační pole, 7B), příznak začátku rámce (1B), adresu cílovou (6B), adresu zdrojovou
+                    (6B), délku paketu (2B). Potom následuje vlastní paket a za ním kontrolní součet (CRC –
+                    cyclic redundanci check) – na této vrtvě pracuje Bridge, switch.
+                </p>
+            </section>
+            <section>
+                <h4>Síťová vrstva</h4>
+                <p>
+                    Zajišťuje adresování a směrování dat v síti od zdroje k cíli přes
+                    několik mezilehlých prvků. Přenosová cesta se buď dynamicky mění při průchodu paketů
+                    Každá vrstva komunikuje jen se sousedními 
+                    jednotlivými prvky sítě (datagramová služba - nespojově), nebo se na začátku spojení nejprve
+                    vytvoří virtuální cesta (spojově orientovaná cesta) – na této vrstvě pracuje Router.   
+                </p>
+            </section>
+            <section>
+                    <h4>Transportní vrstva</h4>
+                    <p>
+                        Zajišťuje vlastní přenos dat. Přijímá data z relační vrstvy,
+                        rozkládá je na pakety (nejmenší ucelená jednotka přenášených dat) a přenese paket při
+                        každém přístupu na síťovou vrstvu. Zabezpečuje, aby se celá zpráva dostala k příjemci
+                        správně. Zajišťuje tedy i opakování zprávy v případě chyby a její opětovné sestavení po
+                        přenosu.                   
+                    </p>
+            </section>
+            <section>
+                <h4>Relační vrstva</h4>
+                <p>
+                    Ůkolem této vrstvy je navázání relací mezi koncovými stanicemi.
+                    Zajišťuje tedy práva, hesla, omezení, … .                          
+                </p>
+            </section>
+            <section>
+                    <h4>Prezentační vrstva</h4>
+                    <p>
+                        Tato vrstva převádí formát dat do universální podoby přístupné
+                        pro celou síť. Zajišťuje např. způsoby kódování, komprimace, kryptografie a po přenosu
+                        zajišťuje zpětný převod. (dává jim význam – smysl).                              
+                    </p>
+            </section>
+            <section>
+                    <h4>Aplikační vrstva</h4>
+                    <p>
+                        Je to sedmá nejvyšší vrstva architektury. Vrstva tvoří rozhraní
+                        k vlastnímu programu a je představována např. aplikacemi FTP, Telnet, SMTP, SNMP, …(na
+                        této vrstvě pracuje Gateway).                                                    
+                    </p>
+            </section>
+        </p>
+
     </div>
 </body>
 
