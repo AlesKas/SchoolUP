@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Protokoly</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+    <link rel='stylesheet' href='css/style.css' type='text/css'/>
+    <link rel='stylesheet' href='css/clicklableimg.css' type='text/css'/>
+</head>
+<body>
+	<div id="web">
+		<nav class="navbar navbar-dark bg-dark">
+  			<a class="navbar-brand" href="HOME.html">Internet</a>
+  			<a class="navbar-brand" href="isoosi.html">ISO/OSI</a>
+			<a class="navbar-brand" href="tcpip.html">TCP/IP</a>
+			<a class="navbar-brand" href="protokoly.html">Protokoly</a>
+			<a class="navbar-brand" id="time" style="color: aliceblue;">00:00</a>
+		</nav>
+		<div id="container-fluid">
+			<div id="content"> 
+                <h1>Protokoly Internety</h1>
+
+				<p>
+                    Protokol je v informatice konvence nebo standard, podle kterého probíhá elektronická komunikace a 
+                    přenos dat mezi dvěma koncovými body (realizované nejčastěji počítači). V nejjednodušší podobě protokol definuje pravidla řídící syntaxi, 
+                    sémantiku a synchronizaci vzájemné komunikace. Protokoly mohou být realizovány hardwarově, softwarově a nebo kombinací obou.
+                </p>
+                <h2>TCP</h2>  
+                <img id="myImg" class="myImg" src="Pictures/tcp.jpg" alt="TCP paket">
+
+				<div id="myModal" class="modal">
+				  <span class="close">×</span>
+				  <img class="modal-content" id="img01">
+                <div id="caption"></div>
+				</div>
+                <p>
+                    Transmission Control Protocol (TCP) je nejpoužívanějším protokolem transportní vrstvy v sadě protokolů TCP/IP používaných v síti Internet. 
+                    Použitím TCP mohou aplikace na počítačích propojených do sítě vytvořit mezi sebou spojení, přes které mohou obousměrně přenášet data. 
+                    Protokol garantuje spolehlivé doručování a doručování ve správném pořadí. 
+                    TCP také umožňuje rozlišovat a rozdělovat data pro více aplikací (například webový server a emailový server) běžících na stejném počítači.
+                    TCP využívá mnoho populárních aplikačních protokolů a aplikací na internetu, včetně WWW, e-mailu a SSH.
+                </p>
+                <h2>UDP</h2>
+                <img id="myImg1" class="myImg" src="Pictures/udp.png" alt="UDP paket">
+
+				<div id="myModal1" class="modal">
+				  <span class="close">×</span>
+				  <img class="modal-content" id="img02">
+                    <div id="caption">
+                </div>
+				</div>
+                <p>
+                    UDP (User Datagram Protocol) je jeden ze sady protokolů internetu. O protokolu UDP říkáme, 
+                    že nedává záruky na datagramy, které přenáší mezi počítači v síti. Někdy je označován jako nespolehlivý, 
+                    ale správněji by mělo být bez záruky doručení, což je hlavní rozdíl proti protokolu TCP.
+                    Protokol UDP je vhodný pro nasazení, které vyžaduje jednoduchost, malá režie nebo pro aplikace pracující systémem otázka-odpověď 
+                    (např. DNS, sdílení souborů v LAN). Jeho bezstavovost je užitečná pro servery, které obsluhují mnoho klientů nebo pro nasazení, 
+                    kde se počítá se ztrátami datagramů a není vhodné, aby se ztrácel čas novým odesíláním (starých) nedoručených zpráv (např. VoIP, online hry).
+                </p>
+                <h3>DHCP</h3>
+                <img id="myImg2" class="myImg" src="Pictures/dhcp.jpg" alt="DHCP komunikace">
+
+				<div id="myModal2" class="modal">
+				  <span class="close">×</span>
+				  <img class="modal-content" id="img03">
+                <div id="caption"></div>
+				</div>
+                <p>
+                    DHCP je název protokolu z rodiny TCP/IP nebo označení odpovídajícího DHCP serveru či klienta. 
+                    Používá se pro automatickou konfiguraci počítačů připojených do počítačové sítě.
+                    DHCP server přiděluje počítačům pomocí DHCP protokolu zejména IP adresu, masku sítě, 
+                    implicitní bránu (default gateway) a adresu DNS serveru. Platnost přidělených údajů je omezená, 
+                    proto je na počítači spuštěn DHCP klient, který jejich platnost prodlužuje.
+                </p>
+			</div>
+		</div>
+	</div>
+<script>
+$(function(){
+
+    var modal = document.getElementById('myModal1');
+    var img = document.getElementById('myImg1');
+    var modalImg = document.getElementById("img02");
+    var captionText = document.getElementById("caption");
+    
+    img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+    }
+
+    var span = document.getElementsByClassName("close")[1];
+
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+    
+    var modal = document.getElementById('myModal2');
+    var img = document.getElementById('myImg2');
+    var modalImg = document.getElementById("img03");
+    var captionText = document.getElementById("caption");
+    
+    img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+    }
+
+    var span = document.getElementsByClassName("close")[2];
+
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+
+})
+</script>
+</body>
+</html>

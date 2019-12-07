@@ -4,7 +4,7 @@ $(function(){
     })
 
     var intretval = setInterval(updateTime, 100);
-    console.log("ready")
+    
     function updateTime(){
         var now = new Date(Date.now());
         var hour = now.getHours();

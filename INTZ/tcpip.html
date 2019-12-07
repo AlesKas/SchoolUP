@@ -7,22 +7,23 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<link rel='stylesheet' href='style.css' type='text/css'/>
-	<link rel='stylesheet' href='clicklableimg.css' type='text/css'/>
+	<link rel='stylesheet' href='css/style.css' type='text/css'/>
+	<link rel='stylesheet' href='css/clicklableimg.css' type='text/css'/>
 	<script src="js/main.js"></script>
 </head>
 <body>
 	<div id="web">
-		<nav class="navbar navbar-light bg-info">
-			<a class="navbar-brand" href="HOME.html">Home</a>
+		<nav class="navbar navbar-dark bg-dark">
+			<a class="navbar-brand" href="HOME.html">Internet</a>
 			<a class="navbar-brand" href="isoosi.html">ISO/OSI</a>
 			<a class="navbar-brand" href="tcpip.html">TCP/IP</a>
-			<a id="time">00:00</a>
+			<a class="navbar-brand" href="protokoly.html">Protokoly</a>
+			<a class="navbar-brand" id="time" style="color: aliceblue;">00:00</a>
 		</nav>
 		<div id="container-fluid">
-			<div id="obsah">
+			<div id="content">
 			<h1>TCP/IP</h1>
-			<img id="myImg" src="Pictures/tcp-ip-model.png" alt="Vrstvy internetové komunikace">
+			<img id="myImg" class="myImg" src="Pictures/tcp-ip-model.png" alt="Vrstvy internetové komunikace">
 
 			<div id="myModal" class="modal">
 			  <span class="close">×</span>
@@ -45,6 +46,31 @@
 				vrstvách jsou pouze nespolehlivé přenosové služby. Zajištění spolehlivosti dělají vyšší vrstvy
 				a to jen při jejich vyžádání. 
 			</p>
+			<h2>Síťová vrtva</h2>
+			<p>
+				Úkol této vrstvy je v prvním přiblížení stejný, jako úkol síťové vrstvy v referenčním modelu ISO/OSI - stará se o to, 
+				aby se jednotlivé pakety dostaly od odesilatele až ke svému skutečnému příjemci, přes případné směrovače resp. brány. 
+				Vzhledem k nespojovanému charakteru přenosů v TCP/IP je na úrovni této vrstvy zajišťována jednoduchá (tj. nespolehlivá) datagramová služba.
+			</p>
+			<h2>Transportní vrstva</h2>
+			<p>
+				Hlavním úkolem této vrstvy je zajistit přenos mezi dvěma koncovými účastníky, 
+				kterými jsou v případě TCP/IP přímo aplikační programy (jako entity bezprostředně vyšší vrstvy). 
+				Podle jejich nároků a požadavků může transportní vrstva regulovat tok dat oběma směry, zajišťovat spolehlivost přenosu, 
+				a také měnit nespojovaný charakter přenosu (v síťové vrstvě) na spojovaný.
+				Přestože je transportní vrstva TCP/IP nejčastěji zajišťována právě protokolem TCP, není to zdaleka jediná možnost. 
+				Dalším používaným protokolem na úrovni transportní vrstvy je například protokol UDP (User Datagram Protocol), 
+				který na rozdíl od TCP nezajišťuje mj. spolehlivost přenosu - samozřejmě pro takové aplikace, které si to (na úrovni transportní vrstvy) nepřejí.
+			</p>
+			<h2>Aplikační vrstva</h2>
+			<p>
+				Nejvyšší vrstvou TCP/IP je pak vrstva aplikační (Application Layer). 
+				Jejími entitami jsou jednotlivé aplikační programy, které na rozdíl od referenčního modelu ISO/OSI komunikují přímo s transportní vrstvou. 
+				Případné prezentační a relační služby, které v modelu ISO/OSI zajišťují samostatné vrstvy, 
+				si zde musí jednotlivé aplikace v případě potřeby realizovat samy.
+			</p>
+			<br/>
+			Více o architektuře TCP/IP se můžete dozvědět <a href="https://cs.wikipedia.org/wiki/TCP/IP">zde</a>
 		</div>
 	</div>
 

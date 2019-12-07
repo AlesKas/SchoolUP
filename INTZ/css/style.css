@@ -1,0 +1,17 @@
+body
+{
+   background-color: darkgray;
+   height:auto;
+}
+
+#web
+{
+   width:1000px;
+   border:1px solid black;
+   margin:20px auto;
+   background-color:lightblue;
+}
+#content
+{
+   margin: 10px;  
+}
