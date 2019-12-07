@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Contact</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel='stylesheet' href='style.css' type='text/css'/>
+</head>
+<body>
+	<div id="web">
+		<img src="Pictures\blizzard-banner.jpg" class="img-fluid" style="width: 1000px; height: 200px;" alt="Responsive image">
+		<nav class="navbar navbar-light bg-info">
+  			<a class="navbar-brand" href="HOME.html">Home</a>
+  			<a class="navbar-brand" href="WOW.html">World of Warcraft</a>
+  			<a class="navbar-brand" href="OW.html">Overwatch</a>
+  			<a class="navbar-brand" href="SC2.html">StarCraft 2</a>
+  			<a class="navbar-brand" href="HS.html">Hearthstone</a>
+  			<a class="navbar-brand" href="Contact.html">Contact</a>
+		</nav>
+		<div id="container-fluid">
+			<div id="obsah">
+				<h2>Contact us</h2>
+				<div id="contact-form">
+				<form action="mailto:skoupil.r@gmail.com" method="post" enctype="text/plain">
+				  <div class="form-group">
+				    <label for="username"><strong>Your name:</strong></label>
+				    <input type="name" class="form-control" id="username" placeholder="Your name...">
+				  </div>
+				  <div class="form-group">
+				    <label for="usermail"><strong>Email address:</strong></label>
+				    <input type="email" class="form-control" id="usermail" placeholder="name@example.com">
+				  </div>
+				  <div class="form-group">
+				  	<label for="reason"><strong>Reason for writing:</strong></label>
+				  <div class="form-check">
+					  <input class="form-check-input" type="checkbox" id="bug-report">
+					  <label class="form-check-label" for="bug-report">
+					    Bug report
+					  </label>
+				  </div>
+				  <div class="form-check">
+					  <input class="form-check-input" type="checkbox" id="other">
+					  <label class="form-check-label" for="other">
+					    Other
+					  </label>
+				  </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="reason"><strong>Game:</strong></label>
+				    <select class="form-control" id="reason">
+				      <option>World of Warcraft</option>
+				      <option>Overwatch</option>
+				      <option>StarCraft II</option>
+				      <option>Hearthstone</option>
+				      <option>Not game related issue</option>
+ 				   </select>
+				  </div>
+				  <div class="form-group">
+				    <label for="message"><strong>Your message:</strong></label>
+				    <textarea class="form-control" id="message" rows="5" placeholder="Message..."></textarea>
+				  </div>
+				  <button type="submit" class="btn btn-lg text-white" style="background-color: green">Send</button>
+				  <button type="reset" class="btn btn-lg text-white" style="background-color: red">Delete</button>
+				</form>
+				</div>
+
+				<!--<form method="post" enctype="text/plain" action="mailto:skoupil.r@gmail.com">
+					<h2>Contact us</h2>
+					<p><b>Your name:</b><br>
+					    <input type="text" name="name" size="30" placeholder="Your name..."></p>
+					<p><b>Reason for writing:</b><br>
+					    <input type="radio" name="ticket"> Bug report<br>
+					    <input type="radio" name="ticket"> Other</p>
+					<p><b>Game:</b><br>
+					    <select name="game">
+					    <option>World of Warcraft</option>
+					    <option>Overwatch</option>
+					    <option>StarCraft 2</option>
+					    <option>Hearthstone</option>
+					    </select></p>
+					<p><b>Your message:</b></p>
+					<p><textarea name="message" cols="60" rows="5" placeholder="Message..."></textarea></p>
+					<p><button type="submit" class="btn btn-lg text-white" style="background-color: green">Send</button>
+					   <button type="reset" class="btn btn-lg text-white" style="background-color: red">Delete</button></p>
+				</form>-->
+			</div>
+		</div>
+		<div id="footer" style="background-color: #17a2b8">©2019 BLIZZARD ENTERTAINMENT, INC. ALL RIGHTS RESERVED.<br> All trademarks referenced herein are the properties of their respective owners.</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TCP/IP</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel='stylesheet' href='style.css' type='text/css'/>
+	<link rel='stylesheet' href='clicklableimg.css' type='text/css'/>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<div id="web">
+		<nav class="navbar navbar-light bg-info">
+			<a class="navbar-brand" href="HOME.html">Home</a>
+			<a class="navbar-brand" href="isoosi.html">ISO/OSI</a>
+			<a class="navbar-brand" href="tcpip.html">TCP/IP</a>
+			<a id="time">00:00</a>
+		</nav>
+		<div id="container-fluid">
+			<div id="obsah">
+			<h1>TCP/IP</h1>
+			<img id="myImg" src="Pictures/tcp-ip-model.png" alt="Vrstvy internetové komunikace">
+
+			<div id="myModal" class="modal">
+			  <span class="close">×</span>
+			  <img class="modal-content" id="img01">
+			  <div id="caption"></div>
+			</div>
+			<h2>Architektura TCP/IP</h2>
+			<p>
+				Z ISO/OSI vychází i množina protokolů TCP/IP. Protokol TCP/IP vznikl původně jako
+				komunikační protokol ministerstva obrany USA pro sjednocení počítačové komunikace v
+				rámci ARPANET. Slouží ke komunikaci především v heterogenních sítích. Dnes je součástí
+				prakticky všech operačních systémů (původně byl navrhován hlavně pro UNIX) a je využit ke
+				komunikaci i v síti Internet. Z těchto důvodů vzrůstá jeho význam jako celosvětového
+				standardu.
+				Model TCP/IP je nezávislý na přenosovém mediu a je určen jak pro WAN tak i pro LAN,
+				jak pro sériové linky, koaxiální kabely, tak i pro vysokorychlostní optické sítě. Je užíván v
+				heterogenní síti (původně určené pro UNIX) Internet. Je to soustava sítí s IP protokolem
+				tvořená mezisíťovým počítačem. Jednotlivé podsítě mohou být různé (Ethernet, X.25, ..).
+				TCP/IP (Transmission Control Protocol/Internet Protokol) předpokládá, že na nižších
+				vrstvách jsou pouze nespolehlivé přenosové služby. Zajištění spolehlivosti dělají vyšší vrstvy
+				a to jen při jejich vyžádání. 
+			</p>
+		</div>
+	</div>
+
+</body>
+</html>

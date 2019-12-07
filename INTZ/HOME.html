@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Internet a služby</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<link rel='stylesheet' href='style.css' type='text/css'/>
+</head>
+<body>
+	<div id="web">
+		<nav class="navbar navbar-light bg-info">
+  			<a class="navbar-brand active" href="HOME.html">Home</a>
+  			<a class="navbar-brand" href="isoosi.html">ISO/OSI</a>
+			<a class="navbar-brand" href="tcpip.html">TCP/IP</a>
+			<a id="time">00:00</a>
+		</nav>
+		<div id="container-fluid">
+			<div id="obsah"> 
+				<h1>Internet a služby</h1>
+				<p>
+					Internet je systém mnoha propojených počítačových sítí po celém světě. Počítačovou sítí nazýváme
+					systém komunikačních linek a počítačů, v němž pracují programy umožňující přenos informace (dat)
+					mezi propojenými počítači. Internet je fyzicky vystavěn z menších počítačových sítí - lokálních (LAN),
+					metropolitních (MAN) a globálních (WAN) počítačových sítí.
+					Samotný přenos informace mezi počítači v Internetu probíhá na základě jednotných pravidel definovaných standardními postupy a jazykem - komunikační protokoly. Počítače Internetu si v rámci
+					daného protokolu vzájemně rozumí a stejně interpretují přenášenou informaci. Každá informační
+					služba má v Internetu vlastní protokol. Komunikační protokoly, které se v Internetu používají, jsou
+					sdruženy v jedné množině označované jako protokoly TCP/IP, která zahrnuje kolem 100 protokolů.
+					Jsou to např. protokoly označované jako FTP, Telnet, SMTP, HTTP apod.
+					Počítače v síti Internet pracují buď jako servery, nebo jako klientské stroje (klienti). Jejich význam je
+					zřejmý: servery své služby poskytují, klientské počítače tyto služby využívají.
+				</p>
+				<h2>Architektura a modely</h2>
+				<p>Síťová komunikace je rozdělena do vrstev, které znázorňují hierarchii činností. Výměna informací mezi vrstvami je přesně definována. Každá
+					vrstva využívá služeb nižší vrstvy, a poskytuje svoje služby vrstvě vyšší. <br/>
+					Organizace ISO je mezinárodní nevládní organizace založená v roce 1947, sdružuje národní
+					standardizační instituce (např. ANSI, DIN atd.). Pokrývá širokou škálu technických problémů
+					mj. globální standardy pro komunikace a výměnu informací. Tato organizace založila v roce
+					1977 vlastní výbor pod názvem OSI ( Open system interconnection ) a o dva roky později byl
+					vytvořen – referenční model pro propojování otevřených systémů - RM OSI. I když tento
+					model byl původně určen pro komunikaci v rozlehlých sítích typu WAN, je jej možné použít i
+					pro lokální sítě. Referenční model OSI je tvořen sedmi vrstvami a specifikuje protokoly na
+					jednotlivých vrstvách a spolupráci mezi nimi.
+				</p> 
+				<h2>Internetové služby</h2>
+				<p>
+					Internet nabízí několik standartních služeb, jejichž prostřednictvím fungují jednotlivé uživatelské aplikace.
+					K používání jednotlivých služeb musí mít uživatel na svém počítači nainstalován program (klienta), 
+					který dokáže prostřednictvím připojení k internetu komunikovat se servery poskytující konkrétní typ služby 
+					(www prohlížeč, ftp klient, poštovní program, telnet terminál, ...). 
+					S většinou současných operačních systémů jsou standardně tyto programy dodávány.
+				</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

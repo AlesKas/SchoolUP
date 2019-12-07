@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ISO/OSI</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel='stylesheet' href='style.css' type='text/css'/>
+	<link rel='stylesheet' href='clicklableimg.css' type='text/css'/>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<div id="web">
+		<nav class="navbar navbar-light bg-info">
+			<a class="navbar-brand" href="HOME.html">Home</a>
+			<a class="navbar-brand" href="isoosi.html">ISO/OSI</a>
+			<a class="navbar-brand" href="tcpip.html">TCP/IP</a>
+			<a id="time">00:00</a>
+		</nav>
+		<div id="container-fluid">
+			<div id="obsah">
+				<h1>Model ISO/OSI</h1>
+				<img id="myImg" src="Pictures/Vrstvy.jpg" alt="Vrstvy internetové komunikace">
+
+				<div id="myModal" class="modal">
+				  <span class="close">×</span>
+				  <img class="modal-content" id="img01">
+				  <div id="caption"></div>
+				</div>
+				<h2>Fyzická vrstva</h2>
+				<p>Umožňuje přenos jednotlivých bitů komunikačním kanálem bez
+					ohledu na jejich význam. Ve fyzické vrstvě jde o definici fyzických signálů používaných na
+					reprezentaci log 1 a log 0. Vrstva předepisuje i vlastnosti přenosového média, charakteristiky
+					signálu, rychlost přenosu, tvary konektorů, … (na této vrstvě pracuje Repeater, hub). 
+				</p>
+				<h2>Linková vrstva </h2>
+				<p>
+					Úkolem vrstvy je zajistit bezchybný přenos dat mezi přímo
+					propojenými (sousedními) stanicemi. Vytváří rámce (frames), které obsahují mimo vlastních
+					přenášených informací i údaje pro adresování a zabezpečení proti chybám přenosu a údaj pro
+					rozpoznání začátku rámce. Přidá tedy (v sítích TCP/IP, Ethernet) před paket preamble
+					(synchronizační pole, 7B), příznak začátku rámce (1B), adresu cílovou (6B), adresu zdrojovou
+					(6B), délku paketu (2B). Potom následuje vlastní paket a za ním kontrolní součet (CRC –
+					cyclic redundanci check) – na této vrtvě pracuje Bridge, switch.
+				</p>
+				<h2>Síťová vrstva</h2>
+				<p>
+					Zajišťuje adresování a směrování dat v síti od zdroje k cíli přes
+					několik mezilehlých prvků. Přenosová cesta se buď dynamicky mění při průchodu paketů
+					Každá vrstva komunikuje jen se sousedními 
+					jednotlivými prvky sítě (datagramová služba - nespojově), nebo se na začátku spojení nejprve
+					vytvoří virtuální cesta (spojově orientovaná cesta) – na této vrstvě pracuje Router.   
+				</p>
+				<h2>Transportní vrstva</h2>
+                <p>
+                    Zajišťuje vlastní přenos dat. Přijímá data z relační vrstvy,
+                    rozkládá je na pakety (nejmenší ucelená jednotka přenášených dat) a přenese paket při
+                    každém přístupu na síťovou vrstvu. Zabezpečuje, aby se celá zpráva dostala k příjemci
+                    správně. Zajišťuje tedy i opakování zprávy v případě chyby a její opětovné sestavení po
+                    přenosu.                   
+				</p>
+				<h2>Relační vrstva</h2>
+				<p>
+					Ůkolem této vrstvy je navázání relací mezi koncovými stanicemi.
+					Zajišťuje tedy práva, hesla, omezení, … .                          
+				</p>
+				<h2>Prezentační vrstva</h2>
+                <p>
+                    Tato vrstva převádí formát dat do universální podoby přístupné
+                    pro celou síť. Zajišťuje např. způsoby kódování, komprimace, kryptografie a po přenosu
+                    zajišťuje zpětný převod. (dává jim význam – smysl).                              
+				</p>
+				<h2>Aplikační vrstva</h2>
+                <p>
+                    Je to sedmá nejvyšší vrstva architektury. Vrstva tvoří rozhraní
+                    k vlastnímu programu a je představována např. aplikacemi FTP, Telnet, SMTP, SNMP, …(na
+                    této vrstvě pracuje Gateway).                                                    
+                </p>
+			</div>
+		</div>
+ 	</div>
+
+</body>
+</html>
