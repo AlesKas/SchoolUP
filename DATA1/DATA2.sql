@@ -15,3 +15,6 @@ SELECT DISTINCT continent, name FROM country INNER JOIN (SELECT max(population) 
 
 --Vytvořte dotaz, který očísluje jednotlivé země podle počtu obyvatel.
 SELECT ROW_NUMBER() OVER (ORDER BY population), name FROM country;
+
+--Vytvořte dotaz, který očísluje jednotlivé země na kontinentu podle počtu obyvatel.
+SELECT continent,ROW_NUMBER() OVER (PARTITION BY continent ORDER BY population), name FROM country;
