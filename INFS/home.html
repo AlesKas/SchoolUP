@@ -1,18 +1,94 @@
 <!DOCTYPE html>
 <html>
-    <header>
+    <head>
+        <meta charset="utf-8">
         <title>Barrio</title>
-    </header>
+        <script src="https://kit.fontawesome.com/bdc669bfe8.js" crossorigin="anonymous"></script>
+        <link rel='stylesheet' href='global.css' type='text/css'/>
+    </head>
     <body>
-        <nav>
-            <li>
-                <ul>Home</ul>
-                <ul>Features</ul>
-                <ul>Post</ul>
-                <ul>Trending</ul>
-                <ul>Shop</ul>
-                <ul>Pages</ul>   
-            </li>
-        </nav>
+        <header>
+            <nav>
+                <ul style="list-style-type:none">
+                    <i class="fas fa-bars"></i>
+                    <h1>Barrio</h1>
+                    <li><a href="home.html">Home</a></li>
+                    <li class="dropdown">Features<i class="fas fa-angle-down"></i>
+                        <ul style="list-style-type:none" class="dropdown-content">
+                            <li><a href="#">Post Style<i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Header Style<i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Footer Style<i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Content Style</a></li>
+                            <li><a href="#">Widgets<i class="fas fa-arrow-right"></i></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Post</a></li>
+                    <li class="hoverableButton" class="dropdown">Trending<i class="fas fa-angle-down"></i></li>
+                    <li class="hoverableButton" class="dropdown">Shop<i class="fas fa-angle-down"></i></li>
+                    <li class="hoverableButton" class="dropdown">Pages<i class="fas fa-angle-down"></i></li>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li> <!--Facebook-->
+                    <li><a href="#"><i class="fab fa-twitter-square"></i></a></li><!--Twitter-->   
+                    <li><a href="#"><i class="fab fa-instagram-square"></i></a></li><!--Instagram-->
+                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li><!--Pinterest-->
+                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="movingImages">
+            <h2 hidden>Latest news</h2>
+            <img src="img/heli.jpeg" height="500" width="500">
+            <img src="img/flor.jpeg" height="500" width="500">
+            <img src="img/home.jpeg" height="500" width="500">
+            <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        </section>
+        <section id="newsAndTrends">
+            <h2>News & Trends</h2>
+            <section>
+                <img src="img/parrot.jpeg" height="250" width="250">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </section>
+            <section>
+                <img src="img/heli2.jpeg" height="250" width="250">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </section>
+            <section>
+                <img src="img/nyc.jpeg" height="250" width="250">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </section>
+            <section>
+                <img src="img/harbor.jpeg" height="250" width="250">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </section>
+            
+        </section>
+            <article>
+
+            </article>
+            <aside>
+                <section>
+                    Follow us
+                    <ul style="list-style-type:none">
+                        <li><i class="fab fa-facebook"></i></li>
+                        <li><i class="fab fa-twitter-square"></i></li>
+                        <li><i class="fab fa-instagram-square"></i></li>
+                        <li><i class="fab fa-pinterest"></i></li>
+                        <li><i class="fab fa-youtube-square"></i></li>
+                    </ul>
+                </section>
+                <section>
+                    Trending posts
+                </section>
+            </aside>
+        </section>
+        <section>
+
+        </section>
+        <section>
+
+        </section>
+        <footer>
+            Find me on instagram
+        </footer>
     </body>
 </html>
