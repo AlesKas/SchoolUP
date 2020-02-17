@@ -1,0 +1,77 @@
+TYPE Jmeno POSSREP {jmeno CHAR, prijmeni CHAR};
+TYPE Datum POSSREP {den INT, mesic INT, rok INT};
+TYPE Pohlavi POSSREP {x CHAR CONSTRAINT x = 'M' or x = 'F'};
+TYPE Plat POSSREP {x INT CONSTRAINT x >= 0};
+VAR Adresar BASE RELATION {jmeno Jmeno, narozen Datum, povolani CHAR, pohlavi Pohlavi, plat Plat, deti RELATION {jmeno CHAR, vek INT}  } INIT
+( RELATION { TUPLE {jmeno Jmeno ("Milada", "Kuzelova"), narozen Datum (31,1,1963), povolani 'Uklizecka', pohlavi Pohlavi ("F"), plat Plat (10000),deti RELATION { TUPLE { jmeno"Petr" ,vek 5}}},
+	TUPLE {jmeno Jmeno ("Hanuš ", "Joska"), narozen Datum (1,7,1980), povolani 'Svarec', pohlavi Pohlavi ("M"), plat Plat (10000),deti RELATION { TUPLE { jmeno"Jan" ,vek 3}, TUPLE {jmeno 'Aneta', vek 15}}},
+	TUPLE {jmeno Jmeno ("Vilém ", "Mašín"), narozen Datum (15,2,1976), povolani 'Delnik', pohlavi Pohlavi ("M"), plat Plat (15000),deti RELATION  {TUPLE { jmeno '', vek 0}}},
+	TUPLE {jmeno Jmeno ("Tomas", "Kral"), narozen Datum(8,3,1996), povolani 'Delnik', pohlavi Pohlavi("M"), plat Plat(10000), deti RELATION {TUPLE {jmeno '', vek 0}}},
+	TUPLE {jmeno Jmeno("Jan", "Kaspar"), narozen Datum(5,5,1993), povolani 'Programator', pohlavi Pohlavi("M"), plat Plat(45000), deti Relation { TUPLE {jmeno 'Ondrej', vek 3}}}}) KEY {jmeno};
+	 
+Zobrazte všechna povolání (bez duplicit)
+	Adresar {povolani}
+
+Z vytvořené relace vyberte jen muže. (Hodnotu dané relační proměnné neměňte.)
+	Adresar WHERE pohlavi = Pohlavi("M")
+	
+Z vytvořené relace vyberte jen ty, co se jmenují "Jan". (Hodnotu dané relační proměnné neměňte; případně použijte jiné jméno.)
+	Adresar WHERE THE_jmeno (jmeno) = "Jan"
+
+Zobrazte všechna mužská povolání (bez duplicit).
+	(Adresar  where pohlavi  = Pohlavi("M")) {povolani}
+
+Zobrazte relaci, kde bude navíc sloupec věk. (Uvažujte jako rozdíl auktuální rok - rok narození.)
+	extend (Adresar) : {vek := 2020 - THE_rok(narozen)}
+
+Zobrazte relaci, kde bude jen jméno a věk.
+	extend (Adresar{jmeno, narozen}) : {vek := 2020 - THE_rok(narozen)} {jmeno, vek}
+
+Některé z profesí zdvojnásobte plat. (Aktualizujte hodnotu relační proměnné.)
+	UPDATE Adresar WHERE (povolani = 'Delnik') : {plat := Plat(20000)};
+
+Odstraňte z relace všechny, co mají plat menší než 10000. (Aktualizujte hodnotu relační proměnné.)
+	DELETE Adresar WHERE (THE_x(plat) <= 10000);
+
+Názvy měst a k nim příslušné názvy zemí.
+	((city RENAME {countrycode AS code, name AS cityname}) JOIN country {code, name}) {cityname, name}
+
+Řeč, kterou se mluví v jednotlivých zemích.
+	((countrylanguage RENAME {countrycode AS code}) JOIN country {code, name}) {name, language}
+
+Řeč, kterou se mluví v jednotlivých městech.
+	(((city RENAME {countrycode AS code, name AS cityname}) JOIN country {code}) {cityname, code}
+	JOIN ((countrylanguage RENAME {countrycode AS code}) JOIN country {code}) {language, code}) {cityname, language}
+
+Řeči, kterými se mluví v Evropě.
+	((country WHERE continent = 'Europe') JOIN (countrylanguage RENAME {countrycode AS code}) {code, language}) {language}
+
+Informace o zemích z G7 ("USA", "FRA", "ITA", "CAN", "DEU", "GBR", "JPN").
+	 country JOIN (g7country RENAME {countrycode AS code}) {code}
+
+Hlavní města zemí z G7.
+	(city JOIN (((country JOIN (g7country RENAME {countrycode AS code}) {code}) JOIN  (capital RENAME {countrycode AS code})) {id})){name}
+
+Názvy hlavních měst v jednotlivých zemích.
+	(country JOIN ((city JOIN capital {id}) RENAME {countrycode AS code, name AS cityname}){code, cityname}) {cityname, name}
+
+Vyberte země světa, které mají větší HDP (GNP) než všechny země v Africe.
+	country  {name, gnp}  where gnp > (MAX ((country where continent = 'Africa'), gnp))
+
+Vyberte země Evropy, které mají větší HDP (GNP) než všechny země v Africe.
+	country {name, gnp, continent} where gnp > (MAX ((country where continent = 'Africa'), gnp)) AND continent = 'Europe'
+
+Vyberte země Evropy, které mají menší HDP (GNP) než některé země v Africe.
+	country {name, gnp, continent} where gnp < (MAX ((country where continent = 'Africa'), gnp)) AND continent = 'Europe'
+
+Vyberte země světa, které mají větší HDP (GNP) než všechny země v Africe dohromady.
+	country {name, gnp} where gnp > (SUM ((country where continent = 'Africa'), gnp))
+
+Vytvořte dotaz, který vrátí seznam kontinentů a pro každý kontinent nejlidnatější stát.
+	summarize country by {continent} : {population := MAX(population)} JOIN country {continent, population, name}
+	
+Vytvořte dotaz, který očísluje jednotlivé země podle počtu obyvatel.
+	extend (country{name,population} rename {population AS pop}): {numbered := count ((country{population}) WHERE (population > pop)) +1} ORDER ( ASC numbered )
+
+Vytvořte dotaz, který očísluje jednotlivé země na kontinentu podle počtu obyvatel.
+	extend (country {name, population, continent} RENAME {population as popul, continent as single_continent}) : {numbered := count((country{population, continent}) WHERE (single_continent = continent and population > popul)) +1} ORDER (ASC cont ,ASC numbered)
