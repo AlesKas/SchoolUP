@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Barrio</title>
@@ -11,14 +11,14 @@
   </head>
   <body>
     <header>
+      <h1>Barrio</h1>
       <nav>
         <ul style="list-style-type:none" class="navList">
-          <i class="fas fa-bars"></i>
-          <h1>Barrio</h1>
+          <li><i class="fas fa-bars"></i></li>
           <li><a href="home.html" class="active">Home</a></li>
           <li class="dropdown">
             Features<i class="fas fa-angle-down"></i>
-            <ul style="list-style-type:none" class="dropdown-content">
+            <ul style="list-style-type:none">
               <li>
                 <a href="#">Post Style<i class="fas fa-arrow-right"></i></a>
               </li>
@@ -35,13 +35,13 @@
             </ul>
           </li>
           <li><a href="#">Post</a></li>
-          <li class="hoverableButton" class="dropdown">
+          <li>
             Trending<i class="fas fa-angle-down"></i>
           </li>
-          <li class="hoverableButton" class="dropdown">
+          <li>
             Shop<i class="fas fa-angle-down"></i>
           </li>
-          <li class="hoverableButton" class="dropdown">
+          <li>
             Pages<i class="fas fa-angle-down"></i>
           </li>
           <li>
@@ -68,9 +68,9 @@
     </header>
     <section id="movingImages">
       <h2 hidden>Latest news</h2>
-      <img src="img/nicoOne.jpeg" height="600" width="1140" />
-      <img src="img/church.jpeg" height="600" width="1140" />
-      <img src="img/covffeffe.jpeg" height="600" width="1140" />
+      <img src="img/nicoOne.jpeg" height="600" width="1140" alt="slider"/>
+      <img src="img/church.jpeg" height="600" width="1140" alt="slider"/>
+      <img src="img/covffeffe.jpeg" height="600" width="1140" alt="slider"/>
       <button class="w3-button w3-display-left" onclick="plusDivs(-1)">
         &#10094;
       </button>
@@ -80,47 +80,47 @@
     </section>
     <section id="newsAndTrends">
       <h2>News & Trends</h2>
-      <section>
-        <img src="img/parrot.jpeg" height="250" width="250" />
+      <article>
+        <img src="img/parrot.jpeg" height="250" width="250" alt="Article"/>
         <h3>Style, design</h3>
         <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
         <p>
           By Andres Harrison <br />
           <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
         </p>
-      </section>
-      <section>
-        <img src="img/heli2.jpeg" height="250" width="250" />
+      </article>
+      <article>
+        <img src="img/heli2.jpeg" height="250" width="250" alt="Article"/>
         <h3>Destination, Travel</h3>
         <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
         <p>
           By Andres Harrison <br />
           <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
         </p>
-      </section>
-      <section>
-        <img src="img/nyc.jpeg" height="250" width="250" />
+      </article>
+      <article>
+        <img src="img/nyc.jpeg" height="250" width="250" alt="Article"/>
         <h3>Lifestyle, Fashion</h3>
         <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
         <p>
           By Andres Harrison <br />
           <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
         </p>
-      </section>
-      <section>
-        <img src="img/harbor.jpeg" height="250" width="250" />
+      </article>
+      <article>
+        <img src="img/harbor.jpeg" height="250" width="250" alt="Article"/>
         <h3>Travel</h3>
         <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
         <p>
           By Andres Harrison <br />
           <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
         </p>
-      </section>
+      </article>
     </section>
-    <section>
+    <main>
       <section>
         <article>
-          <img src="img/flor.jpeg" width="200" height="200" />
+          <img src="img/flor.jpeg" width="200" height="200" alt="Article"/>
           <h3>Holistic Health, Body</h3>
           <h2>
             The Miraculous Health Benefits of Autographagy Fasting: How to
@@ -139,7 +139,7 @@
           <a>Read more<i class="fas fa-arrow-right"></i></a>
         </article>
         <article>
-          <img src="img/heli.jpeg" width="200" height="200" />
+          <img src="img/heli.jpeg" width="200" height="200" alt="Article"/>
           <h3>Holistic Health, Body</h3>
           <h2>
             The Miraculous Health Benefits of Autographagy Fasting: How to
@@ -158,7 +158,7 @@
           <a>Read more<i class="fas fa-arrow-right"></i></a>
         </article>
         <article>
-          <img src="img/heli2.jpeg" width="200" height="200" />
+          <img src="img/heli2.jpeg" width="200" height="200" alt="Article"/>
           <h3>Holistic Health, Body</h3>
           <h2>
             The Miraculous Health Benefits of Autographagy Fasting: How to
@@ -177,7 +177,7 @@
           <a>Read more<i class="fas fa-arrow-right"></i></a>
         </article>
         <article>
-          <img src="img/beach.jpeg" width="200" height="200" />
+          <img src="img/beach.jpeg" width="200" height="200" alt="Article"/>
           <h3>Holistic Health, Body</h3>
           <h2>
             The Miraculous Health Benefits of Autographagy Fasting: How to
@@ -196,7 +196,7 @@
           <a>Read more<i class="fas fa-arrow-right"></i></a>
         </article>
         <article>
-          <img src="img/parrot.jpeg" width="200" height="200" />
+          <img src="img/parrot.jpeg" width="200" height="200" alt="Article"/>
           <h3>Holistic Health, Body</h3>
           <h2>
             The Miraculous Health Benefits of Autographagy Fasting: How to
@@ -230,135 +230,136 @@
           <h3>Trending Posts</h3>
           <ul style="list-style-type:none">
             <li>
-              <img src="img/beach.jpeg" width="100" height="100" />
+              <img src="img/beach.jpeg" width="100" height="100" alt="Article"/>
               <h3>Travel</h3>
               <h2>Lorem ipsum</h2>
               <time datetime="2019-04-01">April 01, 2019</time>
             </li>
             <li>
-              <img src="img/caple.jpeg " width="100" height="100" />
+              <img src="img/caple.jpeg " width="100" height="100" alt="Article"/>
               <h3>Travel</h3>
               <h2>Lorem ipsum</h2>
               <time datetime="2019-04-01">April 01, 2019</time>
             </li>
             <li>
-              <img src="img/plane.jpeg" width="100" height="100" />
+              <img src="img/plane.jpeg" width="100" height="100" alt="Article"/>
               <h3>Travel</h3>
               <h2>Lorem ipsum</h2>
               <time datetime="2019-04-01">April 01, 2019</time>
             </li>
             <li>
-              <img src="img/face.jpeg" width="100" height="100" />
+              <img src="img/face.jpeg" width="100" height="100" alt="Article"/>
               <h3>Travel</h3>
               <h2>Lorem ipsum</h2>
               <time datetime="2019-04-01">April 01, 2019</time>
             </li>
           </ul>
           <section>
-            <img src="img/flor.jpeg" width="100" height="100" />
-            <img src="img/heli.jpeg" width="100" height="100" />
-            <img src="img/nyc.jpeg" width="100" height="100" />
-            <img src="img/parrot.jpeg" width="100" height="100" />
+            <img src="img/flor.jpeg" width="100" height="100" alt="Article"/>
+            <img src="img/heli.jpeg" width="100" height="100" alt="Article"/>
+            <img src="img/nyc.jpeg" width="100" height="100" alt="Article"/>
+            <img src="img/parrot.jpeg" width="100" height="100" alt="Article"/>
           </section>
           <section>
             <h2>Most commented</h2>
-            <img src="img/heli.jpeg" width="200" height="200" />
+            <img src="img/heli.jpeg" width="200" height="200" alt="Article"/>
           </section>
         </section>
       </aside>
-    </section>
+    </main>
 
-    <section></section>
-    <ul style="list-style-type:none">
-      <li>Lifestyle</li>
-      <li>Travel</li>
-      <li>Food</li>
-      <li>Beauty</li>
-    </ul>
     <section>
-      <img src="img/home.jpeg" width="300" height="200" />
+      <ul style="list-style-type:none">
+        <li>Lifestyle</li>
+        <li>Travel</li>
+        <li>Food</li>
+        <li>Beauty</li>
+      </ul>
+      <section>
+        <img src="img/home.jpeg" width="300" height="200" alt="Article"/>
 
-      <img src="img/beach.jpeg" width="100" height="100" />
-      <h3>Style, Design</h3>
-      <h2>Top 10 Most spectacular Things to Do Banff: A Nature</h2>
-      <p>
-        By Andres Harrison <br />
-        <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-      </p>
+        <img src="img/beach.jpeg" width="100" height="100" alt="Article"/>
+        <h3>Style, Design</h3>
+        <h2>Top 10 Most spectacular Things to Do Banff: A Nature</h2>
+        <p>
+          By Andres Harrison <br />
+          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+        </p>
 
-      <img src="img/beach.jpeg" width="100" height="100" />
-      <h3>Destination, Travel</h3>
-      <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
-      <p>
-        By Andres Harrison <br />
-        <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-      </p>
+        <img src="img/beach.jpeg" width="100" height="100" alt="Article"/>
+        <h3>Destination, Travel</h3>
+        <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
+        <p>
+          By Andres Harrison <br />
+          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+        </p>
+      </section>
+      <section>
+        <img src="img/parrot.jpeg" width="100" height="100" alt="Article"/>
+        <h3>Lifestyle, Fashion</h3>
+        <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
+        <p>
+          By Andres Harrison <br />
+          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+        </p>
+
+        <img src="img/shadow.jpeg" width="100" height="100" alt="Article"/>
+        <h3>Travel</h3>
+        <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
+        <p>
+          By Andres Harrison <br />
+          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+        </p>
+
+        <img src="img/palms.jpeg" width="300" height="200" alt="Article"/>
+      </section>
+      <button>View all<i class="fas fa-arrow-right"></i></button>
     </section>
-    <section>
-      <img src="img/parrot.jpeg" width="100" height="100" />
-      <h3>Lifestyle, Fashion</h3>
-      <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
-      <p>
-        By Andres Harrison <br />
-        <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-      </p>
 
-      <img src="img/shadow.jpeg" width="100" height="100" />
-      <h3>Travel</h3>
-      <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
-      <p>
-        By Andres Harrison <br />
-        <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-      </p>
-
-      <img src="img/palms.jpeg" width="300" height="200" />
-    </section>
-
-    <button>View all<i class="fas fa-arrow-right"></i></button>
     <section>
       <h2>The Latest</h2>
       <ul style="list-style-type:none">
         <li>
-          <img src="img/beach.jpeg" width="100" height="100" />
+          <img src="img/beach.jpeg" width="100" height="100" alt="Article"/>
           <h3>Travel</h3>
           <h2>Lorem ipsum</h2>
           <time datetime="2019-04-01">April 01, 2019</time>
         </li>
         <li>
-          <img src="img/caple.jpeg " width="100" height="100" />
+          <img src="img/caple.jpeg " width="100" height="100" alt="Article"/>
           <h3>Travel</h3>
           <h2>Lorem ipsum</h2>
           <time datetime="2019-04-01">April 01, 2019</time>
         </li>
         <li>
-          <img src="img/plane.jpeg" width="100" height="100" />
+          <img src="img/plane.jpeg" width="100" height="100" alt="Article"/>
           <h3>Travel</h3>
           <h2>Lorem ipsum</h2>
           <time datetime="2019-04-01">April 01, 2019</time>
         </li>
       </ul>
       <section>
-        <img src="img/plane.jpeg" width="200" height="300" />
-        <img src="img/shadow.jpeg" width="200" height="300" />
+        <img src="img/plane.jpeg" width="200" height="300" alt="Article"/>
+        <img src="img/shadow.jpeg" width="200" height="300" alt="Article"/>
       </section>
     </section>
 
     <section>
       <h2>Editor's picks</h2>
       <section>
-        <img src="img/parrot.jpeg" height="250" width="250" />
+        <img src="img/parrot.jpeg" height="250" width="250" alt="Article"/>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
       </section>
       <section>
-        <img src="img/heli2.jpeg" height="250" width="250" />
+        <img src="img/heli2.jpeg" height="250" width="250" alt="Article"/>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
       </section>
       <section>
-        <img src="img/nyc.jpeg" height="250" width="250" />
+        <img src="img/nyc.jpeg" height="250" width="250" alt="Article"/>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
       </section>
       <section>
-        <img src="img/harbor.jpeg" height="250" width="250" />
+        <img src="img/harbor.jpeg" height="250" width="250" alt="Article"/>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
       </section>
     </section>
@@ -368,12 +369,12 @@
       <i class="fab fa-instagram-square"></i>
       <h3>Barrio</h3>
       <section>
-        <img src="img/parrot.jpeg" height="250" width="250" />
-        <img src="img/beach.jpeg" height="250" width="250" />
-        <img src="img/caple.jpeg" height="250" width="250" />
-        <img src="img/heli.jpeg" height="250" width="250" />
-        <img src="img/heli2.jpeg" height="250" width="250" />
-        <img src="img/nyc.jpeg" height="250" width="250" />
+        <img src="img/parrot.jpeg" height="250" width="250" alt="Article"/>
+        <img src="img/beach.jpeg" height="250" width="250" alt="Article"/>
+        <img src="img/caple.jpeg" height="250" width="250" alt="Article"/>
+        <img src="img/heli.jpeg" height="250" width="250" alt="Article"/>
+        <img src="img/heli2.jpeg" height="250" width="250" alt="Article"/>
+        <img src="img/nyc.jpeg" height="250" width="250" alt="Article"/>
       </section>
     </section>
     <section>
