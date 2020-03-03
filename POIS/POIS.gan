@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="POIS" company="" webLink="http://" view-date="2020-05-04" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.10" locale="en_US">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Name" width="167" order="0"/>
+        <field id="tpd4" name="Begin date" width="65" order="1"/>
+        <field id="tpd5" name="End date" width="64" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+        <date year="" month="1" date="1" type="HOLIDAY"><![CDATA[Nový rok]]></date>
+        <date year="" month="5" date="1" type="HOLIDAY"><![CDATA[Svátek práce]]></date>
+        <date year="" month="5" date="8" type="HOLIDAY"><![CDATA[Den vítězství]]></date>
+        <date year="" month="7" date="5" type="HOLIDAY"><![CDATA[Den slovanských věrozvěstů Cyrila a Metoděje]]></date>
+        <date year="" month="7" date="6" type="HOLIDAY"><![CDATA[Den upálení mistra Jana Husa]]></date>
+        <date year="" month="9" date="28" type="HOLIDAY"><![CDATA[Den české státnosti]]></date>
+        <date year="" month="10" date="28" type="HOLIDAY"><![CDATA[Den vzniku samostatného československého státu]]></date>
+        <date year="" month="11" date="17" type="HOLIDAY"><![CDATA[Den boje za svobodu a demokracii]]></date>
+        <date year="" month="12" date="24" type="HOLIDAY"><![CDATA[Štědrý den]]></date>
+        <date year="" month="12" date="25" type="HOLIDAY"><![CDATA[1. svátek vánoční]]></date>
+        <date year="" month="12" date="26" type="HOLIDAY"><![CDATA[2. svátek vánoční]]></date>
+        <date year="2017" month="4" date="14" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2017" month="4" date="17" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2018" month="3" date="30" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2018" month="4" date="2" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2019" month="4" date="19" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2019" month="4" date="22" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2020" month="4" date="10" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2020" month="4" date="13" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2021" month="4" date="2" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2021" month="4" date="5" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2022" month="4" date="15" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2022" month="4" date="18" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2023" month="4" date="7" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2023" month="4" date="10" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2024" month="3" date="29" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2024" month="4" date="1" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2025" month="4" date="18" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2025" month="4" date="21" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2026" month="4" date="3" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2026" month="4" date="6" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2027" month="3" date="26" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2027" month="3" date="29" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2028" month="4" date="14" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2028" month="4" date="17" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2029" month="3" date="30" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2029" month="4" date="2" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2030" month="4" date="19" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2030" month="4" date="22" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2031" month="4" date="11" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2031" month="4" date="14" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2032" month="3" date="26" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2032" month="3" date="29" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2033" month="4" date="15" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2033" month="4" date="18" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2034" month="4" date="7" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2034" month="4" date="10" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2035" month="3" date="23" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2035" month="3" date="26" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2036" month="4" date="11" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2036" month="4" date="14" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2037" month="4" date="3" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2037" month="4" date="6" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2038" month="4" date="23" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2038" month="4" date="26" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2039" month="4" date="8" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2039" month="4" date="11" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2040" month="3" date="30" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2040" month="4" date="2" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2041" month="4" date="19" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2041" month="4" date="22" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2042" month="4" date="4" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2042" month="4" date="7" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2043" month="3" date="27" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2043" month="3" date="30" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2044" month="4" date="15" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2044" month="4" date="18" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2045" month="4" date="7" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2045" month="4" date="10" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2046" month="3" date="23" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2046" month="3" date="26" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2047" month="4" date="12" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2047" month="4" date="15" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2048" month="4" date="3" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2048" month="4" date="6" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2049" month="4" date="16" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2049" month="4" date="19" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+        <date year="2050" month="4" date="8" type="HOLIDAY"><![CDATA[Velký pátek]]></date>
+        <date year="2050" month="4" date="11" type="HOLIDAY"><![CDATA[Velikonoční pondělí]]></date>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Uvedení do projektu" color="#8cb6ce" meeting="false" start="2020-03-02" duration="1" complete="0" thirdDate="2020-02-28" thirdDate-constraint="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" name="Analýza stávajícího systému" color="#8cb6ce" meeting="false" start="2020-03-03" duration="2" complete="0" thirdDate="2020-02-21" thirdDate-constraint="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" name="Shrnutí analýzy, Výběr technologií" color="#8cb6ce" meeting="false" start="2020-03-05" duration="1" complete="0" thirdDate="2020-02-21" thirdDate-constraint="0" expand="true">
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="10" name="Návrh prvotního řešení" color="#8cb6ce" meeting="false" start="2020-03-06" duration="1" complete="0" thirdDate="2020-02-24" thirdDate-constraint="0" expand="true">
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="14" name="Programování řešení, inkrementální zlepšování" color="#8cb6ce" meeting="false" start="2020-03-09" duration="10" complete="0" thirdDate="2020-03-09" thirdDate-constraint="0" expand="true">
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="19" name="Testování" color="#8cb6ce" meeting="false" start="2020-03-23" duration="5" complete="0" thirdDate="2020-03-27" thirdDate-constraint="0" expand="true">
+            <depend id="28" type="2" difference="0" hardness="Strong"/>
+            <depend id="41" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="28" name="Konec první etapy, předvedení prototypu" color="#8cb6ce" meeting="false" start="2020-03-30" duration="1" complete="0" thirdDate="2020-03-30" thirdDate-constraint="0" expand="true">
+            <depend id="47" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="41" name="Zpětná vazba, analýza" color="#8cb6ce" meeting="false" start="2020-03-30" duration="1" complete="0" thirdDate="2020-03-31" thirdDate-constraint="0" expand="true">
+            <depend id="47" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="47" name="Naplánování druhé fáze" color="#8cb6ce" meeting="false" start="2020-03-31" duration="1" complete="0" thirdDate="2020-03-31" thirdDate-constraint="0" expand="true">
+            <depend id="59" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="59" name="Programování druhé fáze" color="#8cb6ce" meeting="false" start="2020-04-01" duration="5" complete="0" thirdDate="2020-04-01" thirdDate-constraint="0" expand="true">
+            <depend id="62" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="62" name="Status Update" color="#8cb6ce" meeting="false" start="2020-04-08" duration="1" complete="0" thirdDate="2020-04-08" thirdDate-constraint="0" expand="true">
+            <depend id="65" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="65" name="Programování druhé fáze" color="#8cb6ce" meeting="false" start="2020-04-09" duration="5" complete="0" thirdDate="2020-04-09" thirdDate-constraint="0" expand="true">
+            <depend id="68" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="68" name="Status Update" color="#8cb6ce" meeting="false" start="2020-04-20" duration="1" complete="0" thirdDate="2020-04-20" thirdDate-constraint="0" expand="true">
+            <depend id="70" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="70" name="Programování druhé fáze + rezerva" color="#8cb6ce" meeting="false" start="2020-04-21" duration="4" complete="0" thirdDate="2020-03-23" thirdDate-constraint="0" expand="true">
+            <depend id="74" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="74" name="Testování" color="#8cb6ce" meeting="false" start="2020-04-27" duration="7" complete="0" thirdDate="2020-04-01" thirdDate-constraint="0" expand="true">
+            <depend id="77" type="2" difference="0" hardness="Strong"/>
+            <depend id="81" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="77" name="Předvedení druhé fáze" color="#8cb6ce" meeting="false" start="2020-05-07" duration="1" complete="0" thirdDate="2020-05-07" thirdDate-constraint="0" expand="true"/>
+        <task id="81" name="Analýza požadavků" color="#8cb6ce" meeting="false" start="2020-05-07" duration="1" complete="0" thirdDate="2020-05-07" thirdDate-constraint="0" expand="true">
+            <depend id="83" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="83" name="Plánování třetí fáze" color="#8cb6ce" meeting="false" start="2020-05-11" duration="1" complete="0" thirdDate="2020-05-11" thirdDate-constraint="0" expand="true">
+            <depend id="86" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="86" name="Programování třetí fáze" color="#8cb6ce" meeting="false" start="2020-05-12" duration="4" complete="0" thirdDate="2020-05-12" thirdDate-constraint="0" expand="true">
+            <depend id="89" type="2" difference="0" hardness="Strong"/>
+            <depend id="91" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="89" name="Status Update" color="#8cb6ce" meeting="false" start="2020-05-18" duration="1" complete="0" thirdDate="2020-05-18" thirdDate-constraint="0" expand="true"/>
+        <task id="91" name="Programování" color="#8cb6ce" meeting="false" start="2020-05-18" duration="5" complete="0" thirdDate="2020-04-29" thirdDate-constraint="0" expand="true">
+            <depend id="98" type="2" difference="0" hardness="Strong"/>
+            <depend id="101" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="98" name="Status Update" color="#8cb6ce" meeting="false" start="2020-05-25" duration="1" complete="0" thirdDate="2020-05-25" thirdDate-constraint="0" expand="true"/>
+        <task id="101" name="Programování + rezerva" color="#8cb6ce" meeting="false" start="2020-05-25" duration="5" complete="0" thirdDate="2020-05-25" thirdDate-constraint="0" expand="true">
+            <depend id="105" type="2" difference="0" hardness="Strong"/>
+            <depend id="108" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="105" name="Status Update" color="#8cb6ce" meeting="false" start="2020-06-01" duration="1" complete="0" thirdDate="2020-05-13" thirdDate-constraint="0" expand="true"/>
+        <task id="108" name="Testování" color="#8cb6ce" meeting="false" start="2020-06-01" duration="5" complete="0" thirdDate="2020-05-13" thirdDate-constraint="0" expand="true">
+            <depend id="112" type="2" difference="0" hardness="Strong"/>
+            <depend id="122" type="2" difference="0" hardness="Strong"/>
+            <depend id="124" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="112" name="Prezentace stavu" color="#8cb6ce" meeting="false" start="2020-06-08" duration="1" complete="0" thirdDate="2020-05-18" thirdDate-constraint="0" expand="true"/>
+        <task id="122" name="Analýza požadavků" color="#8cb6ce" meeting="false" start="2020-06-08" duration="1" complete="0" thirdDate="2020-06-08" thirdDate-constraint="0" expand="true">
+            <depend id="127" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="124" name="Uvedení nového člena" color="#8cb6ce" meeting="false" start="2020-06-08" duration="5" complete="0" thirdDate="2020-06-08" thirdDate-constraint="0" expand="true">
+            <depend id="133" type="2" difference="0" hardness="Strong"/>
+            <depend id="135" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="127" name="Programování čtvrté fáze" color="#8cb6ce" meeting="false" start="2020-06-09" duration="4" complete="0" thirdDate="2020-05-29" thirdDate-constraint="0" expand="true">
+            <depend id="133" type="2" difference="0" hardness="Strong"/>
+            <depend id="135" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="133" name="Status Update" color="#8cb6ce" meeting="false" start="2020-06-15" duration="1" complete="0" thirdDate="2020-06-15" thirdDate-constraint="0" expand="true"/>
+        <task id="135" name="Programování čtvrté fáze" color="#8cb6ce" meeting="false" start="2020-06-15" duration="5" complete="0" thirdDate="2020-05-29" thirdDate-constraint="0" expand="true">
+            <depend id="140" type="2" difference="0" hardness="Strong"/>
+            <depend id="143" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="140" name="Status Update" color="#8cb6ce" meeting="false" start="2020-06-22" duration="1" complete="0" thirdDate="2020-06-22" thirdDate-constraint="0" expand="true"/>
+        <task id="143" name="Finální Testování + rezerva" color="#8cb6ce" meeting="false" start="2020-06-22" duration="10" complete="0" thirdDate="2020-06-03" thirdDate-constraint="0" expand="true">
+            <depend id="149" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="149" name="Fiinální Prezentace Projektu" color="#8cb6ce" meeting="false" start="2020-07-07" duration="1" complete="0" thirdDate="2020-07-07" thirdDate-constraint="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Petr Novák" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="1" name="Honza Stylař" function="SoftwareDevelopment:5" contacts="" phone=""/>
+        <resource id="2" name="František Klikař" function="SoftwareDevelopment:4" contacts="" phone=""/>
+        <resource id="3" name="Aleš Kašpárek" function="Default:1" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="2" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="10" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="41" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="47" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="59" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="70" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="74" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="77" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="86" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="91" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="89" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="101" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="105" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="112" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="127" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="143" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="10" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="62" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="65" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="68" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="81" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="83" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="98" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="108" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="122" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="133" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="135" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="140" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="149" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="5" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="10" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="41" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="47" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="59" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="70" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="74" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="77" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="86" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="91" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="89" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="101" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="105" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="112" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="127" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="143" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="2" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="10" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="62" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="65" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="68" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="81" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="83" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="98" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="108" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="122" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="133" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="135" resource-id="1" function="SoftwareDevelopment:5" responsible="true" load="100.0"/>
+        <allocation task-id="140" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="149" resource-id="1" function="SoftwareDevelopment:5" responsible="false" load="100.0"/>
+        <allocation task-id="124" resource-id="2" function="SoftwareDevelopment:4" responsible="true" load="100.0"/>
+        <allocation task-id="143" resource-id="2" function="SoftwareDevelopment:4" responsible="true" load="100.0"/>
+        <allocation task-id="149" resource-id="2" function="SoftwareDevelopment:4" responsible="false" load="100.0"/>
+        <allocation task-id="0" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="2" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="41" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="47" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="77" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="89" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="105" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="112" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="62" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="68" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="81" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="83" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="98" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="122" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="133" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="140" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="149" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
