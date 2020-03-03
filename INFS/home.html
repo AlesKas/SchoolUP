@@ -1,391 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title>Barrio</title>
-    <script
-      src="https://kit.fontawesome.com/bdc669bfe8.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="global.css" type="text/css" />
-  </head>
-  <body>
+    <script src="https://kit.fontawesome.com/bdc669bfe8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/global.css" type="text/css" />
+</head>
+
+<body>
     <header>
-      <h1>Barrio</h1>
-      <nav>
-        <ul style="list-style-type:none" class="navList">
-          <li><i class="fas fa-bars"></i></li>
-          <li><a href="home.html" class="active">Home</a></li>
-          <li class="dropdown">
-            Features<i class="fas fa-angle-down"></i>
-            <ul style="list-style-type:none">
-              <li>
-                <a href="#">Post Style<i class="fas fa-arrow-right"></i></a>
-              </li>
-              <li>
-                <a href="#">Header Style<i class="fas fa-arrow-right"></i></a>
-              </li>
-              <li>
-                <a href="#">Footer Style<i class="fas fa-arrow-right"></i></a>
-              </li>
-              <li><a href="#">Content Style</a></li>
-              <li>
-                <a href="#">Widgets<i class="fas fa-arrow-right"></i></a>
-              </li>
+        <h1>Barrio</h1>
+        <nav>
+            <ul class="navList">
+                <li><i class="fas fa-bars"></i></li>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    Features<i class="fas fa-angle-down"></i>
+                    <ul>
+                        <li>
+                            <a href="#">Post Style<i class="fas fa-arrow-right"></i></a>
+                        </li>
+                        <li>
+                            <a href="#">Header Style<i class="fas fa-arrow-right"></i></a>
+                        </li>
+                        <li>
+                            <a href="#">Footer Style<i class="fas fa-arrow-right"></i></a>
+                        </li>
+                        <li><a href="#">Content Style</a></li>
+                        <li>
+                            <a href="#">Widgets<i class="fas fa-arrow-right"></i></a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Post</a></li>
+                <li>Trending<i class="fas fa-angle-down"></i></li>
+                <li>Shop<i class="fas fa-angle-down"></i></li>
+                <li>Pages<i class="fas fa-angle-down"></i></li>
+                <li>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-instagram-square"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </li>
             </ul>
-          </li>
-          <li><a href="#">Post</a></li>
-          <li>Trending<i class="fas fa-angle-down"></i></li>
-          <li>Shop<i class="fas fa-angle-down"></i></li>
-          <li>Pages<i class="fas fa-angle-down"></i></li>
-          <li>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-          </li>
-          <!--Facebook-->
-          <li>
-            <a href="#"><i class="fab fa-twitter-square"></i></a>
-          </li>
-          <!--Twitter-->
-          <li>
-            <a href="#"><i class="fab fa-instagram-square"></i></a>
-          </li>
-          <!--Instagram-->
-          <li>
-            <a href="#"><i class="fab fa-pinterest"></i></a>
-          </li>
-          <!--Pinterest-->
-          <li>
-            <a href="#"><i class="fas fa-search"></i></a>
-          </li>
-        </ul>
-      </nav>
+        </nav>
     </header>
     <section id="movingImages">
-      <h2 hidden>Latest news</h2>
-      <img src="img/nicoOne.jpeg" height="600" width="1140" alt="slider" />
-      <img src="img/church.jpeg" height="600" width="1140" alt="slider" />
-      <img src="img/covffeffe.jpeg" height="600" width="1140" alt="slider" />
-      <button class="w3-button w3-display-left" onclick="plusDivs(-1)">
-        &#10094;
-      </button>
-      <button class="w3-button w3-display-right" onclick="plusDivs(+1)">
-        &#10095;
-      </button>
+        <h2 hidden>Latest news</h2>
+        <img src="img/nicoOne.jpeg" height="600" width="1140" alt="slider" />
+        <img src="img/church.jpeg" height="600" width="1140" alt="slider" />
+        <img src="img/covffeffe.jpeg" height="600" width="1140" alt="slider" />
+        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">
+				&#10094;
+			</button>
+        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">
+				&#10095;
+			</button>
     </section>
     <section id="newsAndTrends">
-      <h2>News & Trends</h2>
-      <article>
-        <a href="#"><img src="img/parrot.jpeg" height="250" width="250" alt="Article" /></a>
-        <h3>Style, <a href="#">design</a></h3>
-        <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-      </article>
-      <article>
-        <img src="img/heli2.jpeg" height="250" width="250" alt="Article" />
-        <h3>Destination, Travel</h3>
-        <a><h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2></a>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-      </article>
-      <article>
-        <img src="img/nyc.jpeg" height="250" width="250" alt="Article" />
-        <h3>Lifestyle, Fashion</h3>
-        <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-      </article>
-      <article>
-        <img src="img/harbor.jpeg" height="250" width="250" alt="Article" />
-        <h3>Travel</h3>
-        <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-      </article>
+        <h2>News & Trends</h2>
+        <article>
+            <a href="#"><img src="img/parrot.jpeg" height="250" width="250" alt="Article" /></a>
+            <h3>Style, <a href="#">design</a></h3>
+            <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+        </article>
+        <article>
+            <a href="#"><img src="img/heli2.jpeg" height="250" width="250" alt="Article" /></a>
+            <h3>Destination, Travel</h3>
+            <a>
+                <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
+            </a>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+        </article>
+        <article>
+            <a href="#"><img src="img/nyc.jpeg" height="250" width="250" alt="Article" /></a>
+            <h3>Lifestyle, Fashion</h3>
+            <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+        </article>
+        <article>
+            <a href="#"><img src="img/harbor.jpeg" height="250" width="250" alt="Article" /></a>
+            <h3>Travel</h3>
+            <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+        </article>
     </section>
     <main>
-      <article>
-        <img src="img/flor.jpeg" width="200" height="200" alt="Article" />
-        <h3>Holistic Health, Body</h3>
-        <h2>
-          The Miraculous Health Benefits of Autographagy Fasting: How to
-        </h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum. Aenean id metus id velit
-          ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl molestie
-          malesuada.
-        </p>
-        <a>Read more<i class="fas fa-arrow-right"></i></a>
-      </article>
-      <article>
-        <img src="img/heli.jpeg" width="200" height="200" alt="Article" />
-        <h3>Holistic Health, Body</h3>
-        <h2>
-          The Miraculous Health Benefits of Autographagy Fasting: How to
-        </h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum. Aenean id metus id velit
-          ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl molestie
-          malesuada.
-        </p>
-        <a>Read more<i class="fas fa-arrow-right"></i></a>
-      </article>
-      <article>
-        <img src="img/heli2.jpeg" width="200" height="200" alt="Article" />
-        <h3>Holistic Health, Body</h3>
-        <h2>
-          The Miraculous Health Benefits of Autographagy Fasting: How to
-        </h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum. Aenean id metus id velit
-          ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl molestie
-          malesuada.
-        </p>
-        <a>Read more<i class="fas fa-arrow-right"></i></a>
-      </article>
-      <article>
-        <img src="img/beach.jpeg" width="200" height="200" alt="Article" />
-        <h3>Holistic Health, Body</h3>
-        <h2>
-          The Miraculous Health Benefits of Autographagy Fasting: How to
-        </h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum. Aenean id metus id velit
-          ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl molestie
-          malesuada.
-        </p>
-        <a>Read more<i class="fas fa-arrow-right"></i></a>
-      </article>
-      <article>
-        <img src="img/parrot.jpeg" width="200" height="200" alt="Article" />
-        <h3>Holistic Health, Body</h3>
-        <h2>
-          The Miraculous Health Benefits of Autographagy Fasting: How to
-        </h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum. Aenean id metus id velit
-          ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl molestie
-          malesuada.
-        </p>
-        <a>Read more<i class="fas fa-arrow-right"></i></a>
-      </article>
+        <article>
+            <a href="#"><img src="img/flor.jpeg" width="200" height="200" alt="Article" /></a>
+            <h3>Holistic Health, Body</h3>
+            <h2>
+                The Miraculous Health Benefits of Autographagy Fasting: How to
+            </h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Aenean id metus id velit ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl
+                molestie malesuada.
+            </p>
+            <a href="#">Read more<i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article>
+            <a href="#"><img src="img/heli.jpeg" width="200" height="200" alt="Article" /></a>
+            <h3>Holistic Health, Body</h3>
+            <h2>
+                The Miraculous Health Benefits of Autographagy Fasting: How to
+            </h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Aenean id metus id velit ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl
+                molestie malesuada.
+            </p>
+            <a href="#">Read more<i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article>
+            <a href="#"><img src="img/heli2.jpeg" width="200" height="200" alt="Article" /></a>
+            <h3>Holistic Health, Body</h3>
+            <h2>
+                The Miraculous Health Benefits of Autographagy Fasting: How to
+            </h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Aenean id metus id velit ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl
+                molestie malesuada.
+            </p>
+            <a href="#">Read more<i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article>
+            <a href="#"><img src="img/beach.jpeg" width="200" height="200" alt="Article" /></a>
+            <h3>Holistic Health, Body</h3>
+            <h2>
+                The Miraculous Health Benefits of Autographagy Fasting: How to
+            </h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Aenean id metus id velit ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl
+                molestie malesuada.
+            </p>
+            <a href="#">Read more<i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article>
+            <a href="#"><img src="img/parrot.jpeg" width="200" height="200" alt="Article" /></a>
+            <h3>Holistic Health, Body</h3>
+            <h2>
+                The Miraculous Health Benefits of Autographagy Fasting: How to
+            </h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Aenean id metus id velit ullamcorper pulvinar. Fusce nibh. Nulla non lectus sed nisl
+                molestie malesuada.
+            </p>
+            <a href="#">Read more<i class="fas fa-arrow-right"></i></a>
+        </article>
     </main>
     <aside>
-      <section>
-        <h2>Follow us</h2>
-        <ul style="list-style-type:none">
-          <li><i class="fab fa-facebook"></i></li>
-          <li><i class="fab fa-twitter-square"></i></li>
-          <li><i class="fab fa-instagram-square"></i></li>
-          <li><i class="fab fa-pinterest"></i></li>
-          <li><i class="fab fa-youtube-square"></i></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Trending Posts</h3>
-        <ul style="list-style-type:none">
-          <li>
-            <img src="img/beach.jpeg" width="100" height="100" alt="Article" />
-            <h3>Travel</h3>
-            <h2>Lorem ipsum</h2>
-            <time datetime="2019-04-01">April 01, 2019</time>
-          </li>
-          <li>
-            <img src="img/caple.jpeg " width="100" height="100" alt="Article" />
-            <h3>Travel</h3>
-            <h2>Lorem ipsum</h2>
-            <time datetime="2019-04-01">April 01, 2019</time>
-          </li>
-          <li>
-            <img src="img/plane.jpeg" width="100" height="100" alt="Article" />
-            <h3>Travel</h3>
-            <h2>Lorem ipsum</h2>
-            <time datetime="2019-04-01">April 01, 2019</time>
-          </li>
-          <li>
-            <img src="img/face.jpeg" width="100" height="100" alt="Article" />
-            <h3>Travel</h3>
-            <h2>Lorem ipsum</h2>
-            <time datetime="2019-04-01">April 01, 2019</time>
-          </li>
-        </ul>
-        <img src="img/flor.jpeg" width="100" height="100" alt="Article" />
-        <img src="img/heli.jpeg" width="100" height="100" alt="Article" />
-        <img src="img/nyc.jpeg" width="100" height="100" alt="Article" />
-        <img src="img/parrot.jpeg" width="100" height="100" alt="Article" />
         <section>
-          <h2>Most commented</h2>
-          <img src="img/heli.jpeg" width="200" height="200" alt="Article" />
+            <h2>Follow us</h2>
+            <ul>
+                <li><i class="fab fa-facebook"></i></li>
+                <li><i class="fab fa-twitter-square"></i></li>
+                <li><i class="fab fa-instagram-square"></i></li>
+                <li><i class="fab fa-pinterest"></i></li>
+                <li><i class="fab fa-youtube-square"></i></li>
+            </ul>
         </section>
-      </section>
+        <section>
+            <h3>Trending Posts</h3>
+            <ul>
+                <li>
+                    <a href="#"><img src="img/beach.jpeg" width="100" height="100" alt="Article" /></a>
+                    <h3>Travel</h3>
+                    <h2>Lorem ipsum</h2>
+                    <time datetime="2019-04-01">April 01, 2019</time>
+                </li>
+                <li>
+                    <a href="#"><img src="img/caple.jpeg " width="100" height="100" alt="Article" /></a>
+                    <h3>Travel</h3>
+                    <h2>Lorem ipsum</h2>
+                    <time datetime="2019-04-01">April 01, 2019</time>
+                </li>
+                <li>
+                    <a href="#"><img src="img/plane.jpeg" width="100" height="100" alt="Article" /></a>
+                    <h3>Travel</h3>
+                    <h2>Lorem ipsum</h2>
+                    <time datetime="2019-04-01">April 01, 2019</time>
+                </li>
+                <li>
+                    <img src="img/face.jpeg" width="100" height="100" alt="Article" />
+                    <h3>Travel</h3>
+                    <h2>Lorem ipsum</h2>
+                    <time datetime="2019-04-01">April 01, 2019</time>
+                </li>
+            </ul>
+            <a href="#"><img src="img/flor.jpeg" width="100" height="100" alt="Article" /></a>
+            <a href="#"><img src="img/heli.jpeg" width="100" height="100" alt="Article" /></a>
+            <a href="#"><img src="img/nyc.jpeg" width="100" height="100" alt="Article" /></a>
+            <a href="#"><img src="img/parrot.jpeg" width="100" height="100" alt="Article" /></a>
+            <section>
+                <h2>Most commented</h2>
+                <a href="#"><img src="img/heli.jpeg" width="200" height="200" alt="Article" /></a>
+            </section>
+        </section>
     </aside>
 
     <section>
-      <h2 hidden>Click</h2>
-      <ul style="list-style-type:none">
-        <li>Lifestyle</li>
-        <li>Travel</li>
-        <li>Food</li>
-        <li>Beauty</li>
-      </ul>
-      <section>
-        <img src="img/home.jpeg" width="300" height="200" alt="Article" />
+        <h2 hidden>Click</h2>
+        <ul>
+            <li>Lifestyle</li>
+            <li>Travel</li>
+            <li>Food</li>
+            <li>Beauty</li>
+        </ul>
+        <section>
+            <a href="#"><img src="img/home.jpeg" width="300" height="200" alt="Article" /></a>
 
-        <img src="img/beach.jpeg" width="100" height="100" alt="Article" />
-        <h3>Style, Design</h3>
-        <h2>Top 10 Most spectacular Things to Do Banff: A Nature</h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
+            <a href="#"><img src="img/beach.jpeg" width="100" height="100" alt="Article" /></a>
+            <h3>Style, Design</h3>
+            <h2>Top 10 Most spectacular Things to Do Banff: A Nature</h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
 
-        <img src="img/beach.jpeg" width="100" height="100" alt="Article" />
-        <h3>Destination, Travel</h3>
-        <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
-      </section>
-      <section>
-        <img src="img/parrot.jpeg" width="100" height="100" alt="Article" />
-        <h3>Lifestyle, Fashion</h3>
-        <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
+            <a href="#"><img src="img/beach.jpeg" width="100" height="100" alt="Article" /></a>
+            <h3>Destination, Travel</h3>
+            <a>
+                <h2><a href="#">2019 Gift Guide for the Hart-To-Shop-For Crowd</a></h2>
+            </a>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
+        </section>
+        <section>
+            <a href="#"><img src="img/parrot.jpeg" width="100" height="100" alt="Article" /></a>
+            <h3>Lifestyle, Fashion</h3>
+            <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
 
-        <img src="img/shadow.jpeg" width="100" height="100" alt="Article" />
-        <h3>Travel</h3>
-        <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
-        <p>
-          By Andres Harrison <br />
-          <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
-        </p>
+            <a href="#"><img src="img/shadow.jpeg" width="100" height="100" alt="Article" /></a>
+            <h3>Travel</h3>
+            <h2>2019 Gift Guide for the Hart-To-Shop-For Crowd</h2>
+            <p>
+                By Andres Harrison <br />
+                <time datetime="2019-04-01">April 01, 2019</time> 32 Comments
+            </p>
 
-        <img src="img/palms.jpeg" width="300" height="200" alt="Article" />
-      </section>
-      <button>View all<i class="fas fa-arrow-right"></i></button>
+            <img src="img/palms.jpeg" width="300" height="200" alt="Article" />
+        </section>
+        <button>View all<i class="fas fa-arrow-right"></i></button>
     </section>
 
     <section>
-      <h2>The Latest</h2>
-      <ul style="list-style-type:none">
-        <li>
-          <img src="img/beach.jpeg" width="100" height="100" alt="Article" />
-          <h3>Travel</h3>
-          <h2>Lorem ipsum</h2>
-          <time datetime="2019-04-01">April 01, 2019</time>
-        </li>
-        <li>
-          <img src="img/caple.jpeg " width="100" height="100" alt="Article" />
-          <h3>Travel</h3>
-          <h2>Lorem ipsum</h2>
-          <time datetime="2019-04-01">April 01, 2019</time>
-        </li>
-        <li>
-          <img src="img/plane.jpeg" width="100" height="100" alt="Article" />
-          <h3>Travel</h3>
-          <h2>Lorem ipsum</h2>
-          <time datetime="2019-04-01">April 01, 2019</time>
-        </li>
-      </ul>
-      <img src="img/plane.jpeg" width="200" height="300" alt="Article" />
-      <img src="img/shadow.jpeg" width="200" height="300" alt="Article" />
+        <h2>The Latest</h2>
+        <ul>
+            <li>
+                <a href="#"><img src="img/beach.jpeg" width="100" height="100" alt="Article" /></a>
+                <h3><a href="#">Travel</a></h3>
+                <h2>Lorem ipsum</h2>
+                <time datetime="2019-04-01">April 01, 2019</time>
+            </li>
+            <li>
+                <a href="#"><img src="img/caple.jpeg " width="100" height="100" alt="Article" /></a>
+                <h3><a href="#">Travel</a></h3>
+                <h2>Lorem ipsum</h2>
+                <time datetime="2019-04-01">April 01, 2019</time>
+            </li>
+            <li>
+                <a href="#"><img src="img/plane.jpeg" width="100" height="100" alt="Article" /></a>
+                <h3><a>Travel</a></h3>
+                <h2>Lorem ipsum</h2>
+                <time datetime="2019-04-01">April 01, 2019</time>
+            </li>
+        </ul>
+        <a href="#"><img src="img/plane.jpeg" width="200" height="300" alt="Article" /></a>
+        <a href="#"><img src="img/shadow.jpeg" width="200" height="300" alt="Article" /></a>
     </section>
 
     <section>
-      <h2>Editor's picks</h2>
-      <div>
-        <img src="img/parrot.jpeg" height="250" width="250" alt="Article" />
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-      </div>
-      <div>
-        <img src="img/heli2.jpeg" height="250" width="250" alt="Article" />
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-      </div>
-      <div>
-        <img src="img/nyc.jpeg" height="250" width="250" alt="Article" />
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-      </div>
-      <div>
-        <img src="img/harbor.jpeg" height="250" width="250" alt="Article" />
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-      </div>
+        <h2>Editor's picks</h2>
+        <div>
+            <a href="#"><img src="img/parrot.jpeg" height="250" width="250" alt="Article" /></a>
+            <h2>Style, <a>Design</a></h2>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </div>
+        <div>
+            <a href="#"><img src="img/heli2.jpeg" height="250" width="250" alt="Article" /></a>
+            <a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</a>
+        </div>
+        <div>
+            <a href="#"><img src="img/nyc.jpeg" height="250" width="250" alt="Article" /></a>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </div>
+        <div>
+            <a href="#"><img src="img/harbor.jpeg" height="250" width="250" alt="Article" /></a>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </div>
     </section>
 
     <footer>
-      <section>
-        <h2>Follow me on instagram</h2>
-        <i class="fab fa-instagram-square"></i>
-        <h3>Barrio</h3>
-        <div>
-          <img src="img/parrot.jpeg" height="250" width="250" alt="Article" />
-          <img src="img/beach.jpeg" height="250" width="250" alt="Article" />
-          <img src="img/caple.jpeg" height="250" width="250" alt="Article" />
-          <img src="img/heli.jpeg" height="250" width="250" alt="Article" />
-          <img src="img/heli2.jpeg" height="250" width="250" alt="Article" />
-          <img src="img/nyc.jpeg" height="250" width="250" alt="Article" />
-        </div>
-      </section>
-      <section>
-        <h3>Sign up for our newsletters</h3>
-        <form>
-          <input type="text" id="fname" name="fname" value="Your email" /><br />
-          <input type="submit" value="Submit" />
-        </form>
-        <h3>Barrio</h3>
-        <ul style="list-style-type:none">
-          <li><i class="fab fa-facebook"></i>Facebook</li>
-          <li><i class="fab fa-twitter-square"></i>Twitter</li>
-          <li><i class="fab fa-instagram-square"></i>Instagram</li>
-          <li><i class="fab fa-pinterest"></i>Pinterest</li>
-          <li><i class="fab fa-youtube-square"></i>Youtube</li>
-        </ul>
-      </section>
+        <section>
+            <h2>Follow me on instagram</h2>
+            <a href="https://www.instagram.com/aleskaspy/?hl=cs"><i class="fab fa-instagram-square"></i></a>
+            <h3>Barrio</h3>
+            <article>
+                <a href="#"><img src="img/parrot.jpeg" height="250" width="250" alt="Article" /></a>
+                <a href="#"><img src="img/beach.jpeg" height="250" width="250" alt="Article" /></a>
+                <a href="#"><img src="img/caple.jpeg" height="250" width="250" alt="Article" /></a>
+                <a href="#"><img src="img/heli.jpeg" height="250" width="250" alt="Article" /></a>
+                <a href="#"><img src="img/heli2.jpeg" height="250" width="250" alt="Article" /></a>
+                <a href="#"><img src="img/nyc.jpeg" height="250" width="250" alt="Article" /></a>
+            </article>
+        </section>
+        <section>
+            <h3>Sign up for our newsletters</h3>
+            <form>
+                <input type="text" id="fname" name="fname" value="Your email" /><br />
+                <input type="submit" value="Submit" />
+            </form>
+            <h3>Barrio</h3>
+            <ul>
+                <li><i class="fab fa-facebook"></i>Facebook</li>
+                <li><i class="fab fa-twitter-square"></i>Twitter</li>
+                <li><i class="fab fa-instagram-square"></i>Instagram</li>
+                <li><i class="fab fa-pinterest"></i>Pinterest</li>
+                <li><i class="fab fa-youtube-square"></i>Youtube</li>
+            </ul>
+        </section>
 
-      <p>
-        &copy; - All Rights Reserved. Designed and Developed by CreativeLayers.
-      </p>
+        <p>
+            &copy; - All Rights Reserved. Designed and Developed by CreativeLayers.
+        </p>
     </footer>
-  </body>
+</body>
+
 </html>
