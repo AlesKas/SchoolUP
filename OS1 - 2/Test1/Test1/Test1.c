@@ -7,6 +7,10 @@
     mov eax, arg
     mov [eax], neco - zapis
     mov ebx, [eax] - cteni
+
+    volani fci ->
+    eax, ecx, edx - nechraneny
+    ebx, esi, edi - chraneny
 */
 
 void avg(unsigned short a, char b, int c, int* result) {
