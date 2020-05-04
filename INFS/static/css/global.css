@@ -173,12 +173,13 @@ li>label {
     position: relative;
 }
 
-li>div {
+.caption {
+    position: relative;
     float: right;
     font-size: 12px;
     margin-left: 10px;
-    position: relative;
-    top: -5px;
+    top: -10px;
+    left: -80px;
 }
 
 #other {
@@ -263,4 +264,41 @@ li>div {
 #contact>ul>li {
     margin-right: 25px;
     float: left;
+}
+
+.second-page{
+    margin-left: -35px;
+}
+
+.third-page{
+    float: left;
+    width: 700px;
+    margin-left: -10px;
+}
+
+.wider {
+    width: 310px;
+}
+
+.footer{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+.footer > p{
+    margin-left: 150px;
+    float: left;
+}
+
+.footer > ul {
+    position: relative;
+    top: 30px;
+    float: right;
+    display: inline-flex;
+    margin-right: 150px;
+}
+
+.footer > ul > li {
+    padding-right: 10px;
 }
