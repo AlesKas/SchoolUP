@@ -8,6 +8,12 @@ header {
     left: 35%;
 }
 
+header > i {
+    position: relative;
+    left: -35px;
+    top: 50px;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -29,6 +35,10 @@ ul {
     margin-left: 30px;
 }
 
+.navList>li:hover, .navList>li>a:hover{
+    color: red;
+}
+
 .navList>li>a {
     text-decoration:none;
     color: #0a0a0a;
@@ -46,6 +56,11 @@ ul {
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+}
+
+.dropdown-content > li > a:hover{
+    color: red;
+    margin-left: 5px;
 }
 
 .dropdown-content a {
@@ -185,6 +200,14 @@ li>label {
     margin-left: 10px;
     top: -10px;
     left: -80px;
+}
+
+.caption-2{
+    position: relative;
+    float: right;
+    font-size: 12px;
+    right: -10px;
+    top: -10px;
 }
 
 #other {
