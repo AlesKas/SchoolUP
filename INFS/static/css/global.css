@@ -8,7 +8,7 @@ header {
     left: 35%;
 }
 
-header > i {
+header>i {
     position: relative;
     left: -35px;
     top: 50px;
@@ -35,12 +35,13 @@ ul {
     margin-left: 30px;
 }
 
-.navList>li:hover, .navList>li>a:hover{
+.navList>li:hover,
+.navList>li>a:hover {
     color: red;
 }
 
 .navList>li>a {
-    text-decoration:none;
+    text-decoration: none;
     color: #0a0a0a;
 }
 
@@ -58,7 +59,7 @@ ul {
     z-index: 1;
 }
 
-.dropdown-content > li > a:hover{
+.dropdown-content>li>a:hover {
     color: red;
     margin-left: 5px;
 }
@@ -127,7 +128,7 @@ main {
 aside {
     float: right;
     width: 292px;
-    margin-right: 390px;
+    margin-right: 40ex;
 }
 
 main>article {
@@ -202,7 +203,7 @@ li>label {
     left: -80px;
 }
 
-.caption-2{
+.caption-2 {
     position: relative;
     float: right;
     font-size: 12px;
@@ -294,32 +295,33 @@ li>label {
     float: left;
 }
 
-.second-page{
-    margin-left: -35px;
+.second-page {
+    margin-left: -25ex;
 }
 
-.third-page{
+.third-page {
     float: left;
     width: 700px;
-    margin-left: -10px;
+    margin-left: -215px;
 }
 
 .wider {
     width: 310px;
+    float: right;
 }
 
-.footer{
+.footer {
     text-align: center;
     width: 100%;
     display: inline-block;
 }
 
-.footer > p{
+.footer>p {
     margin-left: 150px;
     float: left;
 }
 
-.footer > ul {
+.footer>ul {
     position: relative;
     top: 30px;
     float: right;
@@ -327,6 +329,6 @@ li>label {
     margin-right: 150px;
 }
 
-.footer > ul > li {
+.footer>ul>li {
     padding-right: 10px;
 }
