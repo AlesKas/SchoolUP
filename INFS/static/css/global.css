@@ -3,6 +3,11 @@ body {
     width: 100%;
 }
 
+header {
+    position: relative;
+    left: 35%;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -13,7 +18,7 @@ nav {
     top: -40px;
 }
 
-nav>ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -21,6 +26,7 @@ nav>ul {
 
 .navList>li {
     float: left;
+    margin-left: 10px;
 }
 
 .dropdown {
@@ -75,7 +81,7 @@ nav>ul {
 
 #newsAndTrends {
     position: relative;
-    left: 25%;
+    left: 22%;
 }
 
 .newsAndTrends {
@@ -94,8 +100,8 @@ nav>ul {
 
 main {
     float: left;
-    width: 780px;
-    margin-left: 292px;
+    width: 750px;
+    margin-left: 390px;
 }
 
 aside {
@@ -127,10 +133,6 @@ main>article>p {
     margin-right: 5px;
     width: 100%;
     border-bottom: 1px solid #7A7A7A;
-}
-
-#other {
-    position: relative;
 }
 
 aside>section>ul {
@@ -169,7 +171,6 @@ li>label {
 #trending>li {
     margin-bottom: 10px;
     position: relative;
-    left: -35px;
 }
 
 li>div {
@@ -178,4 +179,88 @@ li>div {
     margin-left: 10px;
     position: relative;
     top: -5px;
+}
+
+#other {
+    width: 1140px;
+    position: relative;
+    margin-left: 390px;
+}
+
+.bone-white {
+    background-color: beige;
+    width: 100%;
+}
+
+#other>ul>li {
+    margin-right: 10px;
+    border: 1px solid #7A7A7A;
+    background: #ddd;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+}
+
+.left-float {
+    display: flex;
+    position: relative;
+}
+
+.left-float>article {
+    margin-left: 30px;
+}
+
+.left-float+button {
+    position: relative;
+    width: 125px;
+    height: 65px;
+    left: 40%;
+}
+
+#latest {
+    margin-left: 390px;
+}
+
+#latest>button {
+    position: relative;
+    width: 125px;
+    height: 65px;
+    left: 30%;
+    margin-top: 15px;
+}
+
+.latest {
+    display: flex;
+}
+
+.latest>ul>li {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.latest>a {
+    display: inline-flex;
+    margin-left: 20px;
+}
+
+.artricle-containter {
+    width: 250px;
+    margin-right: 15px;
+}
+
+.content-container {
+    margin-left: 390px;
+    display: flex;
+}
+
+#contact {
+    text-align: center;
+    position: relative;
+}
+
+#contact>ul>li {
+    margin-right: 25px;
+    float: left;
 }
