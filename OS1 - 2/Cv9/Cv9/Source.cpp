@@ -13,7 +13,7 @@ _declspec(naked) int min1(int a, int b)
 		cmp eax, ebx
 		jl mensi
 		mov eax, ebx
-	mensi :
+	mensi:
 		mov esp, ebp
 		pop ebp
 		ret
@@ -33,7 +33,7 @@ _declspec(naked) int min2(int a, int b)
 		cmp eax, ebx
 		jl mensi
 		mov eax, ebx
-		mensi :
+	mensi:
 		mov esp, ebp
 		pop ebp
 		ret
@@ -48,7 +48,7 @@ _declspec(naked) int min3(int a, int b)
 		cmp eax, ebx
 		jl mensi
 		mov eax, ebx
-	mensi :
+	mensi:
 		ret
 	}
 }
@@ -61,13 +61,13 @@ _declspec(naked) int facCDECL(int num)
 
 		mov eax, [ebp + 8]
 		mov ecx, eax
-		iter :
+	iter:
 		cmp ecx, 1
-		jle end
+		jle konec
 		dec ecx
 		imul eax, ecx
 		jmp iter
-	end :
+	konec:
 		mov esp, ebp
 		pop ebp
 		ret
@@ -79,13 +79,13 @@ _declspec(naked) int facFAST(int num)
 	_asm {
 		mov eax, edx
 		mov ecx, eax
-	iter :
+	iter:
 		cmp ecx, 1
-		jle end
+		jle konec
 		dec ecx
 		imul eax, ecx
 		jmp iter
-	end :
+	konec:
 		ret
 	}
 }
@@ -116,11 +116,11 @@ _declspec(naked) int fibCDECL(int num)
 
 		add eax, ebx
 
-		jmp end
+		jmp konec
 
-	mensi :
+	mensi:
 		movsx eax, [ebp + 8]
-	end :
+	konec:
 
 		pop ebx
 		mov esp, ebp
@@ -149,15 +149,15 @@ __declspec(naked) int fibFastcall(int num) {
 		add eax, edi
 
 
-		jmp end
-	one :
+		jmp konec
+	one:
 		cmp ecx, 0
 		je zero
 		mov eax, 1
-		jmp end
-	zero :
+		jmp konec
+	zero:
 		mov eax, 0
-	end :
+	konec:
 		pop edi
 		pop esi
 		ret
