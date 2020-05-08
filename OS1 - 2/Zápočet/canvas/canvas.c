@@ -33,6 +33,7 @@ void canvas_print(struct canvas* canvas);
 void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int length);
 void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int length);
 
+//Nelze vykreslovacím funkcím zadat záporné hodnoty, nebo hodnoty, které jsou větší než zvolená velikost plátna
 int main() {
 	struct canvas* c = canvas_create(20, 10);
 	canvas_hline(c, 3, 2, 13);
@@ -67,9 +68,6 @@ void canvas_init(struct canvas* canvas) {
 //Funcke pro uvolnění plátna z paměti
 void canvas_free(struct canvas* canvas) {
 	free(canvas->mask);
-	free(canvas->width);
-	free(canvas->height);
-	free(canvas->size);
 	free(canvas);
 }
 
@@ -84,13 +82,13 @@ void canvas_print(struct canvas* canvas) {
 			int location = item & mask;
 			item = item << 2;
 
-			if (!location)			//0b00000000
+			if (!location)					//0b00000000
 				printf(".");
-			else if (location == -64)   //0b11000000
+			else if (!(location ^ -64))		//0b11000000
 				printf("+");
-			else if (location == -128)  //0b10000000
+			else if (!(location ^ -128))	//0b10000000
 				printf("-");
-			else                        //0b01000000
+			else							//0b01000000
 				printf("|");
 
 			linesWritten++;
@@ -103,11 +101,17 @@ void canvas_print(struct canvas* canvas) {
 	}
 }
 
+//Funkce pro vykreslení vodorovné čáry, fungují na principu počítání počátečních a koncových bodů, kontrola překročení plátna je zajištěna
+//kontrolou kolik bitů je možno zpracovat, než dojde k vyskočení z plátna
 void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int length) {
+	if (x < 0 || y < 0 || x > canvas->width || y > canvas->height)
+		return;
+
 	int bitsOnLine = canvas->width * 2;
 	int preBits = 1;
 	int postBits = 1;
-
+	//Vykreslení vodorovné čáry pro velikost větší než 0
+	//Spočítání počátečního a koncového bitu, který leží na čáře
 	if (length > 0) {
 		int startBit = y * bitsOnLine;
 		startBit += (2 * x);
@@ -117,8 +121,10 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 		for (int i = 0; i < canvas->size; i++) {
 			int localStartBit = i * 8;
 			int localEndBit = i * 8 + 7;
+			//Spočítá se, kolik bitů je možno změnit, tak, aby nedošlo k překročení hranice
 			if ((i + 1) * bitsOnLine > startBit && !offset)
 				offset = startBit - (i * bitsOnLine);
+			//Pokud začátek neleží na začátku bytu, spočítá se offset začátku v rámci bytu, a do postupně se rotuje dokud se byte nevrátí do původního stavu
 			if (localStartBit <= startBit && startBit <= localEndBit && preBits) {
 				int bitsToRotate = startBit - localStartBit;
 				for (int j = bitsToRotate; j < 8; j += 2) {
@@ -128,10 +134,12 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 				}
 				preBits = 0;
 			}
+			//Rotují se kopletní byty
 			if (startBit <= i * 8 && endBit > i * 8 + 7) {
 				canvas->mask[i] |= 0b10101010;
 				bitsManipulated += 8;
 			}
+			//Pokud konec úsečky není zarovnán s koncem bytu, provádí se její dokreslení
 			if (localStartBit <= endBit && endBit <= localEndBit && postBits) {
 				int bitsToRotate = endBit - localStartBit;
 				for (int j = 8 - bitsToRotate; j < 8; j += 2) {
@@ -154,12 +162,14 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 		int colStartBit = col * bitsOnLine;
 		startBit += (2 * length + 2);
 
+		//Pokud by při použití délky došlo k překročení hranice, tak se jako počáteční bit použije začítek řádku
 		if (startBit < colStartBit)
 			startBit = colStartBit;
 
 		for (int i = 0; i < canvas->size; i++) {
 			int localStartBit = i * 8;
 			int localEndBit = i * 8 + 7;
+			//Opět se provádí rotace ve třech částech, pro nezarovnané konce a začáty bytů, a pro celé byty
 			if (localStartBit <= startBit && startBit <= localEndBit && preBits) {
 				int bitsToRotate = startBit - localStartBit;
 				canvas->mask[i] = rotr(canvas->mask[i], bitsToRotate);
@@ -184,7 +194,12 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 	}
 }
 
+//Funkce pro vykreslování vertikálních čar, spočítá se počáteční bit, a poté se přičítá počet bitů potřebných k posunu na další řádek
+//Funce pracují na principu hledání bytu ve kterém se nachází patřičný bod, a následnému přičítání počtu bitů potřebných k dosažení dalšího bitu
 void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int length) {
+	if (x < 0 || y < 0 || x > canvas->width || y > canvas->height)
+		return;
+
 	int bitsToNextLine = canvas->width * 2;
 	if (length > 0) {
 		int startBit = y * bitsToNextLine;
@@ -202,13 +217,14 @@ void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 					rotation = localStartBit - startBit;
 					rotationFlag = 0;
 				}
-				if (nextBitToRotate > canvas->width* canvas->height * 2) {
-					return;
-				}
 				canvas->mask[i] = rotr(canvas->mask[i], rotation);
 				canvas->mask[i] |= 0b00000001;
 				canvas->mask[i] = rotr(canvas->mask[i], 8 - rotation - 1);
 				nextBitToRotate += bitsToNextLine;
+				//Podmínka pro ukončení funce, dojde-li k překročení hranice plátna
+				if (nextBitToRotate > canvas->width* canvas->height * 2) {
+					return;
+				}
 			}
 		}
 	}
@@ -228,13 +244,14 @@ void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 					rotation = startBit - localStartBit;
 					rotationFlag = 0;
 				}
-				if (nextBitToRotate > canvas->width* canvas->height * 2) {
-					return;
-				}
 				canvas->mask[i] = rotr(canvas->mask[i], 8 - rotation);
 				canvas->mask[i] |= 0b00000001;
 				canvas->mask[i] = rotr(canvas->mask[i], rotation);
 				nextBitToRotate += bitsToNextLine;
+				//Dojde-li k překročení hranice, další bod by měl zápornou pozici
+				if (nextBitToRotate < 0) {
+					return;
+				}
 			}
 		}
 	}
