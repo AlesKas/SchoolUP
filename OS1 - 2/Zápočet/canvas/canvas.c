@@ -1,8 +1,5 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <limits.h>
 
 //Informace o bodu jsou uloženy ve dvou bitech
 //První bit odpovídá informaci o horizontální čáře - 0 nepřítomna, 1 přítomna
