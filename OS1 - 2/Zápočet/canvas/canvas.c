@@ -101,7 +101,7 @@ void canvas_print(struct canvas* canvas) {
 //Funkce pro vykreslení vodorovné čáry, fungují na principu počítání počátečních a koncových bodů, kontrola překročení plátna je zajištěna
 //kontrolou kolik bitů je možno zpracovat, než dojde k vyskočení z plátna
 void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int length) {
-	if (x < 0 || y < 0 || x > canvas->width || y > canvas->height)
+	if (x <= 0 || y <= 0 || x > canvas->width || y > canvas->height)
 		return;
 
 	int bitsOnLine = canvas->width * 2;
@@ -194,7 +194,7 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 //Funkce pro vykreslování vertikálních čar, spočítá se počáteční bit, a poté se přičítá počet bitů potřebných k posunu na další řádek
 //Funce pracují na principu hledání bytu ve kterém se nachází patřičný bod, a následnému přičítání počtu bitů potřebných k dosažení dalšího bitu
 void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int length) {
-	if (x < 0 || y < 0 || x > canvas->width || y > canvas->height)
+	if (x <= 0 || y <= 0 || x > canvas->width || y > canvas->height)
 		return;
 
 	int bitsToNextLine = canvas->width * 2;
