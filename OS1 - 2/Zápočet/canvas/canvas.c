@@ -35,8 +35,8 @@ int main() {
 	struct canvas* c = canvas_create(20, 10);
 	canvas_hline(c, 3, 2, 13);
 	canvas_hline(c, 14, 5, -11);
-	canvas_vline(c, 4, 1, 6);
-	canvas_vline(c, 14, 6, -6);
+	canvas_vline(c, 4, 1, 20);
+	canvas_vline(c, 14, 6, -9);
 	canvas_vline(c, 9, 5, 20);
 	canvas_print(c);
 	canvas_free(c);
@@ -44,8 +44,8 @@ int main() {
 }
 
 struct canvas* canvas_create(int width, int height){
-	int size = (width * height) / 8;
-	size *= 2;
+	int size = (width * height) * 2;
+	size /= 8;
 	struct canvas* temp = malloc(sizeof(struct canvas));
 	temp->mask = malloc(size);
 	temp->height = height;
@@ -229,6 +229,11 @@ void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 		int endBit = y * bitsToNextLine;
 		endBit += 2 * x + 2;
 		int startBit = endBit + (length + 1) * bitsToNextLine;
+		//Pokud se překročí velikost plátna, má startovní bit zápornou souřadnici
+		//a přičítá se počet bitů do dalšího řádku, dokud se nenarazí na první kladný, a ten představuje nový start
+		while (startBit < 0) {
+			startBit += bitsToNextLine;
+		}
 		int nextBitToRotate = startBit;
 		int rotationFlag = 1;
 		int postBits = 1;
@@ -245,10 +250,6 @@ void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 				canvas->mask[i] |= 0b00000001;
 				canvas->mask[i] = rotr(canvas->mask[i], rotation);
 				nextBitToRotate += bitsToNextLine;
-				//Dojde-li k překročení hranice, další bod by měl zápornou pozici
-				if (nextBitToRotate < 0) {
-					return;
-				}
 			}
 		}
 	}
