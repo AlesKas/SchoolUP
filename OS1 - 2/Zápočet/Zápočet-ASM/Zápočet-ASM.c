@@ -63,6 +63,13 @@ int main() {
 		call canvas_hline
 		add esp, 16
 
+		push 6
+		push 1
+		push 4
+		push edi
+		call canvas_vline
+		add esp, 16
+
 		push edi
 		call canvas_print
 		add esp, 4
@@ -255,8 +262,6 @@ void canvas_print(struct canvas* canvas) {
 //Funkce pro vykreslení vodorovné čáry, fungují na principu počítání počátečních a koncových bodů, kontrola překročení plátna je zajištěna
 //kontrolou kolik bitů je možno zpracovat, než dojde k vyskočení z plátna
 void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int length) {
-	const char* format = "%d\n";
-	const char* cycle = "start: %d end: %d\n";
 	_asm {
 		cmp[ebp + 12], 0
 		jle konec
@@ -600,20 +605,53 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 //Funkce pro vykreslování vertikálních čar, spočítá se počáteční bit, a poté se přičítá počet bitů potřebných k posunu na další řádek
 //Funce pracují na principu hledání bytu ve kterém se nachází patřičný bod, a následnému přičítání počtu bitů potřebných k dosažení dalšího bitu
 void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int length) {
+	const char* format = "%d\n";
+	const char* cycle = "start: %d end: %d\n";
 	_asm {
+
 		cmp[ebp + 12], 0
 		jle konec
 		cmp[ebp + 16], 0
 		jle konec
-		mov eax, [ebp + 8]
+		mov eax, [ebp + 4]
 		mov ebx, [eax]
 		cmp[ebp + 12], ebx
-		jle konec
+		jge konec
 		mov ebx, [eax + 4]
-		jle konec
+		jge konec
+
+		mov eax, [ebp + 8]
+		mov ebx, [eax + 4]
+		shl ebx, 1
+		mov[ebp + 144], ebx			//Počet bitů na řádku
+
+		cmp [ebp + 20], 0
+		jl zapornaVertikalni
+
+		mov eax, [ebp + 16]
+		mov ebx, [ebp + 144]
+		mul ebx
+		mov ebx, eax
+		mov eax, [ebp + 12]
+		shl eax, 1
+		add eax, 2
+		add ebx, eax
+		mov esi, ebx
+
+		mov eax, [ebp + 144]
+		mov ebx, [ebp + 20]
+		mul ebx
+		add eax, esi
+		mov edi, eax
+
+		push edi
+		push esi
+		push cycle
+		call printf
+		add esp, 12 
 
 
-
+	zapornaVertikalni:
 
 	konec:
 	}
