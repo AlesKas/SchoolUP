@@ -49,17 +49,25 @@ int main() {
 		call printf
 		add esp, 20
 
-		push edi
-		call canvas_print
-		add esp, 4
-
 		push 13
 		push 2
 		push 3
 		push edi
 		call canvas_hline
 		add esp, 16
+
+		push -12
+		push 5
+		push 14
+		push edi
+		call canvas_hline
+		add esp, 16
+
+		push edi
+		call canvas_print
+		add esp, 4
 	}
+
 	int lines = 0;
 	printf("\n");
 	for (int i = 0; i < c->size; i++) {
@@ -167,13 +175,13 @@ void canvas_print(struct canvas* canvas) {
 	iter: 
 		mov edi, dword ptr [ebp + 8]
 		mov edi, dword ptr [edi + 12]
-		movsx edi, byte ptr [edi]
+		movsx edi, byte ptr [edi + ebx]
 
 		mov [ebp + 128], 0
 	compare:
 		mov eax, edi
 		and eax, 11000000b
-		rol edi, 2
+		shl edi, 2
 		inc [ebp + 128]
 		
 		cmp eax, 00000000b
@@ -238,6 +246,9 @@ void canvas_print(struct canvas* canvas) {
 		add esp, 4
 		jmp returned
 	konec:
+		push newLine
+		call printf
+		add esp, 4
 	}
 }
 
@@ -251,7 +262,7 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 		jle konec
 		cmp[ebp + 16], 0
 		jle konec
-		mov eax, [ebp + 8]
+		mov eax, [ebp + 4]
 		mov ebx, [eax]
 		cmp[ebp + 12], ebx
 		jge konec
@@ -260,18 +271,20 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 
 		mov [ebp + 128], 1			//preBits
 		mov [ebp + 132], 1			//postBits
+		mov eax, dword ptr[ebp + 8]
+		movsx eax, [eax + 4]
+		shl eax, 1
+		mov[ebp + 144], eax			//Počet bitů na řádku
 
-		cmp[ebp + 20], 0
+		mov eax, [ebp +20]
+		cmp eax, 0
 		je konec
 		jl zapornaDelka
 
 		mov [ebp + 136], 0			//bitsManipulated
 		mov [ebp + 140], 0			//offset
 
-		mov eax, dword ptr[ebp + 8]
-		movsx eax, [eax + 4]
-		shl eax, 1
-		mov [ebp + 144], eax		//Počet bitů na řádku
+		mov eax, [ebp + 144]
 		mul[ebp + 16]
 		mov esi, eax				//V esi se nachází startovní bit
 		mov eax, [ebp + 12]
@@ -293,136 +306,295 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 		mov eax, ebx
 		mov ecx, 8
 		mul ecx
-		mov ecx, eax				//localStartBit
+		mov [ebp + 148], eax				//localStartBit
 
 		mov eax, ebx
 		mov edx, 8
 		mul edx
 		mov edx, eax
-		add edx, 7					//localEndBit
+		add edx, 7
+		mov [ebp + 152], edx				//localEndBit
 
 		mov eax, ebx
 		inc eax
-		mul [ebp + 144]
+		mov ecx, [ebp + 144]
+		mul[ebp + 144]
 		cmp eax, esi
 		jle skipped
 		cmp [ebp + 140], 0
 		jne skipped
 
 		mov eax, ebx
-		mul [ebp + 144]
-		mov [ebp + 140], esi
-		sub [ebp + 140], eax
-
-		push [ebp + 140]
-		push format
-		call printf
-		add esp, 8
-
+		mov ecx, [ebp + 144]
+		mul ecx
+		mov edx, esi
+		sub edx, eax
+		mov [ebp + 140], edx
 
 	skipped:
 
-		//push edx
-		//push ecx
-		//push cycle
-		//call printf
-		//add esp, 12
+		mov eax, [ebp + 148]
+		cmp[ebp + 148], esi
+		jg skippedPre
+		mov eax, [ebp + 152]
+		cmp esi, eax
+		jg skippedPre
+		mov eax, [ebp + 128]
+		cmp eax, 1
+		jg skippedPre
+
+		mov eax, esi
+		sub eax, [ebp + 148]
+
+	preIter:
+
+		cmp eax, 8
+		jge skippedPre
+
+		mov edx, [ebp + 8]
+		mov edx, [edx + 12]
+
+		mov ecx, [edx + ebx]
+		ror ecx, 2
+		or ecx, 00000010b
+		mov [edx + ebx], ecx
+
+		add [ebp + 136], 2
+		mov [ebp + 128], 0
+
+		add eax, 2
+		jmp preIter
+	skippedPre:
+	
+		mov eax, ebx
+		mov edx, 8
+		mul edx
+		mov ecx, eax
+
+		mov eax, ebx
+		mov edx, 8
+		mul edx
+		add eax, 7
+		mov edx, eax
+
+		cmp esi, ecx
+		jg skippedMain
+		cmp edi, edx
+		jle skippedMain
+
+		mov edx, [ebp + 8]
+		mov edx, [edx + 12]
+		mov edx, [edx + ebx]
+		or edx, 10101010b
+		mov eax, [ebp + 8]
+		mov eax, [ebp + 8]
+		mov eax, [eax + 12]
+		mov [eax + ebx], edx
+		mov eax, edx
+		mov eax, [ebp + 136]
+		add eax, 8
+		mov [ebp + 136], eax
+
+	skippedMain:
+
+		cmp [ebp + 148], edi
+		jg skippedPost
+		cmp edi, [ebp + 152]
+		jg skippedPost
+		cmp [ebp + 132], 0
+		je skippedPost
+
+		mov eax, edi
+		mov ecx, [ebp + 148]
+		sub eax, ecx
+		mov ecx, 8
+		sub ecx, eax
+	postIter:
+		cmp ecx, 8
+		jge skippedPost
+		mov eax, [ebp + 8]
+		mov eax, [eax + 12]
+		mov edx, [eax + ebx]
+		ror edx, 2
+		or edx, 10000000b
+		mov [eax + ebx], edx
+		add [ebp + 136], 2
+	skippedPost:
+
+		mov eax, [ebp + 136]
+		mov ecx, [ebp + 144]
+		mov edx, [ebp + 140]
+		sub ecx, edx
+		cmp eax, ecx
+		jge konec
 
 		inc ebx
 		jmp iter
 
 	zapornaDelka:
+		mov eax, [ebp + 16]
+		mov ebx, [ebp + 144]
+		mul ebx
+		mov ebx, [ebp + 12]
+		shl ebx, 1
+		add ebx, 2
+		add eax, ebx
+		mov edi, eax			//Koncový bit
+
+		mov ebx, [ebp + 20]
+		shl ebx, 1
+		add ebx, 4
+		add eax, ebx
+		mov esi, eax			//Začáteční bit
+
+		mov eax, edi
+		mov ebx, [ebp + 144]
+		mov edx, 0
+		cdq
+		div ebx
+
+		mov ebx, [ebp + 144]
+		mul ebx
+		
+		cmp esi, eax
+		jge sizegood
+		mov esi, eax
+
+	sizegood:
+		mov ebx, 0
+	iterZaporny:
+		mov eax, [ebp + 8]
+		mov eax, [eax + 8]
+		cmp ebx, eax
+		jge konec
+
+		mov eax, ebx
+		mov ecx, 8
+		mul ecx
+		mov[ebp + 148], eax				//localStartBit
+
+		mov eax, ebx
+		mov edx, 8
+		mul edx
+		mov edx, eax
+		add edx, 7
+		mov[ebp + 152], edx				//localEndBit
+
+		mov eax, [ebp + 148]
+		cmp eax, esi
+		jg skippedPreZaporne
+		mov eax, [ebp + 152]
+		cmp esi, eax
+		jg skippedPreZaporne
+		mov eax, [ebp + 128]
+		cmp eax, 1
+		jg skippedPreZaporne
+
+		mov eax, esi
+		mov ecx, [ebp + 148]
+		mov edx, [ebp + 152]
+		sub eax, ecx
+		mov [ebp + 156], eax
+
+		mov ecx,  [ebp + 8]
+		mov ecx, [ecx + 12]
+		mov edx, [ecx + ebx]
+
+		push eax
+		push edx
+		call rotr
+		add esp, 8
+
+		mov ecx, [ebp + 8]
+		mov ecx, [ecx + 12]
+		mov [ecx + ebx], eax
+
+		mov eax, [ebp + 156]
+	innerIter:
+		cmp eax, 8
+		jg skippedPreZaporne
+
+		mov ecx, [ebp + 8]
+		mov ecx, [ecx + 12]
+		mov edx, [ecx + ebx]
+
+		rol edx, 2
+		or edx, 00000010b
+
+		mov ecx, [ebp + 8]
+		mov ecx, [ecx + 12]
+		mov [ecx + ebx], edx
+
+		mov eax, [ebp + 156]
+		add eax, 2
+
+		mov[ebp + 128], 0
+		mov [ebp + 156], eax
+		jmp innerIter
+	skippedPreZaporne:
+
+		mov eax, ebx
+		mov edx, 8
+		mul edx
+		mov ecx, eax
+
+		mov eax, ebx
+		mov edx, 8
+		mul edx
+		add eax, 7
+		mov edx, eax
+
+		cmp esi, ecx
+		jg skippedMainZaporny
+		cmp edi, edx
+		jle skippedMainZaporny
+
+		mov edx, [ebp + 8]
+		mov edx, [edx + 12]
+		mov edx, [edx + ebx]
+		or edx, 10101010b
+		mov eax, [ebp + 8]
+		mov eax, [ebp + 8]
+		mov eax, [eax + 12]
+		mov[eax + ebx], edx
+		mov eax, edx
+		mov eax, [ebp + 136]
+		add eax, 8
+		mov[ebp + 136], eax
+
+	skippedMainZaporny:
+
+		cmp[ebp + 148], edi
+		jg skippedPostZaporny
+		cmp edi, [ebp + 152]
+		jg skippedPostZaporny
+		cmp[ebp + 132], 0
+		je skippedPostZaporny
+
+		mov eax, edi
+		mov ecx, [ebp + 148]
+		sub eax, ecx
+		mov ecx, 8
+		sub ecx, eax
+	postIterZaporny:
+		cmp ecx, 8
+		jge skippedPostZaporny
+		mov eax, [ebp + 8]
+		mov eax, [eax + 12]
+		mov edx, [eax + ebx]
+		ror edx, 2
+		or edx, 10000000b
+		mov[eax + ebx], edx
+		add ecx, 2
+		jmp postIterZaporny
+
+	skippedPostZaporny:
+
+		inc ebx
+		jmp iterZaporny
 
 	konec:
 	}
-	//if (x < 0 || y < 0 || x > canvas->width || y > canvas->height)
-	//	return;
-
-	//int bitsOnLine = canvas->width * 2;
-	//int preBits = 1;
-	//int postBits = 1;
-	////Vykreslení vodorovné čáry pro velikost větší než 0
-	////Spočítání počátečního a koncového bitu, který leží na čáře
-	//if (length > 0) {
-	//	int startBit = y * bitsOnLine;
-	//	startBit += (2 * x);
-	//	int endBit = startBit + (length * 2);
-	//	int bitsManipulated = 0;
-	//	int offset = 0;
-	//	for (int i = 0; i < canvas->size; i++) {
-	//		int localStartBit = i * 8;
-	//		int localEndBit = i * 8 + 7;
-	//		//Spočítá se, kolik bitů je možno změnit, tak, aby nedošlo k překročení hranice
-	//		if ((i + 1) * bitsOnLine > startBit && !offset)
-	//			offset = startBit - (i * bitsOnLine);
-	//		//Pokud začátek neleží na začátku bytu, spočítá se offset začátku v rámci bytu, a do postupně se rotuje dokud se byte nevrátí do původního stavu
-	//		if (localStartBit <= startBit && startBit <= localEndBit && preBits) {
-	//			int bitsToRotate = startBit - localStartBit;
-	//			for (int j = bitsToRotate; j < 8; j += 2) {
-	//				canvas->mask[i] = canvas->mask[i] << 2;
-	//				canvas->mask[i] |= 0b00000010;
-	//				bitsManipulated += 2;
-	//			}
-	//			preBits = 0;
-	//		}
-	//		//Rotují se kopletní byty
-	//		if (startBit <= i * 8 && endBit > i * 8 + 7) {
-	//			canvas->mask[i] |= 0b10101010;
-	//			bitsManipulated += 8;
-	//		}
-	//		//Pokud konec úsečky není zarovnán s koncem bytu, provádí se její dokreslení
-	//		if (localStartBit <= endBit && endBit <= localEndBit && postBits) {
-	//			int bitsToRotate = endBit - localStartBit;
-	//			for (int j = 8 - bitsToRotate; j < 8; j += 2) {
-	//				canvas->mask[i] |= 0b00000010;
-	//				canvas->mask[i] = rotr(canvas->mask[i], 2);
-	//				bitsManipulated += 2;
-	//			}
-	//			postBits = 0;
-	//		}
-	//		if (bitsManipulated >= (bitsOnLine - offset))
-	//			return;
-	//	}
-	//}
-	//else if (length < 0) {
-	//	int startBit = y * bitsOnLine;
-	//	startBit += (2 * x + 2);
-	//	int endBit = startBit;
-
-	//	int col = endBit / bitsOnLine;
-	//	int colStartBit = col * bitsOnLine;
-	//	startBit += (2 * length + 2);
-
-	//	//Pokud by při použití délky došlo k překročení hranice, tak se jako počáteční bit použije začítek řádku
-	//	if (startBit < colStartBit)
-	//		startBit = colStartBit;
-
-	//	for (int i = 0; i < canvas->size; i++) {
-	//		int localStartBit = i * 8;
-	//		int localEndBit = i * 8 + 7;
-	//		//Opět se provádí rotace ve třech částech, pro nezarovnané konce a začáty bytů, a pro celé byty
-	//		if (localStartBit <= startBit && startBit <= localEndBit && preBits) {
-	//			int bitsToRotate = startBit - localStartBit;
-	//			canvas->mask[i] = rotr(canvas->mask[i], bitsToRotate);
-	//			for (int j = bitsToRotate; j <= 8; j += 2) {
-	//				canvas->mask[i] |= 0b00000010;
-	//				canvas->mask[i] = rotr(canvas->mask[i], 2);
-	//			}
-	//			preBits = 0;
-	//		}
-	//		if (startBit <= i * 8 && endBit > i * 8 + 7) {
-	//			canvas->mask[i] |= 0b10101010;
-	//		}
-	//		if (localStartBit <= endBit && endBit <= localEndBit && postBits) {
-	//			int bitsToRotate = endBit - localStartBit;
-	//			for (int j = 8 - bitsToRotate; j < 8; j += 2) {
-	//				canvas->mask[i] |= 0b00000010;
-	//				canvas->mask[i] = rotr(canvas->mask[i], 2);
-	//			}
-	//			postBits = 0;
-	//		}
-	//	}
-	//}
 }
 
 //Funkce pro vykreslování vertikálních čar, spočítá se počáteční bit, a poté se přičítá počet bitů potřebných k posunu na další řádek
@@ -445,62 +617,4 @@ void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 
 	konec:
 	}
-	//if (x < 0 || y < 0 || x > canvas->width || y > canvas->height)
-	//	return;
-
-	//int bitsToNextLine = canvas->width * 2;
-	//if (length > 0) {
-	//	int startBit = y * bitsToNextLine;
-	//	startBit += 2 * x + 2;
-	//	int endBit = startBit + length * bitsToNextLine;
-	//	int nextBitToRotate = startBit;
-	//	int rotationFlag = 1;
-	//	int postBits = 1;
-	//	int rotation = 0;
-	//	for (int i = 0; i < canvas->size; i++) {
-	//		int localStartBit = i * 8;
-	//		int localEndBit = i * 8 + 7;
-	//		if (nextBitToRotate <= localEndBit && localEndBit <= endBit) {
-	//			if (rotationFlag) {
-	//				rotation = localStartBit - startBit;
-	//				rotationFlag = 0;
-	//			}
-	//			canvas->mask[i] = rotr(canvas->mask[i], rotation);
-	//			canvas->mask[i] |= 0b00000001;
-	//			canvas->mask[i] = rotr(canvas->mask[i], 8 - rotation - 1);
-	//			nextBitToRotate += bitsToNextLine;
-	//			//Podmínka pro ukončení funce, dojde-li k překročení hranice plátna
-	//			if (nextBitToRotate > canvas->width* canvas->height * 2) {
-	//				return;
-	//			}
-	//		}
-	//	}
-	//}
-	//else if (length < 0) {
-	//	int endBit = y * bitsToNextLine;
-	//	endBit += 2 * x + 2;
-	//	int startBit = endBit + (length + 1) * bitsToNextLine;
-	//	int nextBitToRotate = startBit;
-	//	int rotationFlag = 1;
-	//	int postBits = 1;
-	//	int rotation = 0;
-	//	for (int i = 0; i < canvas->size; i++) {
-	//		int localStartBit = i * 8;
-	//		int localEndBit = i * 8 + 7;
-	//		if (nextBitToRotate <= localEndBit && nextBitToRotate <= endBit) {
-	//			if (rotationFlag) {
-	//				rotation = startBit - localStartBit;
-	//				rotationFlag = 0;
-	//			}
-	//			canvas->mask[i] = rotr(canvas->mask[i], 8 - rotation);
-	//			canvas->mask[i] |= 0b00000001;
-	//			canvas->mask[i] = rotr(canvas->mask[i], rotation);
-	//			nextBitToRotate += bitsToNextLine;
-	//			//Dojde-li k překročení hranice, další bod by měl zápornou pozici
-	//			if (nextBitToRotate < 0) {
-	//				return;
-	//			}
-	//		}
-	//	}
-	//}
 }
