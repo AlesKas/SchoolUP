@@ -35,8 +35,8 @@ int main() {
 	struct canvas* c = canvas_create(20, 10);
 	canvas_hline(c, 3, 2, 13);
 	canvas_hline(c, 14, 5, -11);
-	canvas_vline(c, 4, 1, 20);
-	canvas_vline(c, 14, 6, -9);
+	canvas_vline(c, 4, 1, 6);
+	canvas_vline(c, 14, 6, -6);
 	canvas_vline(c, 9, 5, 20);
 	canvas_print(c);
 	canvas_free(c);
@@ -125,7 +125,7 @@ void canvas_hline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 			if (localStartBit <= startBit && startBit <= localEndBit && preBits) {
 				int bitsToRotate = startBit - localStartBit;
 				for (int j = bitsToRotate; j < 8; j += 2) {
-					canvas->mask[i] = canvas->mask[i] << 2;
+					canvas->mask[i] = rotr(canvas->mask[i], 2);
 					canvas->mask[i] |= 0b00000010;
 					bitsManipulated += 2;
 				}
