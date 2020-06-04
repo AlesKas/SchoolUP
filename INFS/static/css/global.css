@@ -8,6 +8,22 @@ body {
     padding: 0px;
 }
 
+aside>section>ul>li>i {
+    margin-left: -10px;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.5em 0.6em;
+}
+
+div.vertical-line {
+    width: 1px;
+    height: 20px;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -18,9 +34,14 @@ header {
     left: 32%;
 }
 
-header>i {
+.main-title {
     position: relative;
-    left: -35px;
+    right: 300px;
+}
+
+.main-title>i {
+    position: relative;
+    left: -45px;
     top: 30px;
 }
 
@@ -233,6 +254,8 @@ aside>section {
 
 section>h3 {
     margin-bottom: 10px;
+    margin-top: 50px;
+    margin-left: -15px;
 }
 
 aside>section>ul>li {
@@ -255,6 +278,14 @@ li>label {
     filter: drop-shadow(0 0 25px rgba(241, 53, 68, 0.15));
     background-color: #f13544;
     border: 3px solid #ffffff;
+}
+
+.dot>p {
+    color: white;
+    position: relative;
+    font-size: 20px;
+    left: 7px;
+    top: 1px;
 }
 
 #trending>li>a>img {
@@ -280,6 +311,7 @@ li>label {
 
 aside>section>h2 {
     margin-bottom: 5px;
+    margin-left: -15px;
 }
 
 .caption-2 {
