@@ -32,12 +32,12 @@ void canvas_vline(struct canvas* canvas, unsigned int x, unsigned int y, int len
 
 //Nelze vykreslovacím funkcím zadat záporné hodnoty, nebo hodnoty, které jsou větší než zvolená velikost plátna
 int main() {
-	struct canvas* c = canvas_create(20, 10);
-	canvas_hline(c, 3, 2, 13);
-	canvas_hline(c, 14, 5, -11);
-	canvas_vline(c, 4, 1, 6);
-	canvas_vline(c, 14, 6, -6);
-	canvas_vline(c, 9, 5, 20);
+	struct canvas* c = canvas_create(21, 10);
+	//canvas_hline(c, 3, 2, 13);
+	//canvas_hline(c, 14, 5, -11);
+	//canvas_vline(c, 4, 1, 6);
+	//canvas_vline(c, 14, 6, -6);
+	//canvas_vline(c, 9, 5, 20);
 	canvas_print(c);
 	canvas_free(c);
 	return 0;

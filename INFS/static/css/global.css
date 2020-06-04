@@ -152,8 +152,44 @@ main>article>p {
     display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
     border-bottom: 1px solid #7A7A7A;
+    opacity: 0.2;
+}
+
+time {
+    margin-right: 5px;
+    opacity: 0.4;
+}
+
+.comments {
+    opacity: 0.4;
+}
+
+.instagram-widget>a>img {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.main-caption {
+    margin-left: 25px;
+}
+
+.main-caption>a {
+    position: relative;
+    bottom: -80px;
+    text-decoration: none;
+    color: red;
+}
+
+.main-caption>a:hover {
+    text-decoration: underline;
+}
+
+.main-caption>a>i {
+    margin-left: 5px;
 }
 
 aside>section>ul {
@@ -227,7 +263,7 @@ li>label {
     border: 1px solid #7A7A7A;
     background: #ddd;
     width: 140px;
-    height: 50px;
+    height: 45px;
     text-align: center;
     display: inline-block;
     margin: 10px;
