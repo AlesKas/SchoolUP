@@ -12,7 +12,7 @@
 <body>
     <header>
         <i class="fas fa-bars"></i>
-        <h1>Barrio</h1>
+        <h1>Barrio<span class="red-dot">.</span></h1>
         <nav>
             <ul class="navList">
                 <li><a href="home.html" class="active">Home</a></li>
@@ -72,6 +72,7 @@
             </ul>
         </nav>
     </header>
+    <div class="hr-line"></div>
     <section id="movingImages">
         <h2 hidden>Latest news</h2>
         <div class="row">
@@ -278,8 +279,8 @@
                     </div>
                 </li>
             </ul>
-            <h2>Instagram Widget</h2>
             <div class="instagram-widget">
+                <h2>Instagram Widget</h2>
                 <a href="#"><img src="img/flor.jpeg" width="100" height="100" alt="Article" /></a>
                 <a href="#"><img src="img/heli.jpeg" width="100" height="100" alt="Article" /></a>
                 </br>
@@ -303,19 +304,32 @@
     <div class="bone-white">
         <section id="other">
             <h2 hidden>Click</h2>
+            <div class="buttons">
+
+            </div>
             <ul>
-                <li>Lifestyle</li>
+                <li class="active-li">Lifestyle</li>
                 <li>Travel</li>
                 <li>Food</li>
                 <li>Beauty</li>
             </ul>
             <section class="left-float">
-                <a href="#"><img src="img/home.jpeg" width="555" height="333" alt="Article" /></a>
+                <div class="text-container">
+                    <a href="#"><img src="img/home.jpeg" width="555" height="333" alt="Article" /></a>
+                    <div class="text-over-img">
+                        <h3>Style, Design</h3>
+                        <h2>Top 10 Most spectacular Things to Do Banff</h2>
+                        <p>
+                            By Andres Harrison <br />
+                            <time datetime="2019-04-01">April 01, 2019</time> <span class="comments">32 Comments</span>
+                        </p>
+                    </div>
+                </div>
 
                 <article>
                     <a href="#"><img src="img/beach.jpeg" width="276" height="200" alt="Article" /></a>
                     <h3>Style, Design</h3>
-                    <h2>Top 10 Most spectacular Things to Do Banff: A Nature</h2>
+                    <h2>Top 10 Most spectacular Things to Do Banff</h2>
                     <p>
                         By Andres Harrison <br />
                         <time datetime="2019-04-01">April 01, 2019</time> <span class="comments">32 Comments</span>
@@ -325,9 +339,7 @@
                 <article>
                     <a href="#"><img src="img/beach.jpeg" width="276" height="200" alt="Article" /></a>
                     <h3>Destination, Travel</h3>
-                    <a>
-                        <h2><a href="#">2019 Gift Guide for the Hart-To-Shop-For Crowd</a></h2>
-                    </a>
+                    <h2><a href="#">2019 Gift Guide for the Hart-To-Shop-For Crowd</a></h2>
                     <p>
                         By Andres Harrison <br />
                         <time datetime="2019-04-01">April 01, 2019</time> <span class="comments">32 Comments</span>
@@ -355,7 +367,17 @@
                     </p>
                 </article>
 
-                <img src="img/palms.jpeg" width="555" height="333" alt="Article" />
+                <div class="text-container">
+                    <img src="img/palms.jpeg" width="555" height="333" alt="Article" />
+                    <div class="text-over-img">
+                        <h3>Style, Design</h3>
+                        <h2>Top 10 Most spectacular Things to Do Banff</h2>
+                        <p>
+                            By Andres Harrison <br />
+                            <time datetime="2019-04-01">April 01, 2019</time> <span class="comments">32 Comments</span>
+                        </p>
+                    </div>
+                </div>
             </section>
             <button>View all <i class="fas fa-arrow-right"></i></button>
         </section>
@@ -367,7 +389,7 @@
             <ul>
                 <li>
                     <a href="#"><img src="img/beach.jpeg" width="120" height="120" alt="Article" /></a>
-                    <div style="flex-grow: 1;">
+                    <div class="latest-caption">
                         <h3><a href="#">Travel</a></h3>
                         <h2>Lorem ipsum</h2>
                         <time datetime="2019-04-01">April 01, 2019</time>
@@ -375,7 +397,7 @@
                 </li>
                 <li>
                     <a href="#"><img src="img/caple.jpeg " width="120" height="120" alt="Article" /></a>
-                    <div style="flex-grow: 1;">
+                    <div class="latest-caption">
                         <h3><a href="#">Travel</a></h3>
                         <h2>Lorem ipsum</h2>
                         <time datetime="2019-04-01">April 01, 2019</time>
@@ -383,22 +405,42 @@
                 </li>
                 <li>
                     <a href="#"><img src="img/plane.jpeg" width="120" height="120" alt="Article" /></a>
-                    <div style="flex-grow: 1;">
+                    <div class="latest-caption">
                         <h3><a>Travel</a></h3>
                         <h2>Lorem ipsum</h2>
                         <time datetime="2019-04-01">April 01, 2019</time>
                     </div>
                 </li>
             </ul>
-            <a href="#"><img src="img/plane.jpeg" width="360" height="421" alt="Article" /></a>
-            <a href="#"><img src="img/shadow.jpeg" width="360" height="421" alt="Article" /></a>
-        </div>
-        <button>Learn more <i class="fas fa-arrow-right"></i></button>
+            <div class="text-container">
+                <a href="#"><img src="img/plane.jpeg" width="360" height="421" alt="Article" /></a>
+                <div class="text-over-img">
+                    <h3>Design</h3>
+                    <h2>Top 10 Most spectacular Things to Do Banff</h2>
+                    <p>
+                        By Andres Harrison <br />
+                        <time datetime="2019-04-01">April 01, 2019</time> <span class="comments">32 Comments</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-container">
+                <a href="#"><img src="img/shadow.jpeg" width="360" height="421" alt="Article" /></a>
+                <div class="text-over-img">
+                    <h3>Style</h3>
+                    <h2>Top 10 Most spectacular Things to Do Banff</h2>
+                    <p>
+                        By Andres Harrison <br />
+                        <time datetime="2019-04-01">April 01, 2019</time> <span class="comments">32 Comments</span>
+                    </p>
+                </div>
+            </div>
+            <button>Learn more <i class="fas fa-arrow-right"></i></button>
     </section>
 
     <div class="hr-line"></div>
 
-    <section>
+    <section id="editor">
         <h2>Editor's picks</h2>
         <div class="content-container">
             <div class="artricle-containter">
@@ -441,31 +483,33 @@
     </section>
 
     <footer>
-        <section>
-            <h2>Follow me on instagram</h2>
-            <div style="display: flex;">
-                <a href="https://www.instagram.com/aleskaspy/?hl=cs"><i class="fab fa-instagram-square"></i></a>
-                <h3>Barrio</h3>
-            </div>
-            <article>
-                <a href="#"><img src="img/parrot.jpeg" height="250" width="250" alt="Article" /></a>
-                <a href="#"><img src="img/beach.jpeg" height="250" width="250" alt="Article" /></a>
-                <a href="#"><img src="img/caple.jpeg" height="250" width="250" alt="Article" /></a>
-                <a href="#"><img src="img/heli.jpeg" height="250" width="250" alt="Article" /></a>
-                <a href="#"><img src="img/heli2.jpeg" height="250" width="250" alt="Article" /></a>
-                <a href="#"><img src="img/nyc.jpeg" height="250" width="250" alt="Article" /></a>
-            </article>
-        </section>
+        <h2>Follow me on instagram</h2>
+        <div class="footer-instagram">
+            <a href="https://www.instagram.com/aleskaspy/?hl=cs"><i class="fab fa-instagram"></i></a>
+            <h3>Barrio</h3>
+        </div>
+        <article class="images">
+            <a href="#"><img src="img/face.jpeg" height="250" width="250" alt="Article" /></a>
+            <a href="#"><img src="img/parrot.jpeg" height="250" width="250" alt="Article" /></a>
+            <a href="#"><img src="img/beach.jpeg" height="250" width="250" alt="Article" /></a>
+            <a href="#"><img src="img/caple.jpeg" height="250" width="250" alt="Article" /></a>
+            <a href="#"><img src="img/heli.jpeg" height="250" width="250" alt="Article" /></a>
+            <a href="#"><img src="img/heli2.jpeg" height="250" width="250" alt="Article" /></a>
+            <a href="#"><img src="img/nyc.jpeg" height="250" width="250" alt="Article" /></a>
+        </article>
 
         <div class="hr-line"></div>
 
         <section id="contact">
             <h3>Sign up for our newsletters</h3>
-            <form style="display: flex;">
-                <input type="text" id="fname" name="fname" value="Your email" /><br />
+            <form>
+                <input type="text" id="fname" name="fname" value="Your Email" /><br />
                 <input type="submit" value="Submit" />
             </form>
-            <h3>Barrio</h3>
+        </section>
+        <div class="hr-line"></div>
+        <section id="social">
+            <h3>Barrio<span class="red-dot">.</span></h3>
             <ul>
                 <li><i class="fab fa-facebook"></i> Facebook</li>
                 <li><i class="fab fa-twitter-square"></i> Twitter</li>
@@ -478,7 +522,7 @@
         <div class="hr-line"></div>
 
         <p style="text-align: center;">
-            <br> &copy; - All Rights Reserved. Designed and Developed by CreativeLayers.
+            <br> &copy;2020 - All Rights Reserved. Designed and Developed by CreativeLayers.
         </p>
 
     </footer>
