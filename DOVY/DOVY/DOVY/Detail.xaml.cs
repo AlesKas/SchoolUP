@@ -18,9 +18,30 @@ namespace DOVY
     /// </summary>
     public partial class Detail : Window
     {
-        public Detail(Meal jidlo)
+        public Detail(Entities ctx, Meal jidlo)
         {
             InitializeComponent();
+            var list = new List<DetailClass>();
+            foreach(var ingredient in jidlo.MealConsistsOfs)
+            {
+                var ing = new DetailClass
+                {
+                    Amount = (double)ingredient.AmountRequired,
+                    Name = ingredient.Ingredient.Name,
+                    UnitOfMeasure = ingredient.Ingredient.UnitOfMeasure
+                };
+                list.Add(ing);
+            }
+            IngredientsDataGrid.DataContext = list;
         }
+    }
+
+    class DetailClass
+    {
+        public DetailClass(){
+        }
+        public double Amount { get; set; }
+        public string UnitOfMeasure { get; set; }
+        public string Name { get; set; }
     }
 }

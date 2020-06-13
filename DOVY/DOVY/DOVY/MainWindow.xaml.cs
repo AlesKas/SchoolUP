@@ -28,27 +28,6 @@ namespace DOVY
         {
             InitializeComponent();
         }
-        public int Validate_User(string userName, string password)
-        {
-            var id = -1;
-            using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\alesk\OneDrive\Dokumenty\GitHub\SchoolUP\DOVY\DOVY\DOVY\DOVY.mdf;Integrated Security=True;Connect Timeout=30"))
-            {
-                SqlCommand sql = new SqlCommand("SELECT * FROM [dbo].[Users] WHERE UserName=@username AND Password=@password;", conn);
-                sql.Parameters.AddWithValue("@username", userName);
-                sql.Parameters.AddWithValue("@password", password);
-
-                conn.Open();
-                using(var data = sql.ExecuteReader())
-                {
-                    if (data.Read())
-                    {
-                        id = (int)data["Id"];
-                    }
-                }
-                conn.Close();
-            }
-            return id;
-        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 

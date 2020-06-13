@@ -6,6 +6,7 @@ using System.Linq;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace DOVY.Models
 {
@@ -35,7 +36,8 @@ namespace DOVY.Models
             {
                 if (user.UserName == username && user.Password == password)
                 {
-                    return user.Id;
+                    id = user.Id;
+                    break;
                 } 
             }
             return id;

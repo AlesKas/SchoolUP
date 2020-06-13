@@ -6,6 +6,10 @@ namespace DOVY.Models
 {
     public class MenuView
     {
+        public MenuView()
+        {
+
+        }
         public int Id { get; set; }
         public int MealId { get; set; }
         public string MealName { get; set; }

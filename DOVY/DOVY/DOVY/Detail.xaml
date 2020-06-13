@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DOVY"
         mc:Ignorable="d"
-        Title="Details" Height="205.385" Width="426.923" FontSize="14">
+        Title="Details" Height="205.385" Width="482" FontSize="14">
     <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -23,9 +23,9 @@
         <Label Content="Ingredients: " Grid.Column="0" Grid.Row="1"   HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" Name="IngredientsDataGrid" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Ingredient Name" Binding="{Binding Path=IngredientName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Required" Binding="{Binding Path=Required}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Unit Of Measure" Binding="{Binding Path=Unit}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ingredient Name" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Required" Binding="{Binding Path=Amount}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Unit Of Measure" Binding="{Binding Path=UnitOfMeasure}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

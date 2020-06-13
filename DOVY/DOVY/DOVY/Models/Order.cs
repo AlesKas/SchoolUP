@@ -10,7 +10,6 @@ namespace DOVY.Models
         public int UserId { get; set; }
         public int MenuId { get; set; }
         public System.DateTime OrderTime { get; set; }
-
         public virtual Menu Menu { get; set; }
         public virtual User User { get; set; }
     }

@@ -228,7 +228,7 @@ namespace DOVY
                 using (var ctx = new Entities())
                 {
                     var meal = ctx.Meals.FirstOrDefault(m => m.Id == selectedMenu.MealId);
-                    var detailsWindow = new Detail(meal);
+                    var detailsWindow = new Detail(ctx, meal);
                     detailsWindow.Show();
                 }
             }
@@ -310,6 +310,7 @@ namespace DOVY
 
                     CheckOrderConsistence(ctx, selectedMenu);
 
+                    SubIngredientAmountFromWarehouse(ctx, selectedMenu);
                     var order = new Order
                     {
                         UserId = CurrentUser.Id,
@@ -318,7 +319,6 @@ namespace DOVY
                     };
 
                     ctx.Orders.Add(order);
-                    SubIngredientAmountFromWarehouse(ctx, selectedMenu);
                     ctx.SaveChanges();
                     FillOrderDataGrid(new List<Expression<Func<Order, bool>>> { x => true });
                     FillWarehouseDataGrid(new List<Expression<Func<Warehouse, bool>>> { x => true });
@@ -328,7 +328,7 @@ namespace DOVY
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Error occured: " + exc.Message, "Error", MessageBoxButton.OK);
+                MessageBox.Show("Error occured: " + exc.InnerException.InnerException.Message, "Error", MessageBoxButton.OK);
             }
         }
 
@@ -336,21 +336,30 @@ namespace DOVY
         {
             try
             {
-                foreach (var ingredient in ctx.MealConsistsOfs.Where(p => p.MealId == selectedMenu.MealId).Select(x => x.IngredientId))
+                var ingredients = new List<MealConsistsOf>();
+
+                foreach (var item in ctx.MealConsistsOfs.ToList())
                 {
-                    var amountRequired = ctx.MealConsistsOfs
-                        .First(p => p.MealId == selectedMenu.MealId && p.IngredientId == ingredient.Value)
-                        .AmountRequired;
+                    if (item.MealId == selectedMenu.MealId)
+                    {
+                        ingredients.Add(item);
+                    }
+                }
 
-                    var warehouse = ctx.Warehouses
-                        .First(w => w.IngredientId == ingredient.Value);
+                foreach (var ingredient in ingredients)
+                {
+                    var amountLeft = ctx.Warehouses.FirstOrDefault(x => x.Ingredient.Id == ingredient.IngredientId);
 
-                    warehouse.Amount -= (double)amountRequired;
+                    var amountRequired = ctx.MealConsistsOfs.FirstOrDefault(x => x.Meal.Id == selectedMenu.MealId);
+
+                    var newValue = amountLeft.Amount - (double)amountRequired.AmountRequired;
+                    amountLeft.Amount = newValue;
+                    ctx.SaveChanges();
                 }
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Error occured: " + exc.Message, "Error", MessageBoxButton.OK);
+                MessageBox.Show("Error occured: " + exc.InnerException.InnerException.Message, "Error", MessageBoxButton.OK);
             }
         }
 
@@ -359,17 +368,24 @@ namespace DOVY
             if (selectedMenu.ServeDate.Date.CompareTo(DateTime.Now.Date) < 0)
                 throw new Exception("You can not place order on this menu. Serving date already expired");
 
-            foreach (var ingredient in ctx.MealConsistsOfs.Where(p => p.MealId == selectedMenu.MealId).Select(x => x.IngredientId))
+            var ingredients = new List<MealConsistsOf>();
+
+            foreach (var item in ctx.MealConsistsOfs.ToList())
             {
-                var amountLeft = ctx.Warehouses
-                    .First(w => w.IngredientId == ingredient.Value)
-                    .Amount;
-                var amountRequired = ctx.MealConsistsOfs
-                    .First(p => p.MealId == selectedMenu.MealId && p.IngredientId == ingredient.Value)
-                    .AmountRequired;
+                if (item.MealId == selectedMenu.MealId)
+                {
+                    ingredients.Add(item);
+                }
+            }
+
+            foreach (var ingredient in ingredients)
+            {
+                var amountLeft = ctx.Warehouses.FirstOrDefault(x => x.IngredientId == ingredient.IngredientId).Amount;
+
+                var amountRequired = ctx.MealConsistsOfs.FirstOrDefault(x => x.MealId == selectedMenu.MealId).AmountRequired;
 
                 if (amountLeft < amountRequired)
-                    throw new Exception("There is no " + ingredient.Value + " left on the warehouse");
+                    throw new Exception("There is no " + ingredient.Ingredient.Name + " left on the warehouse");
             }
         }
 
@@ -389,38 +405,10 @@ namespace DOVY
                 MessageBox.Show("Error occured: " + exc.Message, "Error", MessageBoxButton.OK);
             }
         }
-
-        //private void Filter_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        var warehouseLambdaList = new List<Expression<Func<Warehouse, bool>>>();
-        //        if (IdFilter.Text != "Id")
-        //            warehouseLambdaList.Add(x => x.Id.ToString().IndexOf(IdFilter.Text.Trim(), StringComparison.OrdinalIgnoreCase) >= 0);
-        //        if (NameFilter.Text != "Name")
-        //            warehouseLambdaList.Add(x => x.Ingredient.Name.ToString().IndexOf(NameFilter.Text.Trim(), StringComparison.OrdinalIgnoreCase) >= 0);
-        //        if (AmountFilter.Text != "Amount")
-        //            warehouseLambdaList.Add(x => x.Amount.ToString().IndexOf(AmountFilter.Text.Trim(), StringComparison.OrdinalIgnoreCase) >= 0);
-        //        if (UnitFilter.Text != "Unit")
-        //            warehouseLambdaList.Add(x => x.Ingredient.UnitOfMeasure.ToString().IndexOf(UnitFilter.Text.Trim(), StringComparison.OrdinalIgnoreCase) >= 0);
-
-        //        if (warehouseLambdaList.Any())
-        //            FillWarehouseDataGrid(warehouseLambdaList);
-        //    }
-        //    catch (Exception exc)
-        //    {
-        //        MessageBox.Show("Error occured: " + exc.Message, "Error", MessageBoxButton.OK);
-        //    }
-        //}
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
-                //IdFilter.TextChanged += Filter_TextChanged;
-                //NameFilter.TextChanged += Filter_TextChanged;
-                //AmountFilter.TextChanged += Filter_TextChanged;
-                //UnitFilter.TextChanged += Filter_TextChanged;
 
                 using (var ctx = new Entities())
                 {
@@ -592,6 +580,11 @@ namespace DOVY
             {
                 MessageBox.Show("Error occured: " + exc.Message, "Error", MessageBoxButton.OK);
             }
+        }
+
+        private void MenuDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

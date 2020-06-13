@@ -67,7 +67,16 @@ namespace DOVY
                         Jidlo = ctx.Meals.FirstOrDefault(x => x.Id == selectedMeal.Id),
                         ServeDate = ServingDatePicker.SelectedDate.Value
                     };
+
+
+                    var menuView = new MenuView();
+                    menuView.MealId = ctx.Meals.FirstOrDefault(x => x.Id == selectedMeal.Id).Id;
+                    menuView.MealName = ctx.Meals.FirstOrDefault(x => x.Id == selectedMeal.Id).Name;
+                    menuView.Price = ctx.Meals.FirstOrDefault(x => x.Id == selectedMeal.Id).Price;
+                    menuView.ServeDate = ServingDatePicker.SelectedDate.Value;
                     ctx.Menus.Add(newMenu);
+                    ctx.MenuViews.Add(menuView);
+
                     ctx.SaveChanges();
                 }
                 this.DialogResult = true;

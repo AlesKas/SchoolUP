@@ -38,7 +38,7 @@
                             <RowDefinition Height="1*" />
                             <RowDefinition Height="0.25*" />
                         </Grid.RowDefinitions>
-                        <DataGrid Name="MenuDataGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding}" Margin="5" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" AlternatingRowBackground="#FF9C9191" AutoGenerateColumns="False">
+                        <DataGrid Name="MenuDataGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding}" Margin="5" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" AlternatingRowBackground="#FF9C9191" AutoGenerateColumns="False" SelectionChanged="MenuDataGrid_SelectionChanged">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Meal Number" Binding="{Binding Path=MealId}" />
                                 <DataGridTextColumn Header="Meal Name" Binding="{Binding Path=MealName}" />
