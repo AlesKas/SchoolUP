@@ -346,6 +346,7 @@ section>h3 {
     left: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
+    height: 450px;
 }
 
 aside>section>ul>li {
@@ -427,12 +428,35 @@ aside>section>h2 {
     position: relative;
     float: right;
     font-size: 12px;
-    left: -85px;
+    left: -80px;
     top: -7px;
+}
+
+.wider .caption-2 {
+    left: -40px;
 }
 
 .caption-2>* {
     margin-bottom: 10px;
+}
+
+.wider>* {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#follow-2nd {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    height: 105px;
+}
+
+#instagram-2nd {
+    margin-bottom: 10px;
+}
+
+#instagram-2nd div {
+    margin-left: -10px;
 }
 
 #other {
@@ -659,7 +683,28 @@ input[type=text] {
 }
 
 .second-page {
-    margin-left: -25ex;
+    position: relative;
+    right: 0%;
+}
+
+.second-page article {
+    width: 748px;
+}
+
+.second-page article>div>* {
+    margin: 10px;
+}
+
+.second-page article>div a {
+    color: red;
+}
+
+.second-page article>div a:hover {
+    text-decoration: underline;
+}
+
+.main-content-2 {
+    margin-top: 100px;
 }
 
 .third-page {
@@ -671,6 +716,8 @@ input[type=text] {
 .wider {
     width: 310px;
     float: right;
+    position: relative;
+    left: 0%;
 }
 
 footer {
@@ -800,4 +847,87 @@ footer>h2 {
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 30px;
+}
+
+.comment-caption>* {
+    position: relative;
+    line-height: 20px;
+    top: -100px;
+    font-size: 15px;
+}
+
+.banner {
+    position: relative;
+    top: -75px;
+}
+
+.banner h2 {
+    position: relative;
+    top: -300px;
+}
+
+.atention {
+    width: 100%;
+    margin-top: 185px;
+    text-align: center;
+}
+
+.atention>h2 {
+    font-size: 35px;
+    line-height: 50px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+    text-align: center;
+}
+
+.nav-buttons {
+    position: relative;
+    top: 50px;
+    left: 275px;
+}
+
+.nav-buttons>a {
+    height: 35px;
+    width: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eeeeee;
+    border-radius: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: .3s all;
+}
+
+.nav-buttons>a:hover {
+    border-color: red;
+}
+
+.active {
+    background: red;
+    color: white;
+}
+
+.main-content-2+.hr-line {
+    margin-bottom: -5px;
+    color: #F0F0F0;
+}
+
+.secondary-nav {
+    display: inline-flex;
+    position: relative;
+    right: 300px;
+    top: -15px
+}
+
+.secondary-nav>li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.left-float-span {
+    float: left;
+    position: relative;
+    top: -17px;
+    left: 300px;
 }
