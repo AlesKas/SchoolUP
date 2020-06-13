@@ -8,6 +8,29 @@ body {
     padding: 0px;
 }
 
+p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #0a0a0a;
+    font-family: "Libre Baskerville";
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 14px;
+    line-height: 30px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+}
+
+h2 {
+    font-size: 22px;
+    line-height: 35px;
+    color: #0a0a0a;
+    font-family: "Libre Baskerville";
+    font-weight: 700;
+}
+
 aside>section>ul>li>i {
     margin-left: -10px;
     border-radius: 60px;
@@ -22,6 +45,7 @@ div.vertical-line {
     position: absolute;
     top: 0;
     bottom: 0;
+    left: -5px;
 }
 
 a {
@@ -65,7 +89,7 @@ ul {
 }
 
 img {
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .navList>li {
@@ -102,6 +126,12 @@ img {
     color: red;
     margin-left: 5px;
 }
+
+
+/* 
+a>i {
+    float: right;
+} */
 
 .dropdown-content a {
     color: black;
@@ -210,6 +240,8 @@ time {
 }
 
 .instagram-widget {
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: inline-block;
 }
 
@@ -220,6 +252,20 @@ time {
 
 .main-caption {
     margin-left: 25px;
+}
+
+.main-caption>* {
+    margin-bottom: 10px;
+}
+
+.main-caption>p {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.main-caption>p>* {
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .main-content {
@@ -258,6 +304,13 @@ section>h3 {
     margin-left: -15px;
 }
 
+.aside-trending-posts {
+    position: relative;
+    left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
 aside>section>ul>li {
     float: left;
     margin-right: 15px;
@@ -283,9 +336,9 @@ li>label {
 .dot>p {
     color: white;
     position: relative;
-    font-size: 20px;
-    left: 7px;
-    top: 1px;
+    font-size: 15px;
+    left: 8.5px;
+    top: 4px;
 }
 
 #trending>li>a>img {
@@ -314,11 +367,21 @@ aside>section>h2 {
     margin-left: -15px;
 }
 
+.aside-trends>h3 {
+    margin-top: 10px;
+}
+
+.aside-trends>h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .caption-2 {
     position: relative;
     float: right;
     font-size: 12px;
-    right: -10px;
+    left: -115px;
+    top: -7px;
 }
 
 .caption-2>* {
@@ -332,30 +395,30 @@ aside>section>h2 {
 }
 
 .bone-white {
-    background-color: #FDF4E5;
+    background-color: #fcf6f5;
     width: 100%;
-    padding-bottom: 50px;
-}
-
-#other>ul>li {
-    margin-right: 10px;
-    opacity: 0.4;
-    width: 140px;
-    height: 20px;
-    text-align: center;
-    display: inline-block;
-    margin: 10px;
-    padding: 1rem;
 }
 
 .active-li {
     opacity: 1 !important;
     background: #ddd;
-    border-radius: 5px;
+}
+
+#other>ul>li {
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    color: #999999;
+    font-family: "Futura PT";
+    text-align: center;
+    float: left;
+    margin: 30px;
+    margin-bottom: 50px;
 }
 
 .left-float {
-    display: flex;
+    display: inline-flex;
     position: relative;
     margin-bottom: 10px;
 }
@@ -380,10 +443,15 @@ button {
     height: 50px;
     text-align: center;
     display: inline-block;
-    margin: 10px;
+    margin: 50px;
     padding: 1px;
     border: 0.5px solid black;
     border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    border-radius: 3px;
+    background-color: rgba(72, 72, 72, 0);
+    border: 1px solid #0a0a0a;
 }
 
 #latest {
@@ -391,22 +459,52 @@ button {
     margin-left: 60ex;
 }
 
-#latest>button {
-    position: relative;
-    width: 125px;
-    height: 65px;
-    left: 30%;
-    margin-top: 15px;
+#latest>h2 {
+    font-size: 20px;
+    line-height: 50px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
 }
 
 .latest {
     display: flex;
 }
 
-.latest-caption>* {
-    flex-grow: 1;
-    margin-bottom: 20px;
-    margin-left: 5px;
+.latest>ul {
+    bottom: 0px;
+}
+
+.latest-caption>h3 {
+    font-size: 14px;
+    line-height: 30px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+}
+
+.latest-caption {
+    margin-left: 10px;
+}
+
+.latest-caption>h2 {
+    font-size: 16px;
+    line-height: 26px;
+    color: #0a0a0a;
+    font-family: "Libre Baskerville";
+    font-weight: 700;
+}
+
+.latest-caption>p {
+    font-size: 13px;
+    line-height: 30px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+}
+
+.latest-caption>time {
+    font-size: 13px;
+    line-height: 30px;
+    color: #838383;
+    font-family: "Futura PT";
 }
 
 .latest>ul>li {
@@ -421,7 +519,7 @@ button {
 
 .artricle-containter {
     width: 250px;
-    margin-right: 15px;
+    margin-right: 75px;
 }
 
 .text-container {
@@ -432,8 +530,12 @@ button {
     position: absolute;
     size: inherit;
     left: 5px;
-    bottom: 5px;
+    bottom: 15px;
     line-height: 30px;
+    color: white;
+}
+
+.text-over-img>* {
     color: white;
 }
 
@@ -449,9 +551,13 @@ button {
 }
 
 #editor>h2 {
+    font-size: 20px;
+    line-height: 50px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+    text-align: center;
     position: relative;
-    margin-bottom: 20px;
-    left: 20%;
+    right: 25%;
 }
 
 .content-container {
@@ -462,7 +568,6 @@ button {
 #contact {
     text-align: center;
     position: relative;
-    padding: 60px;
 }
 
 #social {
@@ -478,11 +583,11 @@ button {
 
 input[type=submit] {
     margin-left: 5px;
-    height: 50px;
-    background: black;
     color: white;
     width: 141px;
-    border-radius: 5px;
+    height: 50px;
+    border-radius: 3px;
+    background-color: #0a0a0a;
 }
 
 input[type=text] {
@@ -530,24 +635,40 @@ footer {
     position: relative;
     left: 46%;
     display: flex;
+    margin-bottom: 50px;
 }
 
 .footer-instagram>a {
     font-size: 31px;
+    position: relative;
+    bottom: -8px;
+    margin-right: 10px;
 }
 
 .footer-instagram>h3 {
     font-size: 30px;
+    line-height: 50px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+    text-align: center;
 }
 
 .images {
-    width: 100%;
+    width: 1920px;
     padding-bottom: 20px;
+}
+
+.images>a {
+    margin-right: -4px;
 }
 
 footer>h2 {
     font-size: 20px;
     opacity: 0.4;
+    font-size: 15px;
+    line-height: 50px;
+    font-family: "Futura PT";
+    text-align: center;
 }
 
 .footer {
@@ -571,4 +692,16 @@ footer>h2 {
 
 .footer>ul>li {
     padding-right: 10px;
+}
+
+.left-img {
+    position: relative;
+    right: 500px;
+    bottom: -135px;
+}
+
+.right-img {
+    position: relative;
+    left: 500px;
+    bottom: 85px;
 }
