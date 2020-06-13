@@ -17,9 +17,8 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Label Name="MealNameLabel" Content="Meal: " Grid.Column="0" Grid.Row="0"   HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Name="MealPriceLabel" Content="Price: " Grid.Column="1" Grid.Row="0"   HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Name="MealWeightLabel" Content="Total Weight: " Grid.Column="2" Grid.Row="0"   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Name="MealNameLabel" Content="Meal: " Grid.Column="0"   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        <Label Name="MealPriceLabel" Content="Price: " Grid.Column="1" Grid.Row="0"   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,2,0,0"/>
         <Label Content="Ingredients: " Grid.Column="0" Grid.Row="1"   HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" Name="IngredientsDataGrid" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <DataGrid.Columns>
@@ -28,5 +27,7 @@
                 <DataGridTextColumn Header="Unit Of Measure" Binding="{Binding Path=UnitOfMeasure}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Label Name="Meal_Content" Content=" " Grid.Column="0"   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="62,0,0,0" Width="85"/>
+        <Label Name="Price_Content" Content=" " Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="62,0,0,0" Width="86"/>
     </Grid>
 </Window>

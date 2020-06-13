@@ -11,73 +11,73 @@
 
 <body>
     <header>
-        <div class="main-title">
-            <i class="fas fa-bars"></i>
-            <div class="vertical-line"></div>
-            <h1>Barrio<span class="red-dot">.</span></h1>
-        </div>
-        <nav>
-            <ul class="navList">
-                <li><a href="home.html" class="active">Home</a></li>
-                <li class="dropdown">
-                    Features<i class="fas fa-angle-down"></i>
-                    <ul class="dropdown-content">
-                        <li>
-                            <a href="404.html">Post Style<i class="fas fa-arrow-right"></i></a>
-                        </li>
-                        <li>
-                            <a href="404.html">Header Style<i class="fas fa-arrow-right"></i></a>
-                        </li>
-                        <li>
-                            <a href="404.html">Footer Style<i class="fas fa-arrow-right"></i></a>
-                        </li>
-                        <li><a href="404.html">Content Style</a></li>
-                        <li>
-                            <a href="404.html">Widgets<i class="fas fa-arrow-right"></i></a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="post.html">Post</a></li>
-                <li>Trending<i class="fas fa-angle-down"></i></li>
-                <li>Shop<i class="fas fa-angle-down"></i></li>
-                <li class="dropdown">Pages<i class="fas fa-angle-down"></i>
-                    <ul class="dropdown-content">
-                        <li>
-                            <a href="post.html">Post<i class="fas fa-arrow-right"></i></a>
-                        </li>
-                        <li>
-                            <a href="typography.html">Typography<i class="fas fa-arrow-right"></i></a>
-                        </li>
-                        <li>
-                            <a href="listPostBlock.html">List<i class="fas fa-arrow-right"></i></a>
-                        </li>
-                        <li><a href="elements.html">Elements<i class="fas fa-arrow-right"></i></a></li>
-                        <li>
-                            <a href="contact.html">Contacts<i class="fas fa-arrow-right"></i></a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                </li>
+        <div class="fixed-nav">
+            <div class="main-title">
+                <i class="fas fa-bars"></i>
+                <h1>Barrio<span class="red-dot">.</span></h1>
+            </div>
+            <nav>
+                <ul class="navList">
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li class="dropdown">
+                        Features<i class="fas fa-angle-down"></i>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="404.html">Post Style<i class="fas fa-arrow-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="404.html">Header Style<i class="fas fa-arrow-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="404.html">Footer Style<i class="fas fa-arrow-right"></i></a>
+                            </li>
+                            <li><a href="404.html">Content Style</a></li>
+                            <li>
+                                <a href="404.html">Widgets<i class="fas fa-arrow-right"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="post.html">Post</a></li>
+                    <li>Trending<i class="fas fa-angle-down"></i></li>
+                    <li>Shop<i class="fas fa-angle-down"></i></li>
+                    <li class="dropdown">Pages<i class="fas fa-angle-down"></i>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="post.html">Post<i class="fas fa-arrow-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="typography.html">Typography<i class="fas fa-arrow-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="listPostBlock.html">List<i class="fas fa-arrow-right"></i></a>
+                            </li>
+                            <li><a href="elements.html">Elements<i class="fas fa-arrow-right"></i></a></li>
+                            <li>
+                                <a href="contact.html">Contacts<i class="fas fa-arrow-right"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </li>
 
-                <li>
-                    <div class="vertical-line"></div>
-                    <a href="#"><i class="fas fa-search"></i></a>
-                </li>
-            </ul>
-        </nav>
+                    <li>
+                        <a href="#"><i class="fas fa-search"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="hr-line"></div>
+        </div>
     </header>
-    <div class="hr-line"></div>
     <section id="movingImages">
         <h2 hidden>Latest news</h2>
         <div class="row">
@@ -133,6 +133,13 @@
                     <time datetime="2019-04-01">April 01, 2019</time> <span class="comments">32 Comments</span>
                 </p>
             </article>
+        </div>
+        <div class="small-dots">
+            <button class="small-dot"></button>
+            <button class="small-dot dot-active"></button>
+            <button class="small-dot"></button>
+            <button class="small-dot"></button>
+            <button class="small-dot"></button>
         </div>
     </section>
     <div class="hr-line"></div>
@@ -305,7 +312,14 @@
             </div>
             <section>
                 <h2>Most commented</h2>
-                <a href="#"><img src="img/heli.jpeg" width="292" height="200" alt="Article" /></a>
+                <a href="#"><img src="img/church.jpeg" width="292" height="200" alt="Article" /></a>
+                <div class="small-dots most-commented">
+                    <button class="small-dot"></button>
+                    <button class="small-dot dot-active in-comment"></button>
+                    <button class="small-dot"></button>
+                    <button class="small-dot"></button>
+                    <button class="small-dot"></button>
+                </div>
                 <div class="aside-trends">
                     <h3>Trends</h3>
                     <h2>Lorem ipsum dolor sit amet</h2>
@@ -515,12 +529,42 @@
             <h3>Barrio</h3>
         </div>
         <article class="images">
-            <a href="#"><img src="img/face.jpeg" height="320" width="320" alt="Article" /></a>
-            <a href="#"><img src="img/parrot.jpeg" height="320" width="320" alt="Article" /></a>
-            <a href="#"><img src="img/beach.jpeg" height="320" width="320" alt="Article" /></a>
-            <a href="#"><img src="img/caple.jpeg" height="320" width="320" alt="Article" /></a>
-            <a href="#"><img src="img/heli.jpeg" height="320" width="320" alt="Article" /></a>
-            <a href="#"><img src="img/heli2.jpeg" height="320" width="320" alt="Article" /></a>
+            <a href="#"><img src="img/face.jpeg" height="320" width="320" alt="Article" />
+                <p class="over">
+                    <i class="fas fa-heart"></i>20
+                    <i class="fas fa-comment"></i>40
+                </p>
+            </a>
+            <a href="#"><img src="img/parrot.jpeg" height="320" width="320" alt="Article" />
+                <p class="over">
+                    <i class="fas fa-heart"></i>20
+                    <i class="fas fa-comment"></i>40
+                </p>
+            </a>
+            <a href="#"><img src="img/beach.jpeg" height="320" width="320" alt="Article" />
+                <p class="over">
+                    <i class="fas fa-heart"></i>20
+                    <i class="fas fa-comment"></i>40
+                </p>
+            </a>
+            <a href="#"><img src="img/caple.jpeg" height="320" width="320" alt="Article" />
+                <p class="over">
+                    <i class="fas fa-heart"></i>20
+                    <i class="fas fa-comment"></i>40
+                </p>
+            </a>
+            <a href="#"><img src="img/heli.jpeg" height="320" width="320" alt="Article" />
+                <p class="over">
+                    <i class="fas fa-heart"></i>20
+                    <i class="fas fa-comment"></i>40
+                </p>
+            </a>
+            <a href="#"><img src="img/heli2.jpeg" height="320" width="320" alt="Article" />
+                <p class="over">
+                    <i class="fas fa-heart"></i>20
+                    <i class="fas fa-comment"></i>40
+                </p>
+            </a>
         </article>
 
 

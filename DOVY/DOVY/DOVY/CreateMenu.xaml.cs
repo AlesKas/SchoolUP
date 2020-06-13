@@ -64,6 +64,7 @@ namespace DOVY
                     var selectedMeal = MealsList.SelectedItem as Meal;
                     var newMenu = new Menu
                     {
+                        MealId = selectedMeal.Id,
                         Jidlo = ctx.Meals.FirstOrDefault(x => x.Id == selectedMeal.Id),
                         ServeDate = ServingDatePicker.SelectedDate.Value
                     };

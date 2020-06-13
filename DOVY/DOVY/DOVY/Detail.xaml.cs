@@ -22,6 +22,9 @@ namespace DOVY
         {
             InitializeComponent();
             var list = new List<DetailClass>();
+            var meal = jidlo.Name;
+            var price = jidlo.Price;
+
             foreach(var ingredient in jidlo.MealConsistsOfs)
             {
                 var ing = new DetailClass
@@ -32,6 +35,8 @@ namespace DOVY
                 };
                 list.Add(ing);
             }
+            Meal_Content.Content = meal;
+            Price_Content.Content = price;
             IngredientsDataGrid.DataContext = list;
         }
     }

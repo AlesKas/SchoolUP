@@ -13,6 +13,7 @@ p {
     line-height: 24px;
     color: #0a0a0a;
     font-family: "Libre Baskerville";
+    src: url('fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf');
     font-weight: 400;
 }
 
@@ -21,6 +22,8 @@ h3 {
     line-height: 30px;
     color: #0a0a0a;
     font-family: "Futura PT";
+    src: url("/fonts/Futura PT/FuturaPTBook.otf");
+    text-transform: uppercase;
 }
 
 h2 {
@@ -28,6 +31,8 @@ h2 {
     line-height: 35px;
     color: #0a0a0a;
     font-family: "Libre Baskerville";
+    src: url('fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf');
+    text-transform: uppercase;
     font-weight: 700;
 }
 
@@ -53,14 +58,22 @@ a {
     color: black;
 }
 
+.fixed-nav {
+    background: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    height: 83px;
+}
+
 header {
     position: relative;
-    left: 32%;
 }
 
 .main-title {
     position: relative;
-    right: 300px;
+    left: 16%;
 }
 
 .main-title>i {
@@ -75,7 +88,7 @@ body {
 
 nav {
     position: relative;
-    left: 135px;
+    left: 42%;
     top: -40px;
 }
 
@@ -127,11 +140,9 @@ img {
     margin-left: 5px;
 }
 
-
-/* 
-a>i {
+li>a>i {
     float: right;
-} */
+}
 
 .dropdown-content a {
     color: black;
@@ -153,6 +164,7 @@ a>i {
 }
 
 #movingImages {
+    margin-top: 100px;
     position: relative;
     left: 0px;
 }
@@ -188,6 +200,32 @@ a>i {
 .newsAndTrends>article {
     width: 250px;
     margin-right: 20px;
+}
+
+.small-dots {
+    position: relative;
+    left: -20%;
+}
+
+.small-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c6c6c6;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 4px;
+    border: none;
+    padding: 0;
+    transition: .3s background;
+}
+
+.small-dot:hover {
+    background: #878787;
+}
+
+.dot-active {
+    background: black;
 }
 
 main {
@@ -277,7 +315,7 @@ time {
 
 .main-caption>a {
     position: relative;
-    bottom: -80px;
+    bottom: -65px;
     text-decoration: none;
     color: red;
 }
@@ -300,7 +338,6 @@ aside>section {
 
 section>h3 {
     margin-bottom: 10px;
-    margin-top: 50px;
     margin-left: -15px;
 }
 
@@ -321,6 +358,11 @@ li>label {
     left: -10px;
 }
 
+.most-commented {
+    position: relative;
+    top: -80px;
+}
+
 .dot {
     position: absolute;
     margin-left: -10px;
@@ -337,8 +379,13 @@ li>label {
     color: white;
     position: relative;
     font-size: 15px;
-    left: 8.5px;
-    top: 4px;
+    left: 8px;
+    top: 2px;
+}
+
+.aside-trends {
+    position: relative;
+    top: -100px;
 }
 
 #trending>li>a>img {
@@ -380,7 +427,7 @@ aside>section>h2 {
     position: relative;
     float: right;
     font-size: 12px;
-    left: -115px;
+    left: -85px;
     top: -7px;
 }
 
@@ -530,7 +577,7 @@ button {
     position: absolute;
     size: inherit;
     left: 5px;
-    bottom: 15px;
+    bottom: 30px;
     line-height: 30px;
     color: white;
 }
@@ -654,12 +701,18 @@ footer {
 }
 
 .images {
+    display: flex;
     width: 1920px;
     padding-bottom: 20px;
 }
 
+.images>a>img {
+    border-radius: 0px;
+}
+
 .images>a {
     margin-right: -4px;
+    height: 320px;
 }
 
 footer>h2 {
@@ -704,4 +757,47 @@ footer>h2 {
     position: relative;
     left: 500px;
     bottom: 85px;
+}
+
+.images>a:hover .over {
+    opacity: 0.75;
+}
+
+.over {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    top: -324px;
+    width: 316px;
+    height: 320px;
+    opacity: 0;
+    transition: .3s opacity;
+}
+
+.over>* {
+    margin: 15px;
+    margin-top: 0px;
+}
+
+.over>i {
+    color: white;
+}
+
+.over>p {
+    font-size: 10px;
+    line-height: 20px;
+    color: #ffffff;
+    font-family: "Libre Baskerville";
+    font-weight: 700;
+}
+
+#contact h3 {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 30px;
 }

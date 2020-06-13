@@ -273,12 +273,15 @@ namespace DOVY
                     if (selectedMenu != null && selectedMenu.ServeDate.Date.CompareTo(DateTime.Now.Date) < 0)
                         throw new Exception("You can not remove this menu offer. Serving date already expired");
 
-                    var menuItem =
-                        ctx.Menus.FirstOrDefault(m => m.Id == selectedMenu.Id);
+                    var menuItem = ctx.Menus.FirstOrDefault(m => m.MealId == selectedMenu.MealId);
 
                     if (menuItem == null || Calendar.SelectedDate == null)
                         return;
 
+                    var selecterMenuView = ctx.MenuViews.FirstOrDefault(m => m.MealId == selectedMenu.MealId);
+
+                    ctx.MenuViews.Remove(selecterMenuView);
+                    ctx.SaveChanges();
                     ctx.Menus.Remove(menuItem);
                     ctx.SaveChanges();
                     FillMealDataGrid(Calendar.SelectedDate.Value);
