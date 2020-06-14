@@ -18,9 +18,16 @@ p {
     margin-bottom: 20px;
 }
 
+h1 {
+    font-size: 30px;
+    line-height: 26px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+}
+
 h3 {
-    font-size: 14px;
-    line-height: 30px;
+    font-size: 22px;
+    line-height: 26px;
     color: #0a0a0a;
     font-family: Futura, Trebuchet MS, Arial, sans-serif;
     src: url("/fonts/Futura PT/FuturaPTBook.otf");
@@ -28,13 +35,34 @@ h3 {
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 26px;
     line-height: 35px;
     color: #0a0a0a;
     font-family: Futura, Trebuchet MS, Arial, sans-serif;
     src: url("/fonts/Futura PT/FuturaPTBook.otf");
     text-transform: uppercase;
     font-weight: 700;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 26px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 26px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 26px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
 }
 
 aside>section>ul>li>i {
@@ -65,7 +93,7 @@ a {
     z-index: 1;
     position: fixed;
     top: 0;
-    height: 83px;
+    height: 72px;
 }
 
 header {
@@ -922,6 +950,11 @@ footer>h2 {
     color: #F0F0F0;
 }
 
+.error-page~.hr-line {
+    margin-bottom: -5px;
+    color: #F0F0F0;
+}
+
 .left-float-span {
     float: left;
     position: relative;
@@ -1335,5 +1368,188 @@ form label {
 .box>ul>li {
     float: left;
     width: 380px;
+    height: 300px;
     text-align: center;
+}
+
+.vertical-middle {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+}
+
+.vertical-middle>h3 {
+    font-size: 18px;
+    line-height: 26px;
+    color: #0a0a0a;
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}
+
+.vertical-middle>p {
+    font-size: 14px;
+    line-height: 26px;
+    color: #0a0a0a;
+    font-family: "Libre Baskerville";
+    font-weight: 400;
+    text-align: center;
+}
+
+.contact-us {
+    margin-top: 50px;
+    text-align: center;
+    height: 670px;
+}
+
+.contact-us>h2 {
+    margin: 50px;
+}
+
+.left-form {
+    display: inline-flex;
+    margin-bottom: 50px;
+    width: 825px;
+}
+
+.left-form>form {
+    display: inline-flex;
+}
+
+.form-text {
+    width: 360px !important;
+    height: 50px !important;
+    border-radius: 5px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    margin-right: -42px !important;
+}
+
+form>label {
+    position: relative;
+    bottom: 25px;
+    left: 65px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #0a0a0a;
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    opacity: 1;
+}
+
+.subject-label {
+    bottom: 40px;
+    left: 55px;
+}
+
+.subject-form {
+    width: 747px !important;
+    height: 50px !important;
+    border-radius: 5px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    margin-bottom: 50px;
+}
+
+.message-form {
+    width: 747px !important;
+    height: 180px !important;
+    border-radius: 5px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    margin-left: -40px;
+}
+
+.message-label {
+    bottom: 105px;
+    left: 55px;
+}
+
+.send-message {
+    position: initial;
+    width: 750px;
+    height: 50px;
+    border-radius: 3px;
+    background-color: #0a0a0a;
+    color: white;
+    margin-left: 100px;
+}
+
+.send-message:hover {
+    cursor: pointer;
+}
+
+.map {
+    width: 1920px;
+    height: 550px;
+    margin-bottom: -18px;
+}
+
+.error-page {
+    margin-top: 100px;
+    height: 650px;
+}
+
+.error-page>.error-content {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+}
+
+.error-content {
+    margin-left: 500px;
+}
+
+.error-content>h3 {
+    font-size: 24px;
+    line-height: 50px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+    margin-bottom: 15px;
+}
+
+.error-content>h2 {
+    font-size: 70px;
+    line-height: 50px;
+    color: #0a0a0a;
+    font-family: "Futura PT";
+    margin-bottom: 15px;
+}
+
+.error-content>p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #0a0a0a;
+    font-family: "Libre Baskerville";
+    font-weight: 400;
+}
+
+.error-content>button {
+    width: 250px;
+    height: 50px;
+    border-radius: 3px;
+    color: white;
+    background-color: #0a0a0a;
+    position: initial;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.typography {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 765px;
+}
+
+.heading {
+    width: 1920px;
+    height: 100px;
+    background-color: #fafafa;
+    margin-top: 73px;
+}
+
+.heading>h2 {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    margin-left: 300px;
 }
