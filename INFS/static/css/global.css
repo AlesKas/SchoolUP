@@ -15,6 +15,7 @@ p {
     font-family: "Libre Baskerville";
     src: url('fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf');
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -30,8 +31,8 @@ h2 {
     font-size: 22px;
     line-height: 35px;
     color: #0a0a0a;
-    font-family: "Libre Baskerville";
-    src: url('fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf');
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    src: url("/fonts/Futura PT/FuturaPTBook.otf");
     text-transform: uppercase;
     font-weight: 700;
 }
@@ -428,16 +429,16 @@ aside>section>h2 {
     position: relative;
     float: right;
     font-size: 12px;
-    left: -80px;
+    left: -100px;
     top: -7px;
 }
 
 .wider .caption-2 {
-    left: -40px;
+    left: -65px;
 }
 
 .caption-2>* {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .wider>* {
@@ -708,9 +709,8 @@ input[type=text] {
 }
 
 .third-page {
-    float: left;
-    width: 700px;
-    margin-left: -215px;
+    position: relative;
+    right: 0%;
 }
 
 .wider {
@@ -930,4 +930,144 @@ footer>h2 {
     position: relative;
     top: -17px;
     left: 300px;
+}
+
+.third-img {
+    position: relative;
+    left: 45px;
+}
+
+.third-img figcaption {
+    position: relative;
+    left: 115px;
+    opacity: 0.4;
+    margin-bottom: 20px;
+}
+
+.numbered {
+    position: relative;
+    left: 45px;
+}
+
+.numbered>li {
+    margin-bottom: 20px;
+}
+
+.fourth-img {
+    float: left;
+}
+
+.fourth-img figcaption {
+    opacity: 0.4;
+    position: relative;
+    left: 75px;
+}
+
+.over-img {
+    float: right;
+    width: 390px;
+    height: 472px;
+}
+
+.img-container {
+    height: 472px;
+}
+
+.over-img p {
+    margin-bottom: 125px;
+}
+
+.img-container+p {
+    margin-top: 20px;
+}
+
+.dotted {
+    list-style-type: disc;
+    position: relative;
+    left: 50px;
+}
+
+.dotted+p {
+    margin-top: 35px;
+}
+
+.dotted>li {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: inline-flex;
+}
+
+.button-st {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-right: 10px;
+    height: 45px;
+    opacity: 0.4;
+    text-transform: uppercase;
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like-button {
+    margin-left: 200px;
+    border-color: red;
+    color: red;
+    opacity: 1;
+}
+
+.span-text {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.share-it>.button-st {
+    width: 180px;
+    opacity: 1;
+    border: 0px;
+    background-color: #eeeeee;
+}
+
+.share-it>p {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 26px;
+    color: #0a0a0a;
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}
+
+.share-it>p>span {
+    margin-left: 5px;
+    margin-right: 50px;
+    opacity: 0.4;
+}
+
+.plus-share {
+    width: 45px !important;
+}
+
+.smaller {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.facebook-button {
+    color: white;
+    background-color: #3b5998 !important;
+}
+
+.post-block>article {
+    margin-right: 165px;
+}
+
+.post-block+.small-dots {
+    bottom: 25px;
+    left: 0px;
 }
