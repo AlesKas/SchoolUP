@@ -10,7 +10,7 @@ body {
 
 p {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 26px;
     color: #0a0a0a;
     font-family: "Libre Baskerville";
     src: url('fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf');
@@ -22,7 +22,7 @@ h3 {
     font-size: 14px;
     line-height: 30px;
     color: #0a0a0a;
-    font-family: "Futura PT";
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
     src: url("/fonts/Futura PT/FuturaPTBook.otf");
     text-transform: uppercase;
 }
@@ -654,12 +654,12 @@ button {
 }
 
 input[type=submit] {
-    margin-left: 5px;
-    color: white;
     width: 141px;
     height: 50px;
     border-radius: 3px;
     background-color: #0a0a0a;
+    color: white;
+    margin-left: 50px;
 }
 
 input[type=text] {
@@ -711,6 +711,10 @@ input[type=text] {
 .third-page {
     position: relative;
     right: 0%;
+}
+
+.third-page * {
+    font-size: 16px;
 }
 
 .wider {
@@ -913,16 +917,9 @@ footer>h2 {
     color: #F0F0F0;
 }
 
-.secondary-nav {
-    display: inline-flex;
-    position: relative;
-    right: 300px;
-    top: -15px
-}
-
-.secondary-nav>li {
-    display: inline;
-    margin-right: 15px;
+#main-content~.hr-line {
+    margin-bottom: -5px;
+    color: #F0F0F0;
 }
 
 .left-float-span {
@@ -974,7 +971,7 @@ footer>h2 {
 }
 
 .over-img p {
-    margin-bottom: 125px;
+    margin-bottom: 75px;
 }
 
 .img-container+p {
@@ -996,6 +993,7 @@ footer>h2 {
 }
 
 .buttons {
+    width: 760px;
     display: inline-flex;
 }
 
@@ -1016,11 +1014,22 @@ footer>h2 {
     align-items: center;
 }
 
+.button-st:hover {
+    background: var(--gray-300);
+    transition: 1s;
+}
+
 .like-button {
     margin-left: 200px;
     border-color: red;
     color: red;
     opacity: 1;
+}
+
+.like-button:hover {
+    color: white;
+    background: red;
+    transition: 1s;
 }
 
 .span-text {
@@ -1058,9 +1067,28 @@ footer>h2 {
     margin-bottom: 10px;
 }
 
+.facebook-button>a {
+    color: white;
+}
+
 .facebook-button {
     color: white;
     background-color: #3b5998 !important;
+}
+
+.facebook-button:hover {
+    transition: 0.5s;
+    background-color: black !important;
+}
+
+.button-st>i {
+    margin-right: 5px;
+}
+
+.facebook-button~.button-st:hover {
+    color: white;
+    background: black;
+    transition: 1s;
 }
 
 .post-block>article {
@@ -1068,6 +1096,244 @@ footer>h2 {
 }
 
 .post-block+.small-dots {
+    margin-bottom: -20px;
     bottom: 25px;
     left: 0px;
+}
+
+.in-text {
+    color: red;
+}
+
+.in-text:hover {
+    text-decoration: underline;
+}
+
+blockquote {
+    width: 750px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.vertical-line {
+    float: left;
+    width: 4px;
+    height: 110px;
+    background-color: #f13544;
+    margin-right: 10px;
+}
+
+.quote-caption {
+    margin-top: 20px;
+    float: right;
+    width: 715px;
+    position: relative;
+    bottom: 50px;
+}
+
+.autor {
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    opacity: 0.4;
+}
+
+.left-float-img {
+    float: left;
+}
+
+.left-float-img>span {
+    height: 120px;
+    width: 120px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.left-float-img>span:hover {
+    background-color: black;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.right-float-img {
+    float: right;
+    width: 600px;
+    margin-top: 3px;
+}
+
+.right-float-img ul {
+    position: relative;
+    bottom: 15px;
+}
+
+.right-float-img ul>li {
+    float: left;
+    margin-left: 15px;
+    opacity: 0.4;
+}
+
+.middle-align {
+    text-align: center;
+}
+
+.newsellers>input[type=text] {
+    left: -55px;
+    position: relative;
+}
+
+.newsellers>input[type=submit] {
+    background: red;
+    color: white;
+    text-transform: uppercase;
+    bottom: 51px;
+    position: relative;
+    left: 235px;
+    border-color: red;
+}
+
+.spam {
+    position: relative;
+    opacity: 0.5;
+    bottom: 40px;
+    margin-bottom: -35px;
+}
+
+h2>time {
+    margin-left: 355px;
+}
+
+.reply {
+    position: relative;
+    top: -15px;
+}
+
+.add-comment-section>h2 {
+    font-size: 20px;
+    line-height: 50px;
+    margin-top: 20px;
+}
+
+.add-comment-section>h3 {
+    margin-left: 10px;
+}
+
+.add-comment {
+    width: 750px !important;
+    height: 180px !important;
+}
+
+.add-comment-section ul>li {
+    float: left;
+    margin-right: 18px;
+}
+
+.add-comment-section ul {
+    margin-left: 10px;
+}
+
+input[type=checkbox] {
+    height: 20px;
+    width: 20px;
+    margin-top: 35px;
+}
+
+form label {
+    opacity: 0.5;
+    position: relative;
+    bottom: 4px;
+}
+
+.post-comment {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    width: 180px !important;
+    height: 50px !important;
+    border-radius: 3px !important;
+    background-color: #0a0a0a !important;
+    margin-left: 0px !important;
+}
+
+.secondary-nav {
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prev-nav {
+    position: relative;
+    left: 45px;
+    bottom: 35px;
+}
+
+.next-nav {
+    position: relative;
+    bottom: 35px;
+    right: 195px;
+}
+
+.next-nav>span {
+    left: 130px;
+    position: relative;
+}
+
+.button-nav {
+    height: 35px;
+    width: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eeeeee;
+    border-radius: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: .3s all;
+}
+
+.posun {
+    position: relative;
+    left: 280px;
+}
+
+.big-black {
+    text-align: center;
+    color: white;
+    background: black;
+    height: 500px;
+}
+
+.big-black>h2 {
+    font-size: 40px;
+    color: #ffffff;
+    font-family: "Libre Baskerville";
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 500px;
+}
+
+#main-content {
+    margin-top: 83px;
+}
+
+.box {
+    width: 1140px;
+    height: 300px;
+    border-radius: 3px;
+    filter: drop-shadow(0 0 25px rgba(10, 10, 10, 0.15));
+    background-color: #ffffff;
+    margin: auto;
+    position: relative;
+    bottom: 50px;
+}
+
+.box>ul {
+    position: initial;
+}
+
+.box>ul>li {
+    float: left;
+    width: 380px;
+    text-align: center;
 }
