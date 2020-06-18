@@ -134,32 +134,45 @@
                     <li>Additional informations</li>
                     <li>Reviews (1)</li>
                 </ul>
-                <p>
+                <p class="text-margined">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Praesent id justo in neque elementum ultrices. Maecenas lorem. Nulla non lectus sed nisl molestie
                     malesuada. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Nulla non arcu lacinia neque faucibus fringilla
                 </p>
                 <h3>Message Boxes</h3>
-                <p>
-                    <div class="message-box red">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-
-                    </div>
-                </p>
-                <p>
-                    <div class="message-box green">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                    </div>
-                </p>
-                <p>
-                    <div class="message-box yelow">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                    </div>
-                </p>
-                <p>
-                    <div class="message-box blue">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                    </div>
-                </p>
+                <div class="message-box-container">
+                    <p>
+                        <div class="message-box red">
+                            <span class="message-box-text">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="message-box green">
+                            <span class="message-box-text">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="message-box yelow">
+                            <span class="message-box-text">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="message-box blue">
+                            <span class="message-box-text">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                                <i class="fas fa-times"></i>
+                            </span>
+                        </div>
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -174,46 +187,60 @@
         </ul>
     </section>
     <br/>
-    <div class="left-elements">
+    <div class="left-elements forms-part">
         <h2>Forms</h2>
         <h3>Input</h3>
         <input type="text" value=" Creative layer">
         <h3>Search select boxes</h3>
-        <biv class="search-box">
+        <biv class="search-box-container">
             <button class="select-search-box">
                 Lorem ipsum dolor sit amet consectetuer
                 <i class="fas fa-chevron-down"></i>
             </button>
             <div class="searching">
-
+                <input type="text" value="Search" class="search-box">
+                <i class="fas fa-search"></i>
+                <ul>
+                    <li>Lorem</li>
+                    <li style="color: red;">Lorem</li>
+                    <li>Lorem</li>
+                    <li>Lorem</li>
+                    <li>Lorem</li>
+                </ul>
             </div>
-            <h3>Textarea</h3>
-            <textarea id="w3review" name="w3review" rows="4" cols="50">
-                Message
-            </textarea>
-            <h3>Tooltip</h3>
-            <div class="tooltip-container">
-                <div class="tooltip">Top
-                    <span class="tooltiptext">Tooltip text</span>
-                </div>
 
-                <div class="tooltip">Left
-                    <span class="tooltiptext">Tooltip text</span>
-                </div>
 
-                <div class="tooltip">Right
-                    <span class="tooltiptext">Tooltip text</span>
-                </div>
-
-                <div class="tooltip">Bottom
-                    <span class="tooltiptext">Tooltip text</span>
-                </div>
-
-            </div>
         </biv>
+        <h3>Textarea</h3>
+        <textarea id="w3review" name="w3review" rows="4" cols="50">
+        </textarea>
+        <div class="tooltip-container">
+
+            <h3>Tooltip</h3>
+            <div class="tooltip">
+                <p>Top</p>
+                <span class="tooltiptext">Tooltip text</span>
+            </div>
+
+            <div class="tooltip">
+                <p>Right</p>
+                <span class="tooltiptext">Tooltip text</span>
+            </div>
+
+            <div class="tooltip">
+                <p>Left</p>
+                <span class="tooltiptext">Tooltip text</span>
+            </div>
+
+            <div class="tooltip">
+                <p>Bottom</p>
+                <span class="tooltiptext">Tooltip text</span>
+            </div>
+
+        </div>
 
     </div>
-    <div class="right-elements">
+    <div class="right-elements select-boxes-part">
         <h3>Select boxes</h3>
         <select>
             <option>Item</option>
@@ -221,23 +248,42 @@
             <option>Item</option>
             <option>Item</option>
         </select>
+        <h3>Multiple select boxes</h3>
         <div class="multiselect">
             <select>
                 <option>Select an option</option>
             </select>
             <div class="multi-checkboxes">
-                <label for="one">
-                  <input type="checkbox" id="one" />First checkbox</label>
-                <label for="two">
-                  <input type="checkbox" id="two" />Second checkbox</label>
-                <label for="three">
-                  <input type="checkbox" id="three" />Third checkbox</label>
+                <ul>
+                    <li>
+                        <label for="one">
+                            <input type="checkbox" id="one" />First checkbox</label>
+                    </li>
+                    <li>
+                        <label for="two">
+                            <input type="checkbox" id="two" />Second checkbox</label>
+                    </li>
+                    <li>
+                        <label for="three">
+                            <input type="checkbox" id="three" />Third checkbox</label>
+                    </li>
+                    <li>
+                        <label for="three">
+                            <input type="checkbox" id="three" />Fourth checkbox</label>
+                    </li>
+                    <li>
+                        <label for="three">
+                            <input type="checkbox" id="three" />Fifth checkbox</label>
+                    </li>
+                </ul>
+
+
             </div>
         </div>
         <div class="input-boxes">
             <div class="radioboxes">
                 <h3>Radiobox</h3>
-                <form>
+                <form class="form-radiobox label-inluded">
                     <input type="radio">
                     <label>Last Hour</label>
                     <br/>
@@ -249,8 +295,8 @@
                 </form>
             </div>
             <div class="checkboxes">
-                <h3>checkboxe</h3>
-                <form>
+                <h3>Checkboxes</h3>
+                <form class="form-radiobox checkbox-form label-inluded">
                     <input type="checkbox">
                     <label>HTML 5</label>
                     <br/>
@@ -262,6 +308,7 @@
                 </form>
             </div>
             <div class="switches">
+                <h3>Switch</h3>
                 <label class="switch">
                     <input type="checkbox" checked>
                     <span class="slider round"></span>
@@ -281,10 +328,12 @@
                 </label>
             </div>
         </div>
+
         <div class="range-slider">
             <h3>Range slider</h3>
-            <label for="points">Points (between 0 and 10):</label>
             <input type="range" id="points" name="points" min="0" max="10">
+            <br/>
+            <label for="points">Points (between 0 and 10):</label>
         </div>
     </div>
 

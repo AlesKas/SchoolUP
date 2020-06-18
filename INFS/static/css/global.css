@@ -457,12 +457,12 @@ aside>section>h2 {
     position: relative;
     float: right;
     font-size: 12px;
-    left: -100px;
+    left: -80px;
     top: -7px;
 }
 
 .wider .caption-2 {
-    left: -65px;
+    left: -50px;
 }
 
 .caption-2>* {
@@ -695,6 +695,7 @@ input[type=text] {
     height: 50px;
     border: 1px solid grey;
     border-radius: 5px;
+    padding-left: 10px;
 }
 
 #contact>form {
@@ -1266,7 +1267,7 @@ h2>time {
 
 .add-comment-section ul>li {
     float: left;
-    margin-right: 18px;
+    margin-right: 16px;
 }
 
 .add-comment-section ul {
@@ -1417,7 +1418,7 @@ form label {
 .left-form {
     display: inline-flex;
     margin-bottom: 50px;
-    width: 825px;
+    width: 850px;
 }
 
 .left-form>form {
@@ -1433,7 +1434,7 @@ form label {
     margin-right: -42px !important;
 }
 
-form>label {
+.label-inluded>label {
     position: relative;
     bottom: 25px;
     left: 65px;
@@ -1577,7 +1578,8 @@ form>label {
 }
 
 .left-elements-content {
-    width: 80%;
+    width: 62%;
+    margin-left: 160px;
 }
 
 .right-elements {
@@ -1687,7 +1689,6 @@ table {
     line-height: 28px;
     font-family: "Nunito";
     font-weight: 400;
-    text-align: center;
 }
 
 .cross {
@@ -1717,6 +1718,7 @@ table {
 .buttons {
     width: 100%;
     float: left;
+    margin-left: 150px;
 }
 
 .list-elements>li {
@@ -1748,12 +1750,13 @@ table {
 
 .left-elements>input[type=text],
 .select-search-box {
-    position: sticky;
+    position: initial;
     width: 552px;
     height: 50px;
     border-radius: 3px;
     background-color: #ffffff;
     border: 1px solid #e5e5e5;
+    margin: 15px;
 }
 
 .searching {
@@ -1796,6 +1799,13 @@ textarea {
     margin-left: -60px;
 }
 
+.tooltip>p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
@@ -1806,6 +1816,7 @@ select {
     border-radius: 3px;
     background-color: #ffffff;
     border: 1px solid #e5e5e5;
+    margin-bottom: 20px;
 }
 
 .multi-checkboxes {
@@ -1814,6 +1825,7 @@ select {
     border-radius: 3px;
     background-color: #ffffff;
     border: 1px solid #e5e5e5;
+    margin-bottom: 110px;
 }
 
 .radioboxes {
@@ -1837,8 +1849,9 @@ input[type=checkbox] {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 49px;
+    height: 21px;
+    margin-bottom: 5px;
 }
 
 .switch input {
@@ -1862,8 +1875,8 @@ input[type=checkbox] {
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 15px;
+    width: 15px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -1885,13 +1898,160 @@ input:checked+.slider:before {
     transform: translateX(26px);
 }
 
-
-/* Rounded sliders */
-
 .slider.round {
     border-radius: 34px;
 }
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.left-elements-content>h3 {
+    right: 190px;
+    position: relative;
+}
+
+.text-margined {
+    margin-top: 100px;
+    width: 655px;
+}
+
+.message-box-text {
+    margin-left: 20px;
+    position: relative;
+    top: 16px;
+}
+
+.message-box-text>i {
+    margin-left: 125px;
+}
+
+.buttons>h3 {
+    margin-left: 135px;
+}
+
+.list-elements {
+    margin-left: -185px;
+}
+
+.forms-part {
+    margin-left: 85px;
+}
+
+.forms-part>h2 {
+    text-align: start;
+    margin-left: 200px;
+    margin-bottom: 50px;
+}
+
+.forms-part>h3,
+.select-boxes-part>h3 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.select-boxes-part {
+    width: 45%;
+    margin-top: 130px;
+}
+
+.search-box {
+    width: 516px;
+    height: 50px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    margin-top: 15px;
+}
+
+.searching>i {
+    position: relative;
+    right: 35px;
+    opacity: 0.5;
+}
+
+.searching>ul {
+    position: relative;
+    left: -200px;
+    position: relative;
+}
+
+.searching>ul>li {
+    font-size: 14px;
+    line-height: 35px;
+    color: #0a0a0a;
+    font-family: "Libre Baskerville";
+    font-weight: 400;
+}
+
+.input-boxes {
+    display: flex;
+}
+
+.multi-checkboxes>ul>li {
+    margin-bottom: 9px;
+    margin-left: 50px;
+}
+
+label>input {
+    margin: 10px;
+    position: relative;
+    top: 3px;
+}
+
+.form-radiobox>label {
+    position: inherit;
+    margin-left: 10px;
+}
+
+.checkbox-form>label {
+    top: -5px;
+    position: relative;
+    left: 5px;
+}
+
+.checkboxes {
+    position: sticky;
+    margin-top: -90px;
+    margin-left: -70px;
+}
+
+.switches {
+    position: sticky;
+    margin-top: -90px;
+    margin-left: -70px;
+}
+
+.switch>.switch-text {
+    position: absolute;
+    margin-left: 35px;
+    width: 85px;
+}
+
+.range-slider {
+    position: relative;
+    top: -50px;
+}
+
+input[type=range] {
+    width: 350px;
+    background-color: red;
+}
+
+.tooltip-container {
+    position: relative;
+    left: -70px;
+    margin-top: 20px;
+}
+
+.tooltip-container>h3 {
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    left: -160px;
+}
+
+.please-dont-break>label {
+    bottom: 20px;
+    left: 70px;
 }
