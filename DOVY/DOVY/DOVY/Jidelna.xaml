@@ -141,13 +141,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <TextBox IsReadOnly="True" Text="Filter:" Margin="5"  Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom"/>
                             <TextBox Name="CountTextOrder" IsReadOnly="True" Text="Count:" Margin="5,1"  Grid.Row="0" Grid.Column="5" VerticalAlignment="Top"/>
-                            <ComboBox Name="MealsListFilter" Grid.Row="0" Grid.Column="1" Height="30"
-                                      ItemsSource="{Binding}" 
-                                      SelectedValue="{Binding Id}" 
-                                      SelectedValuePath="Id" 
-                                      DisplayMemberPath="Name" SelectionChanged="MealsListFilter_SelectionChanged"/>
                             <TextBox IsReadOnly="True" Margin="5" Grid.Row="0" Grid.Column="2" TextWrapping="Wrap" Text="Serving Date(From-To):" VerticalAlignment="Bottom"/>
                             <DatePicker Name="DateFromOrder" Margin="5"  Grid.Row="0" Grid.Column="3" Text="Amount" VerticalAlignment="Bottom" FirstDayOfWeek="Monday" SelectedDateChanged="DateFromOrder_SelectedDateChanged" />
                             <DatePicker Name="DateTillOrder" Margin="5"  Grid.Row="0" Grid.Column="4" Text="Unit" VerticalAlignment="Bottom" SelectedDateChanged="DateTillOrder_SelectedDateChanged" />

@@ -69,8 +69,8 @@ namespace DOVY
             {
                 MessageBox.Show($"Error occured on initialization. \n {e.Message}", "Error", MessageBoxButton.OK);
             }
-            
-        }
+
+}
         private void FillMealDataGrid(DateTime dateToShow)
         {
             try
@@ -96,42 +96,57 @@ namespace DOVY
                     if (Calendar.SelectedDate == null)
                         return;
 
-                    var wrhs = ctx.Warehouses;
+                    var calendar = Calendar.SelectedDate.Value;
+
                     var wrhsList = ctx.Warehouses.ToList();
                     var ingr = ctx.IngredientAmountReqByDates.Where(i => i.ServeDate.Equals(Calendar.SelectedDate.Value));
-                    var wrhsIdList = new List<int>();
-                    if (wrhsWhere != null)
+
+                    var orders = ctx.Orders.Where(p => p.ServeDateOrder == calendar).ToList();
+                    var itemList = new List<WerehouseView>();
+
+                    foreach(var wer in wrhsList)
                     {
-                        foreach (var whereLambda in wrhsWhere)
+                        double required = 0;
+                        var vview = new WerehouseView
                         {
-                            wrhsList = wrhsList.Where(whereLambda.Compile()).ToList();
+                            Id = wer.Id,
+                            Name = ctx.Ingredients.FirstOrDefault(p => p.Id == wer.Id).Name,
+                            Amount = wer.Amount,
+                            UnitOfMeasure = ctx.Ingredients.FirstOrDefault(p => p.Id == wer.Id).UnitOfMeasure
+                        };
 
-                            wrhsIdList.RemoveAll(x => true);
-                            wrhsList.ForEach(x => wrhsIdList.Add(x.Id));
-                        }
-                    }
-
-                    var query = from w in wrhs.Where(t => wrhsIdList.Contains(t.Id))
-                                join i in ingr
-                                on w.IngredientId equals i.IngredientId into wi
-                                from x in wi.DefaultIfEmpty()
-                                select new
+                        foreach (var order in orders)
+                        {
+                            var menus = ctx.MenuViews.ToList();
+                            foreach (var ing in menus)
+                            {
+                                if (ing.Id == order.MenuId)
                                 {
-                                    w.Id,
-                                    w.Ingredient.Name,
-                                    w.Amount,
-                                    RequiredSumAmount = x.RequiredSumAmount ?? 0,
-                                    w.Ingredient.UnitOfMeasure
-                                };
-
-                    WarehouseDataGrid.ItemsSource = query.ToList();
+                                    var meals = ctx.Meals.Where(p => p.Id == ing.MealId).ToList();
+                                    foreach (var meal in meals)
+                                    {
+                                        foreach (var con in meal.MealConsistsOfs)
+                                        {
+                                            if (con.Id == wer.Id)
+                                            {
+                                                required += (double)con.AmountRequired;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        vview.RequiredSumAmount = required;
+                        itemList.Add(vview);
+                    }
+                    WarehouseDataGrid.ItemsSource = itemList;
                 }
-            }
+        }
             catch (Exception exc)
             {
                 MessageBox.Show("Error occured: " + exc.Message, "Error", MessageBoxButton.OK);
             }
-        }
+}
 
         private void FillOrderDataGrid(List<Expression<Func<Order, bool>>> orderWhere)
         {
@@ -409,7 +424,6 @@ namespace DOVY
                 using (var ctx = new Entities())
                 {
                     var query = ctx.Meals;
-                    MealsListFilter.ItemsSource = query.ToList();
                 }
 
                 var americanCulture = new CultureInfo("en-US");
@@ -427,7 +441,6 @@ namespace DOVY
 
         private void ResetFilterOrder_Click(object sender, RoutedEventArgs e)
         {
-            MealsListFilter.SelectedItem = null;
             DateFromOrder.SelectedDate = null;
             DateTillOrder.SelectedDate = null;
             FillOrderDataGrid(new List<Expression<Func<Order, bool>>> { x => true });
@@ -438,11 +451,6 @@ namespace DOVY
             try
             {
                 var orderLambdaList = new List<Expression<Func<Order, bool>>>();
-
-                if (MealsListFilter.SelectedItem != null)
-                {
-                    orderLambdaList.Add(x => x.Menu.Jidlo.Name == (MealsListFilter.SelectedItem as Meal).Name);
-                }
 
                 if (DateFromOrder.SelectedDate != null)
                 {
@@ -459,12 +467,6 @@ namespace DOVY
             {
                 MessageBox.Show("Error occured: " + exc.Message, "Error", MessageBoxButton.OK);
             }
-        }
-
-        private void MealsListFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (((ComboBox)sender).SelectedIndex != -1)
-                FilterOrderChanged();
         }
 
         private void DateFromOrder_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -590,5 +592,18 @@ namespace DOVY
         public double MealPrice { get; set; }
         public System.DateTime OrderDate { get; set; }
         public System.DateTime ServeDate { get; set; }
+    }
+
+    class WerehouseView
+    {
+        public WerehouseView()
+        {
+
+        }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double Amount { get; set; }
+        public double RequiredSumAmount { get; set; }
+        public string UnitOfMeasure { get; set; }
     }
 }
