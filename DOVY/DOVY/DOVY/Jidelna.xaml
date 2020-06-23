@@ -127,7 +127,7 @@
                                 <DataGridTextColumn Header="User Name" Binding="{Binding Path=UserName}" />
                                 <DataGridTextColumn Header="Menu Id" Binding="{Binding Path=MenuId}" />
                                 <DataGridTextColumn Header="Meal Name" Binding="{Binding Path=MealName}" />
-                                <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}" />
+                                <DataGridTextColumn Header="Price" Binding="{Binding Path=MealPrice}" />
                                 <DataGridTextColumn Header="Order Date" Binding="{Binding Path=OrderDate, StringFormat=\{0:dd.MM.yy\}}" />
                                 <DataGridTextColumn Header="Serving Date" Binding="{Binding Path=ServeDate, StringFormat=\{0:dd.MM.yy\}}" />
                             </DataGrid.Columns>
@@ -172,8 +172,23 @@
                         </Grid.RowDefinitions>
                         <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Content="Selected Month:" />
                         <Label Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" Content="Selected Year:" />
-                        <ComboBox Margin="5" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Name="MonthPicker" SelectionChanged="MonthPicker_SelectionChanged" />
-                        <ComboBox Margin="5" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Name="YearPicker" SelectionChanged="YearPicker_SelectionChanged"/>
+                        <ComboBox Margin="5" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Name="MonthPicker" SelectionChanged="MonthPicker_SelectionChanged" SelectedValue="Tag">
+                            <ComboBoxItem Content="1" Tag="1"/>
+                            <ComboBoxItem Content="2" Tag="2"/>
+                            <ComboBoxItem Content="3" Tag="3"/>
+                            <ComboBoxItem Content="4" Tag="4"/>
+                            <ComboBoxItem Content="5" Tag="5"/>
+                            <ComboBoxItem Content="6" Tag="6"/>
+                            <ComboBoxItem Content="7" Tag="7"/>
+                            <ComboBoxItem Content="8" Tag="8"/>
+                            <ComboBoxItem Content="9" Tag="9"/>
+                            <ComboBoxItem Content="10" Tag="10"/>
+                            <ComboBoxItem Content="11" Tag="11"/>
+                            <ComboBoxItem Content="12" Tag="12"/>
+                        </ComboBox>
+                        <ComboBox Margin="5" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Name="YearPicker" SelectionChanged="YearPicker_SelectionChanged">
+                            <ComboBoxItem Content="2020"/>
+                        </ComboBox>
                         <TextBox IsReadOnly="True" TextWrapping="Wrap" Grid.Column="0" Margin="5" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Text="Average Orders/Day:" />
                         <TextBox Name="AverageOrders" IsReadOnly="True" Grid.Column="2" Margin="5" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Text="" />
                         <TextBox IsReadOnly="True" TextWrapping="Wrap" Grid.Column="0" Margin="5" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" Text="Maximum orders:" />

@@ -260,7 +260,7 @@ li>a>i {
 main {
     float: left;
     width: 40%;
-    margin-left: 60ex;
+    margin-left: 45ex;
 }
 
 aside {
@@ -271,6 +271,14 @@ aside {
 
 main>article {
     display: flex;
+    width: 50em;
+    height: 25em;
+}
+
+@media (max-width: 1100px) {
+    main {
+        margin-left: 10ex;
+    }
 }
 
 main>article>h3 {
@@ -457,7 +465,7 @@ aside>section>h2 {
     position: relative;
     float: right;
     font-size: 12px;
-    left: -80px;
+    right: 6em;
     top: -7px;
 }
 
@@ -557,6 +565,10 @@ button {
 #latest {
     padding-top: 40px;
     margin-left: 60ex;
+}
+
+#latest button {
+    position: sticky;
 }
 
 #latest>h2 {

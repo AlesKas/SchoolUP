@@ -152,41 +152,33 @@ namespace DOVY
                         }
                     }
 
-                    if (CurrentUser.Permission == "admin")
+                    var dataGridData = new List<OrderView>();
+                    foreach (var orderInfo in ordersIdList)
                     {
-                        var query = ctx.Orders.Where(t => ordersIdList.Contains(t.Id)).Select(o => new
+                        var order = ctx.Orders.FirstOrDefault(p => p.Id == orderInfo);
+                        var menuView = ctx.MenuViews.FirstOrDefault(p => p.Id == order.MenuId);
+                        var orderView = new OrderView
                         {
-                            o.Id,
-                            o.User.UserName,
-                            o.MenuId,
-                            MealName = o.Menu.Jidlo.Name,
-                            o.Menu.Jidlo.Price,
-                            OrderDate = o.OrderTime,
-                            o.Menu.ServeDate
-                        });
-                        OrdersDataGrid.ItemsSource = query.ToList();
-                        CountTextOrder.Text = "Count: " + query.Count();
+                            Id = orderInfo,
+                            UserName = ctx.Users.FirstOrDefault(p => p.Id == order.UserId).UserName,
+                            MenuId = menuView.Id,
+                            MealId = menuView.MealId,
+                            MealName = menuView.MealName,
+                            MealPrice = menuView.Price,
+                            ServeDate = menuView.ServeDate,
+                            OrderDate = order.OrderTime
+                        };
+                        dataGridData.Add(orderView);
                     }
-                    else
-                    {
-                        var query = ctx.Orders.Where(t => ordersIdList.Contains(t.Id) && t.UserId == CurrentUser.Id).Select(o => new
-                        {
-                            o.Id,
-                            o.User.UserName,
-                            o.MenuId,
-                            MealName = o.Menu.Jidlo.Name,
-                            o.Menu.Jidlo.Price,
-                            OrderDate = o.OrderTime,
-                            o.Menu.ServeDate
-                        });
-                        OrdersDataGrid.ItemsSource = query.ToList();
-                        CountTextOrder.Text = "Count: " + query.Count();
-                    }
+
+
+                    OrdersDataGrid.ItemsSource = dataGridData;
+                    CountTextOrder.Text = "Count: " + dataGridData.Count();
                 }
             }
-            catch (Exception)
+            catch (Exception exc)
             {
-
+                MessageBox.Show("Error occured: " + exc.Message, "Error", MessageBoxButton.OK);
             }
         }
 
@@ -318,7 +310,8 @@ namespace DOVY
                     {
                         UserId = CurrentUser.Id,
                         MenuId = selectedMenu.Id,
-                        OrderTime = DateTime.Now
+                        OrderTime = DateTime.Now,
+                        ServeDateOrder = selectedMenu.ServeDate
                     };
 
                     ctx.Orders.Add(order);
@@ -431,14 +424,6 @@ namespace DOVY
             }
         }
 
-        //private void ResetFilter_Click(object sender, RoutedEventArgs e)
-        //{
-        //    IdFilter.Text = "Id";
-        //    NameFilter.Text = "Name";
-        //    AmountFilter.Text = "Amount";
-        //    UnitFilter.Text = "Unit";
-        //    FillWarehouseDataGrid(new List<Expression<Func<Warehouse, bool>>> { x => true });
-        //}
 
         private void ResetFilterOrder_Click(object sender, RoutedEventArgs e)
         {
@@ -514,6 +499,7 @@ namespace DOVY
 
         private void MonthPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             try
             {
                 if (YearPicker?.SelectedItem != null && MonthPicker?.SelectedItem != null)
@@ -531,12 +517,14 @@ namespace DOVY
         {
             using (var ctx = new Entities())
             {
-                AverageOrders.Text =
-                    ((double)ctx.Orders.Count(x => x.Menu.ServeDate.Month == MonthPicker.SelectedIndex + 1 && x.Menu.ServeDate.Year == (int)YearPicker.SelectedItem) /
-                 DateTime.DaysInMonth((int)YearPicker.SelectedItem, MonthPicker.SelectedIndex - 1)).ToString("F");
+                var month = MonthPicker.SelectedIndex + 1;
+                var year = Int32.Parse(YearPicker.Text);
+                var daysInMonth = DateTime.DaysInMonth(year, month);
 
-                var orderPerDay = ctx.Orders.Where(x => x.Menu.ServeDate.Month == MonthPicker.SelectedIndex + 1 && x.Menu.ServeDate.Year == (int)YearPicker.SelectedItem)
-                    .GroupBy(x => x.Menu.ServeDate).Select(x => new
+                var ordersSum = ctx.Orders.Count(x => x.ServeDateOrder.Month == month && x.ServeDateOrder.Year == year);
+                AverageOrders.Text = ((double)ordersSum / (double)daysInMonth).ToString("F");
+
+                var orderPerDay = ctx.Orders.Where(x => x.ServeDateOrder.Month == month && x.ServeDateOrder.Year == year).GroupBy(x => x.ServeDateOrder).Select(x => new
                     {
                         Date = x.Key,
                         Total = x.Count()
@@ -558,11 +546,8 @@ namespace DOVY
                     MinOrdersText.Text = "0";
                 }
 
-                var orderDates = ctx.Orders.Select(x => x.Menu.ServeDate);
-                var notOrdered = ctx.Menus
-                    .Where(x => x.ServeDate.Month == MonthPicker.SelectedIndex + 1 &&
-                                x.ServeDate.Year == (int)YearPicker.SelectedItem)
-                    .FirstOrDefault(x => !orderDates.Contains(x.ServeDate));
+                var orderDates = ctx.Orders.Select(x => x.ServeDateOrder).ToList();
+                var notOrdered = ctx.MenuViews.Where(x => x.ServeDate.Month == month && x.ServeDate.Year == year).FirstOrDefault(x => !orderDates.Contains(x.ServeDate));
                 if (notOrdered != null)
                     NoOrdersText.Text = "Date: " + notOrdered.ServeDate.ToString("d");
                 else
@@ -589,5 +574,21 @@ namespace DOVY
         {
 
         }
+    }
+
+    class OrderView
+    {
+        public OrderView()
+        {
+
+        }
+        public int Id { get; set; }
+        public string UserName { get; set; }
+        public int MenuId { get; set; }
+        public int MealId { get; set; }
+        public string MealName { get; set; }
+        public double MealPrice { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public System.DateTime ServeDate { get; set; }
     }
 }

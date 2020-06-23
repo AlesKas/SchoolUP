@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -30,25 +31,24 @@ namespace DOVY
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-                using (var context = new Entities())
+            using (var context = new Entities())
+            {
+                Database.SetInitializer<Entities>(null);
+                var userId = context.ValidateCredentials(UserName.Text, Password.Password);
+                switch (userId)
                 {
-                    var userId = context.ValidateCredentials(UserName.Text, Password.Password);
-                    switch (userId)
-                    {
-                        case -1:
-                            FailureText.Content = "Username and/or password is incorrect.";
-                            break;
-                        default:
-                            var system = new Jidelna(context.Users.First(u => u.Id == userId));
-                            system.Show();
-                            this.Close();
-                            break;
-                    }
+                    case -1:
+                        FailureText.Content = "Username and/or password is incorrect.";
+                        break;
+                    default:
+                        var system = new Jidelna(context.Users.First(u => u.Id == userId));
+                        system.Show();
+                        this.Close();
+                        break;
                 }
+            }
             
-
-                FailureText.Content = "Error occured while logging.";
+            FailureText.Content = "Error occured while logging.";
             
         }
     }

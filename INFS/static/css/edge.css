@@ -1,0 +1,47 @@
+@supports (-ms-ime-align: auto) {
+    p {
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+    .caption-2 {
+        right: 4em;
+    }
+    .main-caption {
+        width: 30rem;
+        height: 30rem;
+    }
+    .content-container {
+        margin-left: 40ex;
+    }
+    #latest {
+        margin-left: 40ex;
+    }
+    #other {
+        margin-left: 40ex;
+    }
+    .over-img {
+        width: 300px;
+    }
+    .right-float-img {
+        margin-left: 15px;
+    }
+    .edge-container {
+        display: flex;
+    }
+    .second-page article {
+        height: 250px;
+    }
+    .left-elements {
+        text-align: center;
+    }
+    .left-elements-content h3 {
+        position: static;
+    }
+    .forms-part h3 {
+        position: static;
+    }
+    .searching {
+        position: static;
+        margin-left: 155px;
+    }
+}
