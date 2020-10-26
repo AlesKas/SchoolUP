@@ -51,45 +51,67 @@ SELECT headofstate FROM country GROUP BY headofstate HAVING count(continent) > 1
 
 --vládce, kteří působí v Severní Americe nebo Evropě
 SELECT headofstate FROM country GROUP BY headofstate, continent HAVING continent = 'Europe' or continent = 'North America';
+SELECT headofstate FROM count WHERE continent = 'Eruope' or continent = 'North America';
 
 --vládce, kteří působí současně v Severní Americe i Evropě
 SELECT headofstate FROM country GROUP BY headofstate, continent HAVING continent = 'Europe' AND continent = 'North America';
+SELECT headofstate FROM country WHERE continent = 'Eruope'
+  INTERSECT
+  SELECT headofstate FROM country WHERE continent = 'North America';
 
 --vládce, kteří působí v Severní Americe, ale nepůsobí v Evropě
 SELECT headofstate FROM country GROUP BY headofstate, continent HAVING  continent = 'North America' AND continent <> 'Europe';
+SELECT headofstate FROM country WHERE continent = 'North America' INTERSECT SELECT headofstate FROM country WHERE continent <> 'Europe';
 
 --co je největší evropská země dle rozlohy
 SELECT name FROM country WHERE continent = 'Europe'  ORDER BY surfacearea DESC LIMIT 1;
 
 --co je nejlidnatější region
 SELECT region FROM country GROUP BY region ORDER BY sum(population) DESC LIMIT 1;
+SELECT SUM(population) AS populace, region FROM country GROUP BY region ORDER BY populace DESC LIMIT 1;
 
 --seznam všech vládců, kteří vládnou alespoň 100 000 000 obyvatel
 SELECT headofstate FROM country GROUP BY headofstate HAVING SUM(population) > 100000000;
 
 --průměrný hrubý národní produkt (gnp) zemí podle regionu, které získaly nezávislost po roce 1950.
-SELECT SUM(gnp) / COUNT(GNP) AS average FROM country WHERE indepyear > 1950;
+SELECT region, AVG(gnp) AS average_gnp FROM country WHERE indepyear > 1950 GROUP BY region;
 
 --Názvy měst a k nim příslušné názvy zemí.
 SELECT city.name, country.name FROM city JOIN country ON city.countrycode = country.code;
+SELECT city.name, country.name FROM city, country WHERE city.countrycode = country.code;
 
 --Řeč, kterou se mluví v jednotlivých zemích.
 SELECT name, language FROM country JOIN countrylanguage ON country.code = countrylanguage.countrycode AND isofficial;
+SELECT name, language FROM countrylanguage, country WHERE country.code = countrylanguage.countrycode;
 
 --Řeč, kterou se mluví v jednotlivých městech.
 SELECT name, language FROM city JOIN countrylanguage ON city.countrycode = countrylanguage.countrycode;
 
 --Řeči, kterými se mluví v Evropě.
 SELECT DISTINCT  language FROM countrylanguage NATURAL JOIN (SELECT code FROM country WHERE continent = 'Europe') as TMP;
+SELECT name, language FROM countrylanguage, country WHERE country.code = countrylanguage.countrycode AND continent = 'Europe';
 
 --Informace o zemích z G7 ("USA", "FRA", "ITA", "CAN", "DEU", "GBR", "JPN")
 SELECT * FROM country JOIN g7country ON country.code = g7country.countrycode;
 
 --Hlavní města zemí z G7.
 SELECT DISTINCT name FROM city JOIN ( SELECT capital FROM country JOIN g7country ON country.code = g7country.countrycode) as TMP on TMP.capital = city.id;
+SELECT city.name FROM city, (SELECT capital FROM country, g7country WHERE country.code = g7country.countrycode) as citycode WHERE city.id = citycode.capital;
 
 --Názvy hlavních měst v jednotlivých zemích.
 SELECT DISTINCT city.name, country.name FROM city JOIN country ON city.id = country.capital;
+
+-- Řeči, kterými se mluví v Karibiku i v Asii.
+SELECT country.region, countrylanguage.language FROM country, countrylanguage WHERE country.code = countrylanguage.countrycode AND (region = 'Caribbean' OR continent = 'Asia');
+
+-- Největší město světa (nikoliv maximální).
+SELECT name, population FROM city ORDER BY population DESC LIMIT 1;
+
+-- Nejmenší hlavní město Evropy (nikoliv minimální).
+SELECT city.name, country.name, city.population FROM city, country WHERE country.capital = city.id AND country.continent = 'Europe' ORDER BY city.population ASC LIMIT 1;
+
+-- Dvojce různých států jižní Evropy, které mají stejný oficiální jazyk. (Každá dvojce by měla být ve výsledku pouze jednou)
+SELECT countrylanguage.language, foo.name FROM countrylanguage NATURAL JOIN (SELECT name, code as countrycode  FROM country WHERE region = 'Southern Europe') as foo WHERE countrylanguage.isofficial = True;
 
 /*Ověřte, jakými kroky byly provedeny dotazy, které byly provedeny v tomto a na posledních cvičeních věnovaných práci s DB. 
 Je možné, že DB použije operace, které nebyly zmíněny.

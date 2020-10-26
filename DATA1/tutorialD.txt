@@ -9,6 +9,8 @@ VAR Adresar BASE RELATION {jmeno Jmeno, narozen Datum, povolani CHAR, pohlavi Po
 	TUPLE {jmeno Jmeno ("Tomas", "Kral"), narozen Datum(8,3,1996), povolani 'Delnik', pohlavi Pohlavi("M"), plat Plat(10000), deti RELATION {TUPLE {jmeno '', vek 0}}},
 	TUPLE {jmeno Jmeno("Jan", "Kaspar"), narozen Datum(5,5,1993), povolani 'Programator', pohlavi Pohlavi("M"), plat Plat(45000), deti Relation { TUPLE {jmeno 'Ondrej', vek 3}}}}) KEY {jmeno};
 	 
+VAR adresar BASE RELATION {jmeno Jmeno, narozeni Datum, povolani CHAR, pohlavi Pohlavi,  plat Plat, deti RELATION {jmeno CHAR,  vek INT}} KEY {jmeno};
+
 Zobrazte všechna povolání (bez duplicit)
 	Adresar {povolani}
 
@@ -29,6 +31,10 @@ Zobrazte relaci, kde bude jen jméno a věk.
 
 Některé z profesí zdvojnásobte plat. (Aktualizujte hodnotu relační proměnné.)
 	UPDATE Adresar WHERE (povolani = 'Delnik') : {plat := Plat(20000)};
+	OPERATOR multiplication (a Plat, b INT) RETURNS Plat;
+		RETURN Plat(THE_x (a) * b);
+		END OPERATOR;
+	UPDATE Adresar WHERE (povolani = 'Delnik') : {plat := plat * 2}
 
 Odstraňte z relace všechny, co mají plat menší než 10000. (Aktualizujte hodnotu relační proměnné.)
 	DELETE Adresar WHERE (THE_x(plat) <= 10000);
@@ -45,6 +51,15 @@ Názvy měst a k nim příslušné názvy zemí.
 
 Řeči, kterými se mluví v Evropě.
 	((country WHERE continent = 'Europe') JOIN (countrylanguage RENAME {countrycode AS code}) {code, language}) {language}
+	((countrylanguage RENAME {countrycode as code}) JOIN country WHERE continent = "Europe") {name, language}
+
+Řeči, kterými se mluví v Karibiku i v Asii.
+	((countrylanguage RENAME {countrycode as code}) JOIN country WHERE continent = "Asia" or region = "Caribbean") {name, language}
+
+Dvojce různých států jižní Evropy, které mají stejný oficiální jazyk. (Každá dvojce by měla být ve výsledku pouze jednou)
+	(((((countrylanguage RENAME {countrycode as code}) WHERE isofficial = true ) JOIN (country WHERE continent = "Europe"))  {name, language}) JOIN
+    ((countrylanguage RENAME {countrycode as code, language as lan}) WHERE isofficial = true) JOIN ((country RENAME {name as nam}) WHERE continent = "Europe")
+    WHERE lan = language AND name <> nam) {name, language, nam, lan}
 
 Informace o zemích z G7 ("USA", "FRA", "ITA", "CAN", "DEU", "GBR", "JPN").
 	 country JOIN (g7country RENAME {countrycode AS code}) {code}
