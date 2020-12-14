@@ -466,26 +466,40 @@ RETURN QUERY SELECT faktura.id as id_faktury, zbozi_polozka.jmeno as produkt,
 END; 
 $$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION vystavit_fakturu_a_upravit_zbozi(input_faktura_id INT) RETURNS TABLE (produkt TEXT, mnozstvi INT, cena NUMERIC, cena_celkem NUMERIC)
+CREATE OR REPLACE FUNCTION upravit_zbozi() RETURNS VOID
 as $$
 DECLARE
     r RECORD;
+    id_faktury INT;
 BEGIN
-    FOR r IN select * FROM fakturizace(input_faktura_id)
+    id_faktury := (SELECT id FROM faktura ORDER BY vystaveni DESC LIMIT 1);
+    FOR r IN select * FROM fakturizace(id_faktury)
     LOOP
     INSERT INTO faktura_zakaznikovi VALUES (r.id_faktury, r.produkt, r.id_polozky, r.mnozstvi, r.cena);
     RAISE NOTICE 'Odecitam % zbozi %', r.mnozstvi, r.produkt;
     UPDATE zbozi SET skladem = skladem - r.mnozstvi WHERE zbozi.jmeno = r.produkt;
     END LOOP;
-    RETURN QUERY SELECT fakt.produkt, fakt.mnozstvi, fakt.cena, (fakt.mnozstvi * fakt.cena) as cena_celkem FROM fakturizace(input_faktura_id) as fakt;
 END;
 $$ LANGUAGE plpgsql;
 
--- Funkce sama o sobě vrací tabulku, ale pro Vás jsem ještě přidal tabulku, ve které budou nové faktury
+CREATE OR REPLACE FUNCTION insert_zbozi_do_faktury(id_zbozi INT) RETURNS VOID
+as $$
+DECLARE
+    id_faktury INT;
+BEGIN
+    id_faktury := (SELECT id FROM faktura ORDER BY vystaveni DESC LIMIT 1);
+    INSERT INTO polozka(faktura_id, zbozi_id, mnozstvi) VALUES (id_faktury, id_zbozi, floor(random() * 10) + 1);
+END;
+$$ LANGUAGE plpgsql;
 
 BEGIN;
-SELECT * FROM vystavit_fakturu_a_upravit_zbozi(9);
+INSERT INTO faktura(vystaveni, zakaznik_id) VALUES (now(), floor(random() * 14) + 1);
+SELECT * FROM insert_zbozi_do_faktury(floor(random() * 25 + 1)::int);
+SELECT * FROM insert_zbozi_do_faktury(floor(random() * 25 + 1)::int);
+SELECT * FROM upravit_zbozi();
 COMMIT;
+
+-- Backend by pro každou položku zavolal insert zbozi do faktury
 
 -- trigger a tabulku: zaznamenávání historie ceny zboží
 
