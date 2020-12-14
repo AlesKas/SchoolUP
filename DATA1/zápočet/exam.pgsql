@@ -434,17 +434,27 @@ INSERT INTO polozka (faktura_id, zbozi_id, mnozstvi) VALUES
 CREATE OR REPLACE VIEW faktura_cena AS 
     SELECT faktura.id, SUM(zbozi_polozka.mnozstvi * zbozi_polozka.cena) as utraceno FROM faktura JOIN 
     (SELECT * FROM polozka JOIN zbozi ON polozka.zbozi_id = zbozi.id) AS zbozi_polozka 
-    ON faktura.id = zbozi_polozka.faktura_id WHERE faktura.id = 1 GROUP BY faktura.id;
+    ON faktura.id = zbozi_polozka.faktura_id GROUP BY faktura.id ORDER BY faktura.id ASC;
 -- Spíše bych řešil přes funkci, jelikož si nejsem vědom, že by se pohledu daly předávat argumenty, aby to nebyl pohled pouze pro jednu fakturu
 
 -- Dotaz: jméno zákazníka a jeho maximalní utracená částka na jedné faktuře
-SELECT zakaznik.jmeno, faktura.id as id_faktura, SUM(polozka.mnozstvi * zbozi.cena) as utraceno FROM zakaznik 
+
+SELECT DISTINCT ON (jmeno) zakaznik.jmeno as jmeno, faktura.id as id_faktura, SUM(polozka.mnozstvi * zbozi.cena) as utraceno
+    FROM zakaznik 
     JOIN faktura ON zakaznik.id = faktura.zakaznik_id 
     JOIN polozka ON polozka.faktura_id = faktura.id 
     JOIN zbozi ON polozka.zbozi_id = zbozi.id 
-    WHERE zakaznik.id = 9 GROUP BY faktura.id, zakaznik.jmeno ORDER BY utraceno DESC LIMIT 1;
+    GROUP BY faktura.id, zakaznik.jmeno ORDER BY jmeno, utraceno DESC;
 
 -- Transakci: vystavení faktury zákazníkovi a úprava zboží skladem
+
+CREATE TABLE faktura_zakaznikovi(
+    id_faktury INT REFERENCES faktura(id),
+    produkt TEXT,
+    id_polozky INT REFERENCES zbozi(id),
+    mnozstvi TEXT,
+    celkova_cena  NUMERIC
+);
 
 CREATE OR REPLACE FUNCTION fakturizace(input_faktura_id INT) RETURNS TABLE (id_faktury INT, produkt TEXT, id_polozky INT, mnozstvi INT, cena NUMERIC)
 as $$
@@ -463,12 +473,15 @@ DECLARE
 BEGIN
     FOR r IN select * FROM fakturizace(input_faktura_id)
     LOOP
+    INSERT INTO faktura_zakaznikovi VALUES (r.id_faktury, r.produkt, r.id_polozky, r.mnozstvi, r.cena);
     RAISE NOTICE 'Odecitam % zbozi %', r.mnozstvi, r.produkt;
     UPDATE zbozi SET skladem = skladem - r.mnozstvi WHERE zbozi.jmeno = r.produkt;
     END LOOP;
     RETURN QUERY SELECT fakt.produkt, fakt.mnozstvi, fakt.cena, (fakt.mnozstvi * fakt.cena) as cena_celkem FROM fakturizace(input_faktura_id) as fakt;
 END;
 $$ LANGUAGE plpgsql;
+
+-- Funkce sama o sobě vrací tabulku, ale pro Vás jsem ještě přidal tabulku, ve které budou nové faktury
 
 BEGIN;
 SELECT * FROM vystavit_fakturu_a_upravit_zbozi(9);
