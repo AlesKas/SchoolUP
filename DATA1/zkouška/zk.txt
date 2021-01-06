@@ -33,10 +33,13 @@ integer bigint
 20	    3
 10	    4
 
-
+lze přepsat jako 
+    ((r1 MINUS ((r1 JOIN r2) {x, y, z})) JOIN r2) {ALL BUT x, a}
 Prázdná relace nad {y, z, b, c ,d}
 
 
+Pro každý řádek spojí r1 a r2 tam kde x == a, y == b
+ty řádky, které se s ničím nespojí se spojí s prázdnou relací
 x           w
 INTEGER     INTEGER
 10          10 
