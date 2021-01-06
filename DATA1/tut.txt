@@ -4,3 +4,7 @@
             (countrylanguage RENAME {countrycode as code}) WHERE isofficial = true ) JOIN (country WHERE continent = "Europe"))  {name, language}) JOIN
             ((countrylanguage RENAME {countrycode as code, language as lan}) WHERE isofficial = true) JOIN ((country RENAME {name as nam}) WHERE continent = "Europe")
             WHERE lan = language) {name, language, nam, lan}
+
+WITH (max_africa_gnp := MAX((country WHERE continent = 'Africa'), gnp)) : 
+	country WHERE continent = 'Europe' AND gnp > max_africa_gnp
+

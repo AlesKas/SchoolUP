@@ -1,0 +1,46 @@
+1)
+    RP má pevně daný svuj typ a množinu klíčů
+    Pohled vzniká vyhodnocením rel. výrazu a má typ tohoto výrazu
+
+2) 
+WITH (min_x := MIN(rel2, x), max_y := max(rel2, y)) :
+	(rel1 WHERE a < max_y AND (b - 10) > min_x)
+
+3)
+CREATE TABLE r(
+    x int,
+    y int,
+    a int,
+    b int,
+    PRIMARY KEY(x, y)
+);
+
+ALTER TABLE r ADD CONSTRAINT r_constr CHECK (a = x AND b = y);
+SELECT count(*) as w, a + b as z FROM r GROUP BY x, y;
+
+6)
+
+p           q
+integer     integer
+20	        20
+30	        40
+10	        10
+
+	
+x       c
+integer bigint
+30	    3
+20	    3
+10	    4
+
+
+Prázdná relace nad {y, z, b, c ,d}
+
+
+x           w
+INTEGER     INTEGER
+10          10 
+10          0 
+20          30 
+20          0 
+30          10 
